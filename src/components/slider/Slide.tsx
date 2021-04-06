@@ -1,38 +1,35 @@
 import React from "react";
 import styled from "styled-components";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { getHeroImageFromId } from "./lib";
+import { ImageNode } from "gatsby-source-sanity/lib-es5/images/getGatsbyImageProps";
 
 type SlideProps = {
-  imgUrl: string;
+  imageId?: ImageNode;
   children: JSX.Element;
 };
 
 const SlideWrapperStyles = styled.div`
   position: relative;
   width: 100%;
-  height: calc(100vh - 70px);
-  height: calc(100vh - ${({ theme }) => theme.dimensions.navbarHeight});
+  height: 100%;
 `;
 const ImageWrapper = styled.div`
   position: absolute;
   width: 100%;
-  height: calc(100vh - 70px);
-  height: calc(100vh - ${({ theme }) => theme.dimensions.navbarHeight});
+  height: 100%;
 `;
 const Content = styled.div`
   position: absolute;
   z-index: 1;
 `;
 
-const Slide = ({ imgUrl, children }: SlideProps) => {
+const Slide = ({ imageId, children }: SlideProps) => {
+  const imgData = getHeroImageFromId(imageId);
   return (
     <SlideWrapperStyles>
       <ImageWrapper>
-        <Image
-          src={imgUrl}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-        />
+        <GatsbyImage image={imgData} alt="kk" />
       </ImageWrapper>
       <Content>{children}</Content>
     </SlideWrapperStyles>

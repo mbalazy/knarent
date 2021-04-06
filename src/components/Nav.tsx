@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
-/* import Logo from "../../public/logo_knarent.svg"; */
-/* import Phone from "../../public/phone1.svg"; */
+import { ReactComponent as Logo } from "../../public/logo_knarent.svg";
+import { ReactComponent as Phone } from "../../public/phone1.svg";
 import info from "../../theme/info";
 
 type NavProps = {
@@ -42,10 +42,14 @@ const Nav = ({ sticky }: NavProps) => {
   const [firstPhoneNumber] = info.telephones;
   return (
     <NavWrapper sticky={sticky}>
-      <LogoWrapperStyles>{/* <Logo /> */}</LogoWrapperStyles>
+      <LogoWrapperStyles>
+        <Logo />
+      </LogoWrapperStyles>
       <p>Menu Items</p>
       <PhoneWrapperStyles>
-        <PhoneLogoStyles>{/* <Phone /> */}</PhoneLogoStyles>
+        <PhoneLogoStyles>
+          <Phone />
+        </PhoneLogoStyles>
         {firstPhoneNumber}
       </PhoneWrapperStyles>
     </NavWrapper>
