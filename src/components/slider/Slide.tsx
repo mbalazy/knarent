@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { getHeroImageFromId } from "./lib";
+import { getHeroImageFromId } from "../utils/getHeroImageFromId";
 import { ImageNode } from "gatsby-source-sanity/lib-es5/images/getGatsbyImageProps";
 
 type SlideProps = {
@@ -23,13 +23,16 @@ const Content = styled.div`
   position: absolute;
   z-index: 1;
 `;
+const ImageStyles = styled(GatsbyImage)`
+  height: 100%;
+`;
 
 const Slide = ({ imageId, children }: SlideProps) => {
   const imgData = getHeroImageFromId(imageId);
   return (
     <SlideWrapperStyles>
       <ImageWrapper>
-        <GatsbyImage image={imgData} alt="kk" />
+        <ImageStyles image={imgData} alt="kk" />
       </ImageWrapper>
       <Content>{children}</Content>
     </SlideWrapperStyles>

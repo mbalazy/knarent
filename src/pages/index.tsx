@@ -1,12 +1,12 @@
 import React from "react";
 import Nav from "../components/Nav";
-import Slider from "../components/slider/Slider";
+import HeroSlider from "../components/slider/HeroSlider";
 
 const Home = () => {
   return (
     <>
       <Nav />
-      <Slider />
+      <HeroSlider />
       <p>Home</p>
     </>
   );

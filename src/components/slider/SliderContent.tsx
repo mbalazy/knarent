@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 type SliderContentProps = {
-  translateX?: number
-  transition?: number
-  width?: number
-}
+  translateX?: number;
+  transition?: number;
+  width?: number;
+};
 
 const SliderContent = styled.div<SliderContentProps>`
   transform: translateX(-${(props) => props.translateX}px);
@@ -11,5 +11,6 @@ const SliderContent = styled.div<SliderContentProps>`
   height: calc(100vh - ${({ theme }) => theme.dimensions.navbarHeight});
   width: ${(props) => props.width}px;
   display: flex;
-`
-export default SliderContent
+`;
+
+export default SliderContent;
