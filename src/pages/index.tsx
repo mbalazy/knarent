@@ -1,15 +1,15 @@
-import React from "react";
-import Nav from "../components/Nav";
-import HeroSlider from "../components/slider/HeroSlider";
+import React from 'react'
+import Nav from '../components/Nav'
+import Hero from '../components/hero/Hero'
 
 const Home = () => {
   return (
     <>
-      <Nav />
-      <HeroSlider />
+      <Nav sticky />
+      <Hero />
       <p>Home</p>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

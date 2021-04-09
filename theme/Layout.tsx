@@ -1,7 +1,7 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
-import theme from "./mainTheme";
-import GlobalStyle from "./globalStyle";
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import theme from './mainTheme'
+import GlobalStyle from './globalStyle'
 
 export const Layout = ({ children }) => (
   <>
@@ -10,4 +10,4 @@ export const Layout = ({ children }) => (
       {children}
     </ThemeProvider>
   </>
-);
+)

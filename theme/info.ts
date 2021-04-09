@@ -1,6 +1,6 @@
 const info = {
   title: 'Knarent',
-  fullTitle: 'Knarent Artur Knap',
+  fullTitle: ' FHU Knarent Artur Knap',
   telephones: ['514 902 882'],
   emails: ['kontakt@knarent.pl'],
 }
