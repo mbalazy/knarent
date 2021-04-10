@@ -31,6 +31,7 @@ const PhoneWrapperStyles = styled.div`
   gap: 1rem;
   font-size: ${({ theme }) => theme.fontSize.m};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
+  white-space: nowrap;
 `
 
 const Navbar = ({ sticky }: NavProps) => {

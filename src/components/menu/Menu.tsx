@@ -11,7 +11,7 @@ const MenuStyles = styled.div<MenuProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 600px;
+  width: 40%;
   margin: 0 4rem;
 
   ${({ vertical }) =>

@@ -12,6 +12,7 @@ const BaseLinkStyles = css`
   color: inherit;
   padding: 0.8rem 1.2rem;
   font-size: ${({ theme }) => theme.fontSize.m};
+  white-space: nowrap;
 `
 
 const BigLinkStyles = styled(Link)`
