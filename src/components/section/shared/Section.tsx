@@ -5,6 +5,7 @@ type SectionProps = {
   children: JSX.Element | string
 }
 import styled from 'styled-components'
+import { H2, H3 } from '../../shared/Typography'
 
 const SectionWrapper = styled.section`
   max-width: 1200px;
@@ -12,20 +13,17 @@ const SectionWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 8rem 7%;
+  margin: 0 5%;
   text-align: center;
-`
-const SubheadingStyles = styled.h2`
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  line-height: 1.3;
+  gap: 6rem;
 `
 
 const Section = ({ heading, subheading, children }: SectionProps) => {
   return (
     <SectionWrapper>
-      <h2>{heading}</h2>
-      <SubheadingStyles>{subheading}</SubheadingStyles>
-      <p>{children}</p>
+      {heading && <H2 bigger>{heading}</H2>}
+      {subheading && <H3 bigger>{subheading}</H3>}
+      <>{children}</>
     </SectionWrapper>
   )
 }

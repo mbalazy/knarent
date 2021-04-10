@@ -6,7 +6,9 @@ const mainTheme = {
     accent2: '#001F3F',
     primaryText: '#222222',
     lightText: '#FFFFFF',
+    white: '#FFFFFF',
     grey100: 'hsl(0, 0%, 90%)',
+    grey002: 'hsl(0, 0%, 98%)',
     grey850: 'hsl(0, 0%, 15%)',
     black: 'hsl(0, 0%, 0%)',
   },
@@ -17,8 +19,8 @@ const mainTheme = {
     m: '1.8rem',
     l: '2rem',
     xl: '2.4rem',
-    xxl: '2.8rem',
-    heading: '3.4rem',
+    '2xl': '2.8rem',
+    '3xl': '3.4rem',
   },
 
   fontWeight: {
