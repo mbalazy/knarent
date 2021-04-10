@@ -28,6 +28,11 @@ const mainTheme = {
     extrabold: 900,
   },
 
+  border: {
+    standard: '20px',
+    light: '15px',
+  },
+
   dimensions: {
     navbarHeight: '70px',
     footerHeight: '80px',

@@ -26,9 +26,9 @@ const ImageStyles = styled(GatsbyImage)`
 const HeroImage = ({ children }: HeroContentProps) => {
   const { imageFile } = useStaticQuery(graphql`
     query HeroImage {
-      imageFile: file(relativePath: { eq: "hero-3-bg.jpg" }) {
+      imageFile: file(relativePath: { eq: "hero-2-bg.jpg" }) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH, quality: 80)
+          gatsbyImageData(layout: FULL_WIDTH, quality: 80, width: 1800)
         }
       }
     }

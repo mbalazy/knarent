@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { ReactComponent as Logo } from '../images/logo_knarent.svg'
-import { ReactComponent as Phone } from '../images/phone1.svg'
+import { ReactComponent as Logo } from '../../images/logo_knarent.svg'
+import { ReactComponent as Phone } from '../../images/phone1.svg'
 import info from '../../theme/info'
 
 type NavProps = {

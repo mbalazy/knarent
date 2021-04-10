@@ -1,13 +1,12 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-export type ButtonProps = {
+export type Props = {
   variant?: 'primary' | 'secondary'
   children: string
-  onClick?: () => void
 }
 
-const ButtonStyles = styled.button<ButtonProps>`
+export const BaseStyles = css<Props>`
   border: none;
   cursor: pointer;
   display: inline-block;
@@ -33,8 +32,11 @@ const ButtonStyles = styled.button<ButtonProps>`
     }
   }}
 `
+const ButtonStyles = styled.button`
+  ${BaseStyles}
+`
 
-const Button = ({ variant = 'primary', children, ...props }: ButtonProps) => {
+const Button = ({ variant = 'primary', children, ...props }: Props) => {
   return (
     <ButtonStyles variant={variant} type="button" {...props}>
       {children}

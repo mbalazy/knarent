@@ -14,15 +14,14 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-svgr',
-    `gatsby-env-variables`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        path: `${__dirname}/images`,
         name: 'images',
-        path: './src/images/',
       },
-      __key: 'images',
     },
+    `gatsby-env-variables`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
