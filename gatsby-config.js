@@ -7,13 +7,6 @@ module.exports = {
     title: 'knarent',
   },
   plugins: [
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-svgr',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -21,6 +14,12 @@ module.exports = {
         name: 'images',
       },
     },
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-svgr',
     `gatsby-env-variables`,
     {
       resolve: `gatsby-plugin-typescript`,
@@ -36,20 +35,8 @@ module.exports = {
       options: {
         projectId: process.env.GATSBY_SANITY_PROJECT_ID,
         dataset: `production`,
-        // a token with read permissions is required
-        // if you have a private dataset
-        // token: process.env.SANITY_TOKEN,
-
-        // If the Sanity GraphQL API was deployed using `--tag <name>`,
-        // use `graphqlTag` to specify the tag name. Defaults to `default`.
         graphqlTag: 'default',
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-styled-components`,
-    //   options: {
-    //     displayName: true,
-    //   },
-    // },
   ],
 }

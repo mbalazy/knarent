@@ -1,12 +1,12 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-export type Props = {
+export interface ButtonProps {
   variant?: 'primary' | 'secondary'
   children: string
 }
 
-export const BaseStyles = css<Props>`
+export const BottomBaseStyles = css<ButtonProps>`
   border: none;
   cursor: pointer;
   display: inline-block;
@@ -33,10 +33,10 @@ export const BaseStyles = css<Props>`
   }}
 `
 const ButtonStyles = styled.button`
-  ${BaseStyles}
+  ${BottomBaseStyles}
 `
 
-const Button = ({ variant = 'primary', children, ...props }: Props) => {
+const Button = ({ variant = 'primary', children, ...props }: ButtonProps) => {
   return (
     <ButtonStyles variant={variant} type="button" {...props}>
       {children}

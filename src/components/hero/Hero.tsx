@@ -2,7 +2,7 @@ import React from 'react'
 import HeroImage from './HeroImage'
 import styled from 'styled-components'
 import { ReactComponent as BigLogo } from '../../../images/logo_knarent_big.svg'
-import BaseLink from '../shared/Links'
+import { BigLink } from '../shared/Links'
 
 const Hero = () => {
   const Content = styled.div`
@@ -52,7 +52,7 @@ const Hero = () => {
           <h2 style={{ fontSize: ' 28px', lineHeight: '1.4' }}>
             Wypożyczalnia sprzętu budowlanego, ogrodniczego i sprzątającego.
           </h2>
-          <BaseLink to="/">Zobacz nasz asortyment</BaseLink>
+          <BigLink to="/">Zobacz nasz asortyment</BigLink>
         </Copy>
         <LogoWrapper>
           <LogoStyles />

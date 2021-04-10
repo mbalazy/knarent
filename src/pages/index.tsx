@@ -1,11 +1,11 @@
 import React from 'react'
-import Nav from '../components/Nav'
+import Navbar from '../components/Navbar'
 import Hero from '../components/hero/Hero'
 
 const Home = () => {
   return (
     <>
-      <Nav sticky />
+      <Navbar sticky />
       <Hero />
       <p>Home</p>
     </>

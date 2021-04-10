@@ -2,7 +2,8 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { ReactComponent as Logo } from '../../images/logo_knarent.svg'
 import { ReactComponent as Phone } from '../../images/phone1.svg'
-import info from '../../theme/info'
+import CONSTS from '../../theme/CONSTS'
+import Menu from './menu/Menu'
 
 type NavProps = {
   sticky?: boolean
@@ -24,36 +25,26 @@ const NavWrapper = styled.nav<NavProps>`
       z-index: 1000;
     `}
 `
-const LogoWrapperStyles = styled.div`
-  height: 32px;
-`
-const PhoneLogoStyles = styled.div`
-  height: 16px;
-`
 const PhoneWrapperStyles = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   font-size: ${({ theme }) => theme.fontSize.m};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `
 
-const Nav = ({ sticky }: NavProps) => {
-  const [firstPhoneNumber] = info.telephones
+const Navbar = ({ sticky }: NavProps) => {
+  const [firstPhoneNumber] = CONSTS.telephones
   return (
     <NavWrapper sticky={sticky}>
-      <LogoWrapperStyles>
-        <Logo />
-      </LogoWrapperStyles>
-      <p>Menu Items</p>
+      <Logo />
+      <Menu />
       <PhoneWrapperStyles>
-        <PhoneLogoStyles>
-          <Phone />
-        </PhoneLogoStyles>
+        <Phone />
         {firstPhoneNumber}
       </PhoneWrapperStyles>
     </NavWrapper>
   )
 }
 
-export default Nav
+export default Navbar

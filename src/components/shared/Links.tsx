@@ -1,25 +1,34 @@
 import React from 'react'
-import styled from 'styled-components'
-import { BaseStyles } from './Button'
+import styled, { css } from 'styled-components'
+import { BottomBaseStyles as LikeAButtonStyles } from './Button'
 import { Link } from 'gatsby'
+import type { ButtonProps } from './Button'
 
-export type Props = {
-  variant?: 'primary' | 'secondary'
+interface LinkProps extends ButtonProps {
   to: string
-  children: string
 }
-
-const LinkStyles = styled(Link)`
-  ${BaseStyles}
+const BaseLinkStyles = css`
   text-decoration: none;
+  color: inherit;
+  padding: 0.8rem 1.2rem;
+  font-size: ${({ theme }) => theme.fontSize.m};
 `
 
-const BaseLink = ({ variant = 'primary', children, to }: Props) => {
+const BigLinkStyles = styled(Link)`
+  ${BaseLinkStyles}
+  ${LikeAButtonStyles}
+`
+export const BigLink = ({ variant = 'primary', children, to }: LinkProps) => {
   return (
-    <LinkStyles variant={variant} to={to}>
+    <BigLinkStyles variant={variant} to={to}>
       {children}
-    </LinkStyles>
+    </BigLinkStyles>
   )
 }
 
-export default BaseLink
+const SimpleLinkStyles = styled(Link)`
+  ${BaseLinkStyles}
+`
+export const SimpleLink = ({ children, to }: LinkProps) => {
+  return <SimpleLinkStyles to={to}>{children}</SimpleLinkStyles>
+}
