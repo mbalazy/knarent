@@ -2,7 +2,7 @@ import React from 'react'
 type SectionProps = {
   heading?: string
   subheading?: string
-  children: JSX.Element | string
+  children: JSX.Element | string | JSX.Element[]
 }
 import styled from 'styled-components'
 import { H2, H3 } from '../../shared/Typography'

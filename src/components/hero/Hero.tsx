@@ -22,18 +22,23 @@ const Hero = () => {
     align-items: center;
     justify-content: space-between;
     gap: 6rem;
+    flex-wrap: wrap;
   `
   const Copy = styled.section`
-    max-width: 550px;
+    flex: 1 1 350px;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
+
+    & > a {
+      margin-top: 6vh;
+    }
   `
   const LogoWrapper = styled.section`
-    width: 500px;
-    height: 60%;
+    flex: 1 1 300px;
+
     background-color: ${({ theme }) => theme.colors.lightText};
     border-radius: ${({ theme }) => theme.border.light};
 
@@ -42,7 +47,7 @@ const Hero = () => {
     justify-content: center;
   `
   const LogoStyles = styled(BigLogo)`
-    padding: 4rem;
+    padding: 8rem 6rem;
   `
 
   return (
