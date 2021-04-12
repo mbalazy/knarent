@@ -4,6 +4,7 @@ import Hero from '../components/hero/Hero'
 import Features from '../components/section/Features'
 import styled from 'styled-components'
 import Offer from '../components/section/Offer'
+import FeaturedProducts from '../components/section/FeaturedProducts'
 
 const HomeWrapper = styled.main`
   display: flex;
@@ -22,6 +23,7 @@ const Home = () => {
         <Hero />
         <Features />
         <Offer />
+        <FeaturedProducts />
       </HomeWrapper>
     </>
   )
