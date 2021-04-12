@@ -3,53 +3,53 @@ import HeroImage from './HeroImage'
 import styled from 'styled-components'
 import { ReactComponent as BigLogo } from '../../../images/logo_knarent_big.svg'
 import { BigLink } from '../shared/Links'
-import { H1, H2 } from '../shared/Typography'
+import { H1, H2 } from '../../../theme/Typography'
+
+const Content = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  padding: 6rem;
+  color: ${({ theme }) => theme.colors.lightText};
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6rem;
+  flex-wrap: wrap;
+`
+const Copy = styled.section`
+  flex: 1 1 350px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+
+  & > a {
+    margin-top: 6vh;
+  }
+`
+const LogoWrapper = styled.section`
+  flex: 1 1 300px;
+
+  background-color: ${({ theme }) => theme.colors.lightText};
+  border-radius: ${({ theme }) => theme.border.light};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+const LogoStyles = styled(BigLogo)`
+  padding: 8rem 6rem;
+`
 
 const Hero = () => {
-  const Content = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 100%;
-    max-width: 1300px;
-    height: 100%;
-    padding: 6rem;
-    color: ${({ theme }) => theme.colors.lightText};
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6rem;
-    flex-wrap: wrap;
-  `
-  const Copy = styled.section`
-    flex: 1 1 350px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-
-    & > a {
-      margin-top: 6vh;
-    }
-  `
-  const LogoWrapper = styled.section`
-    flex: 1 1 300px;
-
-    background-color: ${({ theme }) => theme.colors.lightText};
-    border-radius: ${({ theme }) => theme.border.light};
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  `
-  const LogoStyles = styled(BigLogo)`
-    padding: 8rem 6rem;
-  `
-
   return (
     <HeroImage>
       <Content>

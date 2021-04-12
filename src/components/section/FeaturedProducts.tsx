@@ -6,6 +6,13 @@ import { Product } from '../../../types/sanity'
 import ProductThumbnail from './shared/ProductThumbnail'
 import Section from './shared/Section'
 
+const FeaturedWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 3rem;
+  flex-wrap: wrap;
+`
+
 const FeaturedProducts = () => {
   const {
     allSanityEquipment: { edges: featuredProducts },
@@ -31,12 +38,6 @@ const FeaturedProducts = () => {
       }
     }
   `)
-
-  const FeaturedWrapper = styled.div`
-    display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
-  `
 
   return (
     <>

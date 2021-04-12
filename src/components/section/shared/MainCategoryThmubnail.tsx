@@ -3,7 +3,7 @@ import { MainCategory } from '../../../../types/sanity'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import { getImageFromId } from '../../utils/getHeroImageFromId'
-import { H4, P } from '../../shared/Typography'
+import { H4, P } from '../../../../theme/Typography'
 import { BigLink } from '../../shared/Links'
 import { cardBasicStyle } from '../../../../theme/globalStyle'
 

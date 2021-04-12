@@ -1,7 +1,7 @@
 import React from 'react'
 import { OneFeature as OneFeatureProps } from '../../../../theme/CONSTS'
 import styled from 'styled-components'
-import { H4, P } from '../../shared/Typography'
+import { H4, P } from '../../../../theme/Typography'
 import { cardBasicStyle } from '../../../../theme/globalStyle'
 
 const OneFeatureWrapper = styled.section`

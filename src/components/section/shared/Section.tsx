@@ -5,17 +5,21 @@ type SectionProps = {
   children: JSX.Element | string | JSX.Element[]
 }
 import styled from 'styled-components'
-import { H2, H3 } from '../../shared/Typography'
+import { H2, H3 } from '../../../../theme/Typography'
 
 const SectionWrapper = styled.section`
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
+  gap: 6rem;
+
+  max-width: 1200px;
   margin: 0 5%;
   text-align: center;
-  gap: 6rem;
+`
+const ChildrenWrapper = styled.div`
+  width: 90vw;
+  max-width: 1200px;
 `
 
 const Section = ({ heading, subheading, children }: SectionProps) => {
@@ -23,7 +27,7 @@ const Section = ({ heading, subheading, children }: SectionProps) => {
     <SectionWrapper>
       {heading && <H2>{heading}</H2>}
       {subheading && <H3>{subheading}</H3>}
-      <>{children}</>
+      <ChildrenWrapper>{children}</ChildrenWrapper>
     </SectionWrapper>
   )
 }

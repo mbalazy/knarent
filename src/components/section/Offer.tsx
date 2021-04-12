@@ -6,6 +6,12 @@ import MainCategoryThumbnail from './shared/MainCategoryThmubnail'
 import Section from './shared/Section'
 import styled from 'styled-components'
 
+const OfferWrapper = styled.div`
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+`
+
 const Offer = () => {
   const {
     allSanityMainCategory: { edges: allMainCategory },
@@ -30,12 +36,6 @@ const Offer = () => {
       }
     }
   `)
-
-  const OfferWrapper = styled.div`
-    display: flex;
-    gap: 4rem;
-    flex-wrap: wrap;
-  `
 
   return (
     <Section heading={CONSTS.offerHeading} subheading={CONSTS.offerSubheading}>
