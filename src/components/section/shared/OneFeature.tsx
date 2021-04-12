@@ -2,17 +2,16 @@ import React from 'react'
 import { OneFeature as OneFeatureProps } from '../../../../theme/CONSTS'
 import styled from 'styled-components'
 import { H4, P } from '../../shared/Typography'
+import { cardBasicStyle } from '../../../../theme/globalStyle'
 
 const OneFeatureWrapper = styled.section`
+  ${cardBasicStyle}
+
   display: flex;
   flex-direction: column;
   gap: 4rem;
   flex: 1 1 260px;
-  padding: 5rem 3%;
-
-  box-shadow: 0px 34px 53px -7px rgba(0, 0, 0, 0.11);
-  border-radius: 20px;
-  background-color: ${({ theme }) => theme.colors.white};
+  padding: 5rem 3rem;
 `
 const ImageStyles = styled.img`
   height: 8rem;

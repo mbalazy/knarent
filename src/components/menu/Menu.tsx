@@ -13,6 +13,7 @@ const MenuStyles = styled.div<MenuProps>`
   align-items: center;
   width: 40%;
   margin: 0 4rem;
+  white-space: nowrap;
 
   ${({ vertical }) =>
     vertical &&

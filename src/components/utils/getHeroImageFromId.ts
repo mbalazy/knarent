@@ -9,11 +9,12 @@ const sanityConfig = {
   projectId: GATSBY_SANITY_PROJECT_ID,
   dataset: 'production',
 }
+type Layout = 'constrained' | 'fixed' | 'fullWidth'
 
-export const getHeroImageFromId = (imageId: ImageNode) => {
-  return getGatsbyImageData(
-    imageId,
-    { maxWidth: 1920, layout: 'fullWidth' } as GatsbyImageDataArgs,
-    sanityConfig
-  )
+export const getImageFromId = (
+  imageId: ImageNode,
+  layout: Layout = 'fullWidth',
+  maxWidth = 800
+) => {
+  return getGatsbyImageData(imageId, { maxWidth, layout } as GatsbyImageDataArgs, sanityConfig)
 }

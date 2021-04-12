@@ -4,7 +4,7 @@ export type MainCategory = {
   id: string
   images: {
     asset: {
-      url: string
+      id: string
     }
   }
   slug: {

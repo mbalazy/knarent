@@ -21,8 +21,8 @@ const SectionWrapper = styled.section`
 const Section = ({ heading, subheading, children }: SectionProps) => {
   return (
     <SectionWrapper>
-      {heading && <H2 bigger>{heading}</H2>}
-      {subheading && <H3 bigger>{subheading}</H3>}
+      {heading && <H2>{heading}</H2>}
+      {subheading && <H3>{subheading}</H3>}
       <>{children}</>
     </SectionWrapper>
   )

@@ -11,6 +11,7 @@ const HomeWrapper = styled.main`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.grey002};
   gap: 12rem;
+  padding-bottom: 12rem;
 `
 
 const Home = () => {

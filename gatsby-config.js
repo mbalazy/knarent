@@ -20,6 +20,7 @@ module.exports = {
         displayName: true,
       },
     },
+    `gatsby-plugin-preload-fonts`,
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',

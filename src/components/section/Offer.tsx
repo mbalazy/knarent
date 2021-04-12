@@ -2,8 +2,9 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import CONSTS from '../../../theme/CONSTS'
 import { MainCategory } from '../../../types/sanity'
-import MainCategoryPreview from './shared/MainCategoryPreview'
+import MainCategoryThumbnail from './shared/MainCategoryThmubnail'
 import Section from './shared/Section'
+import styled from 'styled-components'
 
 const Offer = () => {
   const {
@@ -18,7 +19,7 @@ const Offer = () => {
             title
             images {
               asset {
-                url
+                id
               }
             }
             slug {
@@ -30,13 +31,19 @@ const Offer = () => {
     }
   `)
 
-  console.log(allMainCategory)
+  const OfferWrapper = styled.div`
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+  `
 
   return (
     <Section heading={CONSTS.offerHeading} subheading={CONSTS.offerSubheading}>
-      {allMainCategory.map(({ node }: { node: MainCategory }) => (
-        <MainCategoryPreview mainCategory={node} key={node.id} />
-      ))}
+      <OfferWrapper>
+        {allMainCategory.map(({ node }: { node: MainCategory }) => (
+          <MainCategoryThumbnail mainCategory={node} key={node.id} />
+        ))}
+      </OfferWrapper>
     </Section>
   )
 }

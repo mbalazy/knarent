@@ -39,4 +39,5 @@ export const H4 = styled.h4<Props>`
 export const P = styled.p`
   font-size: ${({ theme }) => theme.fontSize.s};
   line-height: 1.4;
+  text-align: left;
 `

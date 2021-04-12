@@ -12,12 +12,12 @@ const BaseLinkStyles = css`
   color: inherit;
   padding: 0.8rem 1.2rem;
   font-size: ${({ theme }) => theme.fontSize.m};
-  white-space: nowrap;
 `
 
 const BigLinkStyles = styled(Link)`
   ${BaseLinkStyles}
   ${LikeAButtonStyles}
+  text-align: center;
 `
 export const BigLink = ({ variant = 'primary', children, to }: LinkProps) => {
   return (

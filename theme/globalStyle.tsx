@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`  
   *, *::after, *::before {
@@ -26,3 +26,9 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 export default GlobalStyle
+
+export const cardBasicStyle = css`
+  box-shadow: 0px 34px 53px -7px rgba(0, 0, 0, 0.11);
+  border-radius: ${({ theme }) => theme.border.standard};
+  background-color: ${({ theme }) => theme.colors.white};
+`
