@@ -1,13 +1,13 @@
 import React from 'react'
+import { Product } from '../../../../types/sanity'
 type ProductThumbnailProps = {
-  product: any
+  product: Product
 }
 
 const ProductThumbnail = ({ product }: ProductThumbnailProps) => {
   return (
     <>
-      component
-      <p>ProductThumbnail</p>
+      <p>{product.title}</p>
     </>
   )
 }

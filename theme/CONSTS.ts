@@ -14,6 +14,7 @@ const CONSTS = {
   featureSubheading:
     'Wiele urządzeń mechanicznych i sprzętów, które przydałyby się na budowie, dużo kosztuje. U nas czeka na Ciebie bogaty asortyment wszystkiego, co może usprawnić Twoją pracę.',
 
+  featuredProductsHeading: 'Co wypożyczamy najczęściej?',
   menuItemList: [
     { label: 'Strona główna', link: '/' },
     { label: 'Szukaj', link: '/szukaj' },

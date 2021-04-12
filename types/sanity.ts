@@ -11,3 +11,7 @@ export type MainCategory = {
     current: string
   }
 }
+
+export type Product = MainCategory & {
+  featured: boolean
+}
