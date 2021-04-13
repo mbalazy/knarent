@@ -1,10 +1,11 @@
+import { graphql, useStaticQuery } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
-import CONSTS from '../../../theme/CONSTS'
-import Section from './shared/Section'
-
 import styled from 'styled-components'
+import CONSTS from '../../../theme/CONSTS'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import { H4, P } from '../../../theme/Typography'
+import Section from './shared/Section'
 
 const ContactWrapper = styled.div`
   display: grid;
@@ -13,7 +14,6 @@ const ContactWrapper = styled.div`
 
   & > * {
     ${cardBasicStyle}
-    padding: 3rem;
     text-align: left;
 
     display: flex;
@@ -26,10 +26,12 @@ const MapStyles = styled.article`
   grid-column: 2/-1;
 `
 const AderesStyles = styled.article`
+  padding: 3rem;
   grid-row: 1 / span 2;
   grid-column: 1/1;
 `
 const WorkingHoursStyles = styled.article`
+  padding: 3rem;
   grid-row: 3 / span 2;
   grid-column: 1/1;
 `
@@ -38,14 +40,14 @@ const Contact = () => {
   return (
     <Section heading={CONSTS.contactHeading}>
       <ContactWrapper>
-        <MapStyles>Map</MapStyles>
+        <MapStyles></MapStyles>
         <AderesStyles>
           <H4>{CONSTS.fullTitle}</H4>
-          <P>
+          <div>
             {CONSTS.adress.map((adres) => (
               <p key={adres}>{adres}</p>
             ))}
-          </P>
+          </div>
           <div>
             <P>
               email:{' '}
