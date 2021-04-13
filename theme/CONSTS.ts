@@ -7,6 +7,12 @@ const CONSTS = {
   fullTitle: ' FHU Knarent Artur Knap',
   telephones: ['514 902 882'],
   emails: ['kontakt@knarent.pl'],
+  adress: ['Brzozowka 55a', '32-340 Wolbrom'],
+  openHours: [
+    { days: 'Poniedzialek - Piatek', hours: '09:00 - 17:00' },
+    { days: 'Sobota', hours: '09:00 - 13:00' },
+    { days: 'Niedziela', hours: 'Prosimy o kontakt' },
+  ],
   offerHeading: 'Co możemi Ci zaoferować?',
   offerSubheading:
     'Wybierz kategorię urządzeń w celu zapoznania się z naszą ofertą. Oferujemy wynajem w pełni profesjonalnego sprzętu do prac budowlanych, remontowych, wykończeniowych, instalacyjnych, ogrodowych oraz porządkowych.',
@@ -15,6 +21,7 @@ const CONSTS = {
     'Wiele urządzeń mechanicznych i sprzętów, które przydałyby się na budowie, dużo kosztuje. U nas czeka na Ciebie bogaty asortyment wszystkiego, co może usprawnić Twoją pracę.',
 
   featuredProductsHeading: 'Co wypożyczamy najczęściej?',
+  contactHeading: 'Skontaktuj sie z nami',
   menuItemList: [
     { label: 'Strona główna', link: '/' },
     { label: 'Szukaj', link: '/szukaj' },

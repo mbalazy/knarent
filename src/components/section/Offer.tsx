@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
+import styled from 'styled-components'
 import CONSTS from '../../../theme/CONSTS'
 import { MainCategory } from '../../../types/sanity'
 import MainCategoryThumbnail from './shared/MainCategoryThmubnail'
 import Section from './shared/Section'
-import styled from 'styled-components'
 
 const OfferWrapper = styled.div`
   display: flex;
