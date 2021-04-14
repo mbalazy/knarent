@@ -6,6 +6,7 @@ const CONSTS = {
   title: 'Knarent',
   fullTitle: ' FHU Knarent Artur Knap',
   telephones: ['514 902 882'],
+  mapCenter: { lat: 50.374, lng: 19.7941 } as const,
   emails: ['kontakt@knarent.pl'],
   adress: ['Brzozowka 55a', '32-340 Wolbrom'],
   openHours: [
