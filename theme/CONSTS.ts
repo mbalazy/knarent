@@ -30,6 +30,9 @@ const CONSTS = {
     { label: 'Kontakt', link: '/kontakt' },
     { label: 'FAQ', link: '/#faq' },
   ],
+
+  linkToExternalMap:
+    'https://www.google.com/maps/dir//Wypo%C5%BCyczalnia+sprz%C4%99tu+budowlano-ogrodniczego+Knarent,+Brzoz%C3%B3wka+55+A,+32-340+Brzoz%C3%B3wka/@50.3732841,19.7912093,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x471703d87c1ffc6d:0x28a737f6c2e567b2!2m2!1d19.794068!2d50.373889!3e0',
 }
 export default CONSTS
 

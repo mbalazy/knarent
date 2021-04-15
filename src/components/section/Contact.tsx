@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import CONSTS from '../../../theme/CONSTS'
 import { cardBasicStyle } from '../../../theme/globalStyle'
-import { H4, P } from '../../../theme/Typography'
+import { H4 } from '../../../theme/Typography'
+import ContactInfo from './shared/ContactInfo'
 import Map from './shared/Map'
 import Section from './shared/Section'
 
@@ -55,39 +56,17 @@ const WorkingHoursStyles = styled.article`
 `
 
 const Contact = () => {
-  const { contactHeading, fullTitle, adress, emails, telephones, openHours } = CONSTS
+  const { contactHeading, fullTitle, openHours } = CONSTS
 
   return (
     <Section heading={contactHeading}>
       <ContactWrapper>
         <MapStyles>
-          <Map />
+          <Map infoWindow />
         </MapStyles>
         <AderesStyles>
           <H4>{fullTitle}</H4>
-          <div>
-            {adress.map((adres) => (
-              <p key={adres}>{adres}</p>
-            ))}
-          </div>
-          <div>
-            <P>
-              email:{' '}
-              {emails.map((email, i) => (
-                <span key={email}>
-                  {i !== 0 && <>,</>} {email}
-                </span>
-              ))}
-            </P>
-            <P>
-              tel:{' '}
-              {telephones.map((tel, i) => (
-                <span key={tel}>
-                  {i !== 0 && <>,</>} {tel}
-                </span>
-              ))}
-            </P>
-          </div>
+          <ContactInfo />
         </AderesStyles>
         <WorkingHoursStyles>
           <H4>Godziny Pracy</H4>

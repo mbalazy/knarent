@@ -29,6 +29,8 @@ const AnswerStyles = styled.div`
 const ArrowStyles = styled.div<ArrowProps>`
   flex-shrink: 0;
   margin-left: 1rem;
+  transform: rotate(0deg);
+  transition: transform 80ms;
 
   ${({ visibilityOfQuestion }) =>
     visibilityOfQuestion &&

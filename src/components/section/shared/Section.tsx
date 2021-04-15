@@ -13,7 +13,7 @@ const SectionWrapper = styled.section`
   justify-content: space-between;
   gap: 6rem;
 
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
   margin: 0 5%;
   text-align: center;
 `

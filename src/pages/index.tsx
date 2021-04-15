@@ -7,6 +7,7 @@ import Offer from '../components/section/Offer'
 import FeaturedProducts from '../components/section/FeaturedProducts'
 import Contact from '../components/section/Contact'
 import Faq from '../components/section/Faq'
+import Footer from '../components/section/Footer'
 
 const HomeWrapper = styled.main`
   display: flex;
@@ -29,6 +30,7 @@ const Home = () => {
         <Contact />
         <Faq />
       </HomeWrapper>
+      <Footer />
     </>
   )
 }

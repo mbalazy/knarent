@@ -37,7 +37,7 @@ const mainTheme = {
 
   dimensions: {
     navbarHeight: '70px',
-    footerHeight: '80px',
+    mainContentWidth: '1200px',
   },
 }
 

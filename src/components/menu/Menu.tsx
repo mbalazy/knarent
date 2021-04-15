@@ -19,6 +19,8 @@ const MenuStyles = styled.div<MenuProps>`
     vertical &&
     css`
       flex-direction: column;
+      width: auto;
+      margin: 0;
     `}
 `
 

@@ -6,10 +6,17 @@ import CONSTS from '../../../../theme/CONSTS'
 import { ReactComponent as BigLogo } from '../../../../images/logo_knarent.svg'
 import { P } from '../../../../theme/Typography'
 
+type MapProps = {
+  infoWindow?: boolean
+  disableDefaultUI?: boolean
+  zoom?: number
+}
+
 const containerStyle = {
   width: '100%',
   height: '100%',
 }
+
 const InfoWindowStyles = styled.div`
   padding: 1.2rem 2rem;
   display: flex;
@@ -27,37 +34,40 @@ const LinkStyles = styled.a`
   align-self: stretch;
   text-align: center;
 `
-const position = CONSTS.mapCenter
-const link =
-  'https://www.google.com/maps/place/Wypo%C5%BCyczalnia+sprz%C4%99tu+budowlano-ogrodniczego+Knarent/@50.3732841,19.7912093,16z/data=!4m5!3m4!1s0x0:0x28a737f6c2e567b2!8m2!3d50.373889!4d19.794068'
 
-const Map = () => {
+const Map = ({ infoWindow, disableDefaultUI, zoom = 14 }: MapProps) => {
+  const { adress, linkToExternalMap, mapCenter } = CONSTS
   const { isLoaded, loadError } = useJsApiLoader({
     googleMapsApiKey: `${GOOGLE_MAPS}`,
   })
   if (loadError) {
-    return <div>Nie możemy załadować mapy</div>
+    return <div>Błąd mapy, nie możemy jej w tej chwili wyświetlić. Przepraszamy :(</div>
   }
-  const { adress } = CONSTS
 
   return (
     isLoaded && (
-      <GoogleMap mapContainerStyle={containerStyle} center={position} zoom={14}>
-        <Marker position={position} />
-        <InfoWindow position={position}>
-          <InfoWindowStyles>
-            <BigLogo />
-
-            <div>
-              {adress.map((adres) => (
-                <P key={adres}>{adres}</P>
-              ))}
-            </div>
-            <LinkStyles href={link} target="_blank">
-              Sprawdź dojazd
-            </LinkStyles>
-          </InfoWindowStyles>
-        </InfoWindow>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={mapCenter}
+        zoom={zoom}
+        options={{ disableDefaultUI }}
+      >
+        <Marker position={mapCenter} />
+        {infoWindow && (
+          <InfoWindow position={mapCenter}>
+            <InfoWindowStyles>
+              <BigLogo />
+              <div>
+                {adress.map((adres) => (
+                  <P key={adres}>{adres}</P>
+                ))}
+              </div>
+              <LinkStyles href={linkToExternalMap} target="_blank">
+                Sprawdź dojazd
+              </LinkStyles>
+            </InfoWindowStyles>
+          </InfoWindow>
+        )}
       </GoogleMap>
     )
   )
