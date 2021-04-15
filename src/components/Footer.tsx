@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { cardBasicStyle } from '../../../theme/globalStyle'
-import { H4 } from '../../../theme/Typography'
-import Menu from '../menu/Menu'
-import ContactInfo from './shared/ContactInfo'
-import Map from './shared/Map'
+import { cardBasicStyle } from '../../theme/globalStyle'
+import { H4 } from '../../theme/Typography'
+import Menu from './menu/Menu'
+import ContactInfo from './sections/shared/ContactInfo'
+import Map from './sections/shared/Map'
 
 const FooterWrapper = styled.footer`
   color: ${({ theme }) => theme.colors.lightText};
@@ -29,8 +29,8 @@ const FooterContentStyles = styled.div`
 const MapWrapper = styled.div`
   ${cardBasicStyle}
   overflow: hidden;
-  width: 32rem;
-  height: 32rem;
+  width: 30rem;
+  height: 30rem;
   margin: 3rem;
 `
 

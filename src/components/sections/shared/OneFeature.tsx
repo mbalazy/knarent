@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { H4, P } from '../../../../theme/Typography'
 import { cardBasicStyle } from '../../../../theme/globalStyle'
 
-const OneFeatureWrapper = styled.section`
+const OneFeatureWrapper = styled.article`
   ${cardBasicStyle}
 
   display: flex;

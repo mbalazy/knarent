@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/hero/Hero'
-import Features from '../components/section/Features'
+import Features from '../components/sections/Features'
 import styled from 'styled-components'
-import Offer from '../components/section/Offer'
-import FeaturedProducts from '../components/section/FeaturedProducts'
-import Contact from '../components/section/Contact'
-import Faq from '../components/section/Faq'
-import Footer from '../components/section/Footer'
+import Offer from '../components/sections/Offer'
+import FeaturedProducts from '../components/sections/FeaturedProducts'
+import Contact from '../components/sections/Contact'
+import Faq from '../components/sections/Faq'
+import Footer from '../components/Footer'
 
 const HomeWrapper = styled.main`
   display: flex;
@@ -21,7 +21,6 @@ const HomeWrapper = styled.main`
 const Home = () => {
   return (
     <>
-      <Navbar sticky />
       <HomeWrapper>
         <Hero />
         <Features />
@@ -30,7 +29,6 @@ const Home = () => {
         <Contact />
         <Faq />
       </HomeWrapper>
-      <Footer />
     </>
   )
 }
