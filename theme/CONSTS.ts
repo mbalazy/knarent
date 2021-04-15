@@ -23,6 +23,7 @@ const CONSTS = {
 
   featuredProductsHeading: 'Co wypożyczamy najczęściej?',
   contactHeading: 'Skontaktuj sie z nami',
+  faqHeading: 'Najczęściej zadawane pytania',
   menuItemList: [
     { label: 'Strona główna', link: '/' },
     { label: 'Szukaj', link: '/szukaj' },
@@ -53,3 +54,27 @@ export const listOfFeatures = [
   },
 ]
 export type OneFeature = typeof listOfFeatures[number]
+export const faqContent = [
+  {
+    question: 'Jak wynająć maszynę w wypożyczalni?',
+    answer:
+      'Najlepiej telefonicznie zarezerwować w naszej wypożyczalni i w dniu wynajmu odwiedzić naszą wypożyczalnię.',
+  },
+  {
+    question: 'Ile kosztuje wynajem maszyn budowlanych w naszej wypożyczalni?',
+    answer:
+      'Najlepiej telefonicznie zarezerwować w naszej wypożyczalni i w dniu wynajmu odwiedzić naszą wypożyczalnię.',
+  },
+  {
+    question: 'Czy przy wynajmie obowiązuje kaucja?',
+    answer:
+      'Najlepiej telefonicznie zarezerwować w naszej wypożyczalni i w dniu wynajmu odwiedzić naszą wypożyczalnię.',
+  },
+  {
+    question: 'Czy każdy może wypożyczyć sprzęt?',
+    answer:
+      'Tak. Oferta skierowana jest do firm i osób prywatnych. Na życzenie wystawiamy fakturę VAT. ',
+  },
+]
+
+export type OneIssue = typeof faqContent[number]
