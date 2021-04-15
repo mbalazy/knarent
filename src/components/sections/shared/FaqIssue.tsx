@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 import { cardBasicStyle } from '../../../../theme/globalStyle'
 import { H4, P } from '../../../../theme/Typography'
 import { ReactComponent as Arrow } from '../../../../images/arrow.svg'
+import VisuallyHidden from '../../shared/VisuallyHidden'
 
 type FaqIssueProps = {
   issue: OneIssue
@@ -26,17 +27,28 @@ const QuestionStyles = styled.div`
 const AnswerStyles = styled.div`
   padding-top: 2.4rem;
 `
-const ArrowStyles = styled.div<ArrowProps>`
+const ArrowStyles = styled.button<ArrowProps>`
   flex-shrink: 0;
   margin-left: 1rem;
   transform: rotate(0deg);
   transition: transform 80ms;
+
+  background-color: transparent;
+  border: transparent solid 2px;
+  outline: transparent solid 2px;
 
   ${({ visibilityOfQuestion }) =>
     visibilityOfQuestion &&
     css`
       transform: rotate(-90deg);
     `}
+
+  &:active,
+  &:focus {
+    border: ${({ theme }) => theme.colors.accent1} solid 2px !important;
+    border-radius: 4px;
+    padding: 1rem;
+  }
 `
 
 const FaqIssue = ({ issue: { question, answer } }: FaqIssueProps) => {
@@ -45,9 +57,14 @@ const FaqIssue = ({ issue: { question, answer } }: FaqIssueProps) => {
     <FaqIssueWrapper onClick={() => setIsAnswerVisible(!isAnswerVisible)}>
       <QuestionStyles>
         <H4>{question}</H4>
-        <ArrowStyles visibilityOfQuestion={isAnswerVisible}>
+        <ArrowStyles
+          visibilityOfQuestion={isAnswerVisible}
+          aria-label="pokaz odpowiedź"
+          aria-expanded={isAnswerVisible}
+        >
           <Arrow />
         </ArrowStyles>
+        <VisuallyHidden>{answer}</VisuallyHidden>
       </QuestionStyles>
       {isAnswerVisible && (
         <AnswerStyles>
