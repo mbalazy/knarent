@@ -29,6 +29,7 @@ export const BigLink = ({ variant = 'primary', children, to }: LinkProps) => {
 
 const SimpleLinkStyles = styled(Link)`
   ${BaseLinkStyles}
+  padding: 1.4rem;
 `
 export const SimpleLink = ({ children, to }: LinkProps) => {
   return <SimpleLinkStyles to={to}>{children}</SimpleLinkStyles>
