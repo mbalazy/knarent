@@ -34,8 +34,8 @@ const ArrowStyles = styled.button<ArrowProps>`
   transition: transform 80ms;
 
   background-color: transparent;
-  border: transparent solid 2px;
-  outline: transparent solid 2px;
+  border: none;
+  outline: none;
 
   ${({ visibilityOfQuestion }) =>
     visibilityOfQuestion &&

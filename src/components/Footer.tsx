@@ -14,12 +14,13 @@ const FooterWrapper = styled.footer`
   align-items: center;
 `
 const FooterInnerWrapper = styled.div`
-  width: 100%;
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
+  width: 90vw;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 4rem;
 `
 const FooterContentStyles = styled.div`
   display: flex;
@@ -30,8 +31,7 @@ const MapWrapper = styled.div`
   ${cardBasicStyle}
   overflow: hidden;
   width: 30rem;
-  height: 30rem;
-  margin: 3rem;
+  height: 24rem;
 `
 
 const Footer = () => {
