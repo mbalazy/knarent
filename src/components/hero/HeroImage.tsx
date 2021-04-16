@@ -17,6 +17,16 @@ const ImageWrapper = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.84);
+  }
 `
 
 const ImageStyles = styled(GatsbyImage)`
@@ -26,7 +36,7 @@ const ImageStyles = styled(GatsbyImage)`
 const HeroImage = ({ children }: HeroContentProps) => {
   const { imageFile } = useStaticQuery(graphql`
     query HeroImage {
-      imageFile: file(relativePath: { eq: "hero-2-bg.jpg" }) {
+      imageFile: file(relativePath: { eq: "hero-2.jpg" }) {
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH, quality: 80, width: 1800)
         }

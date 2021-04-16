@@ -11,12 +11,10 @@
     "fs": false
   },
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "preload-fonts": "gatsby-preload-fonts",
-    "generate": "graphql-codegen --config codegen.yml",
+    "build": "npx --node-arg '-r esm' gatsby build",
+    "develop": "npx --node-arg '-r esm' gatsby develop",
+    "start": "npm run develop",
+    "serve": "npx --node-arg '-r esm' gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
@@ -27,6 +25,7 @@
     "@types/styled-components": "^5.1.9",
     "babel-plugin-styled-components": "^1.12.0",
     "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
     "gatsby": "^3.2.1",
     "gatsby-background-image": "^1.5.0",
     "gatsby-env-variables": "^2.0.0",

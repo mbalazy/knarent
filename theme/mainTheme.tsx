@@ -38,6 +38,7 @@ const mainTheme = {
   dimensions: {
     navbarHeight: '70px',
     mainContentWidth: '1200px',
+    mainContentGap: '12rem',
   },
 }
 
