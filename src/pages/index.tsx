@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import Hero from '../components/hero/Hero'
 import Contact from '../components/sections/Contact'
 import Faq from '../components/sections/Faq'

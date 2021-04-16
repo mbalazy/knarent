@@ -1,13 +1,13 @@
 export type MainCategory = {
-  title: string
-  description: string
-  id: string
-  images: {
+  title?: string
+  description?: string
+  id?: string
+  images?: {
     asset: {
       id: string
     }
   }
-  slug: {
+  slug?: {
     current: string
   }
 }
