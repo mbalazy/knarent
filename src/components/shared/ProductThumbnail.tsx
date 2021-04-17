@@ -1,9 +1,9 @@
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
-import { cardBasicStyle } from '../../../../theme/globalStyle'
-import { Product } from '../../../../types/sanity'
-import { getImageFromId } from '../../utils/getHeroImageFromId'
+import { cardBasicStyle } from '../../../theme/globalStyle'
+import { Product } from '../../../types/sanity'
+import { getImageFromId } from '../utils/getHeroImageFromId'
 type ProductThumbnailProps = {
   product: Product
 }

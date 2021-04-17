@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { cardBasicStyle } from '../../theme/globalStyle'
 import { H4 } from '../../theme/Typography'
 import Menu from './menu/Menu'
-import ContactInfo from './sections/shared/ContactInfo'
-import Map from './sections/shared/Map'
+import ContactInfo from './shared/ContactInfo'
+import Map from './shared/Map'
 
 const FooterWrapper = styled.footer`
   color: ${({ theme }) => theme.colors.lightText};

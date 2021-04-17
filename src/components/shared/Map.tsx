@@ -2,9 +2,9 @@ import { GoogleMap, InfoWindow, useJsApiLoader, Marker } from '@react-google-map
 import { GOOGLE_MAPS } from 'gatsby-env-variables'
 import React from 'react'
 import styled from 'styled-components'
-import CONSTS from '../../../../theme/CONSTS'
-import { ReactComponent as BigLogo } from '../../../../images/logo_knarent.svg'
-import { P } from '../../../../theme/Typography'
+import CONSTS from '../../../theme/CONSTS'
+import { ReactComponent as BigLogo } from '../../../images/logo_knarent.svg'
+import { P } from '../../../theme/Typography'
 
 type MapProps = {
   infoWindow?: boolean

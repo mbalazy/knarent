@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import CONSTS from '../../../theme/CONSTS'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import { H4 } from '../../../theme/Typography'
-import ContactInfo from './shared/ContactInfo'
-import Map from './shared/Map'
-import Section from './shared/Section'
+import ContactInfo from '../shared/ContactInfo'
+import Map from '../shared/Map'
+import Section from '../shared/Section'
 
 const ContactWrapper = styled.div`
   display: grid;

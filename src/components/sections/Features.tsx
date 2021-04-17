@@ -1,7 +1,7 @@
 import React from 'react'
 import CONSTS, { listOfFeatures } from '../../../theme/CONSTS'
-import OneFeature from './shared/OneFeature'
-import Section from './shared/Section'
+import OneFeature from '../shared/OneFeature'
+import Section from '../shared/Section'
 import styled from 'styled-components'
 
 const AllFeaturesWrapper = styled.div`

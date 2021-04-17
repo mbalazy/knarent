@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from '@reach/router'
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import { Category, MainCategory } from '../../../types/sanity'
@@ -16,6 +16,10 @@ const CategoryMenuWrapper = styled.div`
   ${H4}:not(:first-child) {
     margin-top: 4rem;
   }
+
+  grid-row: 1/-1;
+  grid-column: 1/1;
+  // align-self: start;
 `
 
 const CategoryMenu = () => {

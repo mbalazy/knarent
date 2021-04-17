@@ -16,7 +16,7 @@ export type Product = MainCategory & {
   featured: boolean
 }
 export type Category = MainCategory & {
-  mainCategory: {
+  mainCategory?: {
     id: string
   }
 }

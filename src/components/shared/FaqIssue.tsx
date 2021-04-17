@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { OneIssue } from '../../../../theme/CONSTS'
+import { OneIssue } from '../../../theme/CONSTS'
 import styled, { css } from 'styled-components'
-import { cardBasicStyle } from '../../../../theme/globalStyle'
-import { H4, P } from '../../../../theme/Typography'
-import { ReactComponent as Arrow } from '../../../../images/arrow.svg'
-import VisuallyHidden from '../../shared/VisuallyHidden'
+import { cardBasicStyle } from '../../../theme/globalStyle'
+import { H4, P } from '../../../theme/Typography'
+import { ReactComponent as Arrow } from '../../../images/arrow.svg'
+import VisuallyHidden from '../shared/VisuallyHidden'
 
 type FaqIssueProps = {
   issue: OneIssue

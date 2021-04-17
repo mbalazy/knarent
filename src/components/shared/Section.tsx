@@ -5,7 +5,7 @@ type SectionProps = {
   children: JSX.Element | string | JSX.Element[]
 }
 import styled from 'styled-components'
-import { H2, H3 } from '../../../../theme/Typography'
+import { H2, H3 } from '../../../theme/Typography'
 
 const SectionWrapper = styled.section`
   display: flex;

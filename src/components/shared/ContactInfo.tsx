@@ -1,6 +1,6 @@
 import React from 'react'
-import CONSTS from '../../../../theme/CONSTS'
-import { P } from '../../../../theme/Typography'
+import CONSTS from '../../../theme/CONSTS'
+import { P } from '../../../theme/Typography'
 
 const ContactInfo = () => {
   const { emails, telephones, adress } = CONSTS

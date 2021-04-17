@@ -3,8 +3,8 @@ import React from 'react'
 import styled from 'styled-components'
 import CONSTS from '../../../theme/CONSTS'
 import { Product } from '../../../types/sanity'
-import ProductThumbnail from './shared/ProductThumbnail'
-import Section from './shared/Section'
+import ProductThumbnail from '../shared/ProductThumbnail'
+import Section from '../shared/Section'
 
 const FeaturedWrapper = styled.div`
   display: grid;
