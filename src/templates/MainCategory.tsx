@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 import { MainCategory as MainCategoryType, Category as CategoryType } from '../../types/sanity'
-import CategoryOverview from '../components/equipment/CategoryOverview'
+import CategoryOverview from '../components/category/CategoryOverview'
 
 type MainCategoryProps = {
   data: {

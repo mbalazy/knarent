@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { getImage } from 'gatsby-plugin-image'
 import { graphql, useStaticQuery } from 'gatsby'
+import { ImageOverlayWrapper, FullImageStyles } from '../shared/ImageOverlay'
 
 type HeroContentProps = {
   children: JSX.Element
@@ -12,25 +13,6 @@ const HeroContentWrapper = styled.div`
   height: calc(100vh - 70px);
   height: calc(100vh - ${({ theme }) => theme.dimensions.navbarHeight});
   width: 100%;
-`
-const ImageWrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  &:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.84);
-  }
-`
-
-const ImageStyles = styled(GatsbyImage)`
-  height: 100%;
 `
 
 const HeroImage = ({ children }: HeroContentProps) => {
@@ -47,9 +29,9 @@ const HeroImage = ({ children }: HeroContentProps) => {
 
   return (
     <HeroContentWrapper>
-      <ImageWrapper>
-        <ImageStyles image={image} alt="background" />
-      </ImageWrapper>
+      <ImageOverlayWrapper>
+        <FullImageStyles image={image} alt="background" />
+      </ImageOverlayWrapper>
       <>{children}</>
     </HeroContentWrapper>
   )
