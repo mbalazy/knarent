@@ -25,7 +25,7 @@ const CategoryHeadingWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.accent2};
 `
 
-const CategoryOverview = ({ mainCategory: { title }, categories }: CategoryOverviewProps) => {
+const EquipmentOverview = ({ mainCategory: { title }, categories }: CategoryOverviewProps) => {
   return (
     <CategoryOverviewWrapper>
       <CategoryMenu />
@@ -39,4 +39,4 @@ const CategoryOverview = ({ mainCategory: { title }, categories }: CategoryOverv
   )
 }
 
-export default CategoryOverview
+export default EquipmentOverview
