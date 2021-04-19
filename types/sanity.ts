@@ -12,8 +12,31 @@ export type MainCategory = {
   }
 }
 
-export type Product = MainCategory & {
+export type Product = {
+  title?: string
+  description?: string
+  id?: string
   featured: boolean
+  slug?: {
+    current: string
+  }
+  images?: [
+    {
+      asset: {
+        id: string
+      }
+    }
+  ]
+  category: {
+    slug: {
+      current: string
+    }
+    mainCategory: {
+      slug: {
+        current: string
+      }
+    }
+  }
 }
 export type Category = MainCategory & {
   mainCategory?: {

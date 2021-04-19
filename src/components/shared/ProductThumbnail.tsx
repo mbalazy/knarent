@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
@@ -7,9 +8,11 @@ import { getImageFromId } from '../utils/getHeroImageFromId'
 type ProductThumbnailProps = {
   product: Product
 }
-const ProductThumbnailWrapper = styled.article`
+const ProductThumbnailWrapper = styled(Link)`
   overflow-y: hidden;
   ${cardBasicStyle}
+  text-decoration: inherit;
+  color: inherit;
 
   display: flex;
   flex-direction: column;
@@ -28,10 +31,23 @@ const CopyWrapper = styled.div`
   align-items: center;
 `
 
-const ProductThumbnail = ({ product: { title, images, slug } }: ProductThumbnailProps) => {
+const ProductThumbnail = ({
+  product: {
+    title,
+    images,
+    slug: { current: productSlug },
+    category: {
+      slug: { current: categorySlug },
+      mainCategory: {
+        slug: { current: mainCategorySlug },
+      },
+    },
+  },
+}: ProductThumbnailProps) => {
   const imageData = getImageFromId(images[0].asset.id, 'fullWidth')
+  const getSlug = () => `/${mainCategorySlug}/${categorySlug}/${productSlug}`
   return (
-    <ProductThumbnailWrapper>
+    <ProductThumbnailWrapper to={getSlug()}>
       <ImageStyles image={imageData} alt={title} />
       <CopyWrapper>
         <h5>{title}</h5>

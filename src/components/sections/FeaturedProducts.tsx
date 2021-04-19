@@ -33,6 +33,16 @@ const FeaturedProducts = () => {
                 id
               }
             }
+            category {
+              slug {
+                current
+              }
+              mainCategory {
+                slug {
+                  current
+                }
+              }
+            }
           }
         }
       }
@@ -43,8 +53,8 @@ const FeaturedProducts = () => {
     <>
       <Section heading={CONSTS.featuredProductsHeading}>
         <FeaturedWrapper>
-          {featuredProducts.map(({ node }: { node: Product }) => (
-            <ProductThumbnail product={node} key={node.id} />
+          {featuredProducts.map(({ node: product }: { node: Product }) => (
+            <ProductThumbnail product={product} key={product.id} />
           ))}
         </FeaturedWrapper>
       </Section>

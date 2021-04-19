@@ -48,6 +48,16 @@ export const query = graphql`
           }
         }
         id
+        category {
+          slug {
+            current
+          }
+          mainCategory {
+            slug {
+              current
+            }
+          }
+        }
         slug {
           current
         }

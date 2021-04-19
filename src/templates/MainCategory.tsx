@@ -14,9 +14,11 @@ type MainCategoryProps = {
 const MainCategory = ({ data: { mainCategory, categories } }: MainCategoryProps) => {
   return (
     <EquipmentOverview title={mainCategory.title}>
-      {categories.nodes.map((category) => (
-        <CategoryThumbnail key={category.id} category={category} />
-      ))}
+      {categories.nodes
+        .sort((a, b) => a.title.localeCompare(b.title))
+        .map((category) => (
+          <CategoryThumbnail key={category.id} category={category} />
+        ))}
     </EquipmentOverview>
   )
 }
