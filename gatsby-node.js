@@ -1,6 +1,6 @@
 import path from 'path'
 
-async function turnPizzasIntoPages({ graphql, actions }) {
+async function turnMainCategoryIntoPages({ graphql, actions }) {
   const mainCategoryTemplate = path.resolve('./src/templates/MainCategory.tsx')
   const { data } = await graphql(`
     query AllMainCategory {
@@ -14,10 +14,8 @@ async function turnPizzasIntoPages({ graphql, actions }) {
       }
     }
   `)
-  // 3. Loop over each pizza and create a page for that pizza
   data.allSanityMainCategory.nodes.forEach((mainCategory) => {
     actions.createPage({
-      // What is the URL for this new page??
       path: `/${mainCategory.slug.current}`,
       component: mainCategoryTemplate,
       context: {
@@ -27,8 +25,36 @@ async function turnPizzasIntoPages({ graphql, actions }) {
   })
 }
 
+async function turnCategoryIntoPages({ graphql, actions }) {
+  const categoryTemplate = path.resolve('./src/templates/Category.tsx')
+  const { data } = await graphql(`
+    query AllCategory {
+      allSanityCategory {
+        nodes {
+          title
+          slug {
+            current
+          }
+          mainCategory {
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+  data.allSanityCategory.nodes.forEach((category) => {
+    actions.createPage({
+      path: `/${category.mainCategory.slug.current}/${category.slug.current}`,
+      component: categoryTemplate,
+      context: {
+        slug: category.slug.current,
+      },
+    })
+  })
+}
+
 export async function createPages(params) {
-  // Create pages dynamically
-  // Wait for all promises to be resolved before finishing this function
-  await Promise.all([turnPizzasIntoPages(params)])
+  await Promise.all([turnMainCategoryIntoPages(params), turnCategoryIntoPages(params)])
 }

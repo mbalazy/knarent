@@ -1,14 +1,19 @@
 import React from 'react'
 import { useLocation } from '@reach/router'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import { Category, MainCategory } from '../../../types/sanity'
 import { H4 } from '../../../theme/Typography'
 import { SimpleLink } from '../shared/Links'
 
-const CategoryMenuWrapper = styled.div`
+const CategoryMenuWrapper = styled.aside`
   ${cardBasicStyle}
+  grid-row: 1/-1;
+  grid-column: 1/1;
+  // align-self: start;
+`
+const LinksStyles = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3rem;
@@ -16,10 +21,10 @@ const CategoryMenuWrapper = styled.div`
   ${H4}:not(:first-child) {
     margin-top: 4rem;
   }
-
-  grid-row: 1/-1;
-  grid-column: 1/1;
-  // align-self: start;
+`
+const MenuLinkStyles = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `
 
 const CategoryMenu = () => {
@@ -59,22 +64,21 @@ const CategoryMenu = () => {
         .sort((a, b) => a.title.localeCompare(b.title))
         .map((mainCategory: MainCategory) => {
           return (
-            <>
-              <H4 key={mainCategory.id}>{mainCategory.title}</H4>
+            <LinksStyles key={mainCategory.id}>
+              <MenuLinkStyles to={`/${mainCategory.slug.current}`}>
+                <H4>{mainCategory.title}</H4>
+              </MenuLinkStyles>
               {categories.nodes
                 .sort((a, b) => a.title.localeCompare(b.title))
                 .map(
                   (category: Category) =>
                     category.mainCategory.id === mainCategory.id && (
-                      <SimpleLink
-                        to={`/${mainCategory.slug.current}/${category.slug.current}`}
-                        key={category.id}
-                      >
+                      <SimpleLink to={`/${mainCategory.slug.current}/${category.slug.current}`}>
                         {category.title}
                       </SimpleLink>
                     )
                 )}
-            </>
+            </LinksStyles>
           )
         })}
     </CategoryMenuWrapper>

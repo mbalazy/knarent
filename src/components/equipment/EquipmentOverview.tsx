@@ -11,7 +11,7 @@ type EquipmentOverviewProps = {
 const EquipmentOverviewWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 9rem repeat(2, 30rem);
+  grid-template-rows: 9rem repeat(2, 34rem);
   padding: 4rem;
   gap: 4rem;
 `
