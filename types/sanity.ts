@@ -18,5 +18,8 @@ export type Product = MainCategory & {
 export type Category = MainCategory & {
   mainCategory?: {
     id: string
+    slug?: {
+      current: string
+    }
   }
 }

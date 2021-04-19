@@ -5,12 +5,13 @@ import { cardBasicStyle } from '../../../theme/globalStyle'
 import { getImageFromId } from '../utils/getHeroImageFromId'
 import { ImageOverlayWrapper, FullImageStyles } from '../shared/ImageOverlay'
 import { H3 } from '../../../theme/Typography'
+import { Link } from 'gatsby'
 
 type CategoryThumbnailProps = {
   category: Category
 }
 
-const CategoryThumbnailWrapper = styled.article`
+const CategoryThumbnailWrapper = styled(Link)`
   ${cardBasicStyle}
   overflow: hidden;
   position: relative;
@@ -25,8 +26,9 @@ const TitleWrapper = styled.div`
 
 const CategoryThumbnail = ({ category }: CategoryThumbnailProps) => {
   const image = getImageFromId(category.images.asset.id, 'fullWidth')
+  const categorySlug = `/${category.mainCategory.slug.current}/${category.slug.current}`
   return (
-    <CategoryThumbnailWrapper>
+    <CategoryThumbnailWrapper to={categorySlug}>
       <ImageOverlayWrapper lighten>
         <FullImageStyles image={image} alt={category.title} />
       </ImageOverlayWrapper>

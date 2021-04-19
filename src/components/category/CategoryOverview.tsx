@@ -17,7 +17,7 @@ const CategoryOverviewWrapper = styled.div`
   padding: 4rem;
   gap: 4rem;
 `
-const CategoryHeadingStyles = styled.div`
+const CategoryHeadingWrapper = styled.div`
   ${cardBasicStyle}
   ${center}
   grid-column: 2/-1;
@@ -29,9 +29,9 @@ const CategoryOverview = ({ mainCategory: { title }, categories }: CategoryOverv
   return (
     <CategoryOverviewWrapper>
       <CategoryMenu />
-      <CategoryHeadingStyles>
+      <CategoryHeadingWrapper>
         <H3 bigger>{title}</H3>
-      </CategoryHeadingStyles>
+      </CategoryHeadingWrapper>
       {categories.map((category) => (
         <CategoryThumbnail key={category.id} category={category} />
       ))}

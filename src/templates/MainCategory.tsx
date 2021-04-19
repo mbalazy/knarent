@@ -41,6 +41,9 @@ export const query = graphql`
         }
         mainCategory {
           id
+          slug {
+            current
+          }
         }
         images {
           asset {
