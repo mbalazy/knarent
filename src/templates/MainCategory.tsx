@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 import { MainCategory as MainCategoryType, Category as CategoryType } from '../../types/sanity'
+import CategoryThumbnail from '../components/equipment/CategoryThumbnail'
 import EquipmentOverview from '../components/equipment/EquipmentOverview'
 
 type MainCategoryProps = {
@@ -11,7 +12,13 @@ type MainCategoryProps = {
 }
 
 const MainCategory = ({ data: { mainCategory, categories } }: MainCategoryProps) => {
-  return <EquipmentOverview mainCategory={mainCategory} categories={categories.nodes} />
+  return (
+    <EquipmentOverview title={mainCategory.title}>
+      {categories.nodes.map((category) => (
+        <CategoryThumbnail key={category.id} category={category} />
+      ))}
+    </EquipmentOverview>
+  )
 }
 
 export default MainCategory

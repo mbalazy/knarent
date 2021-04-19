@@ -2,40 +2,36 @@ import React from 'react'
 import CategoryMenu from './CategoryMenu'
 import styled from 'styled-components'
 import { H3 } from '../../../theme/Typography'
-import { MainCategory, Category } from '../../../types/sanity'
-import { cardBasicStyle, center } from '../../../theme/globalStyle'
-import CategoryThumbnail from './CategoryThumbnail'
+import { cardBasicStyle, centerMe } from '../../../theme/globalStyle'
 
-type CategoryOverviewProps = {
-  mainCategory: MainCategory
-  categories: Category[]
+type EquipmentOverviewProps = {
+  title: string
+  children: JSX.Element | JSX.Element[]
 }
-const CategoryOverviewWrapper = styled.div`
+const EquipmentOverviewWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 9rem repeat(2, 30rem);
   padding: 4rem;
   gap: 4rem;
 `
-const CategoryHeadingWrapper = styled.div`
+const EquipmentHeadingWrapper = styled.div`
   ${cardBasicStyle}
-  ${center}
+  ${centerMe}
   grid-column: 2/-1;
   color: ${({ theme }) => theme.colors.lightText};
   background-color: ${({ theme }) => theme.colors.accent2};
 `
 
-const EquipmentOverview = ({ mainCategory: { title }, categories }: CategoryOverviewProps) => {
+const EquipmentOverview = ({ title, children }: EquipmentOverviewProps) => {
   return (
-    <CategoryOverviewWrapper>
+    <EquipmentOverviewWrapper>
       <CategoryMenu />
-      <CategoryHeadingWrapper>
+      <EquipmentHeadingWrapper>
         <H3 bigger>{title}</H3>
-      </CategoryHeadingWrapper>
-      {categories.map((category) => (
-        <CategoryThumbnail key={category.id} category={category} />
-      ))}
-    </CategoryOverviewWrapper>
+      </EquipmentHeadingWrapper>
+      {children}
+    </EquipmentOverviewWrapper>
   )
 }
 
