@@ -13,6 +13,7 @@ const EquipmentOverviewWrapper = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 9rem repeat(2, 36rem);
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
+  width: 90vw;
   margin: ${({ theme }) => theme.dimensions.equipmentMargin};
   gap: ${({ theme }) => theme.dimensions.equipmentGap};
 `

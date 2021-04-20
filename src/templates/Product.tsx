@@ -1,14 +1,16 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import { Product as ProductType } from '../../types/sanity'
-import { H3 } from '../../theme/Typography'
+import { graphql, navigate } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
-import { cardBasicStyle } from '../../theme/globalStyle'
-import CategoryMenu from '../components/equipment/CategoryMenu'
-import CONSTS from '../../theme/CONSTS'
-import { ReactComponent as Phone } from '../../images/phone1.svg'
 import { ReactComponent as Arrow } from '../../images/arrow.svg'
-import { navigate } from 'gatsby'
+import { ReactComponent as Phone } from '../../images/phone1.svg'
+import CONSTS from '../../theme/CONSTS'
+import { cardBasicStyle } from '../../theme/globalStyle'
+import { H2, P } from '../../theme/Typography'
+import { Product as ProductType } from '../../types/sanity'
+import CategoryMenu from '../components/equipment/CategoryMenu'
+import BusinessFeatures from '../components/shared/BusinessFeatures'
+import { getImageFromId } from '../components/utils/getHeroImageFromId'
 
 type MainCategoryProps = {
   data: {
@@ -18,19 +20,20 @@ type MainCategoryProps = {
 
 const ProductWrapper = styled.div`
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
-  margin: ${({ theme }) => theme.dimensions.equipmentMargin};
+  width: 90vw;
+  margin: ${({ theme }) => theme.dimensions.equipmentMargin} 0;
+
+  section {
+    ${cardBasicStyle}
+  }
 `
-const ProductMainInfoGrid = styled.section`
+const ProductMainInfoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: ${({ theme }) => theme.dimensions.equipmentGap};
-
-  & > article {
-    ${cardBasicStyle}
-  }
 `
-const ProductMainInfo = styled.article`
+const ProductMainInfo = styled.section`
   grid-column: 2/-1;
   grid-row: 1 / span 2;
   display: flex;
@@ -40,7 +43,8 @@ const ProductMainInfo = styled.article`
   position: relative;
 `
 const ImagesStyles = styled.div`
-  flex: 3;
+  flex: 1;
+  padding: 9rem;
 `
 const ProductDetails = styled.div`
   flex: 2;
@@ -81,14 +85,15 @@ const BackButton = styled.button`
   align-items: center;
   gap: 1rem;
 `
-const ProductDescription = styled.article`
+const ProductDescription = styled.section`
+  padding: 4rem;
   grid-column: 2/-1;
   grid-row: -2/-1;
 `
-
 const Category = ({ data: { product } }: MainCategoryProps) => {
   const { telephones } = CONSTS
   const handleGoBack = () => navigate(-1)
+  const sampleOnePhoto = getImageFromId(product.images[0].asset.id)
 
   return (
     <ProductWrapper>
@@ -96,21 +101,24 @@ const Category = ({ data: { product } }: MainCategoryProps) => {
         <CategoryMenu />
         <ProductMainInfo>
           <ImagesStyles>
-            <p>zdjecie</p>
+            <GatsbyImage image={sampleOnePhoto} alt={product.title} />
           </ImagesStyles>
           <ProductDetails>
-            <H3>{product.title}</H3>
+            <H2>{product.title}</H2>
             <PhoneStyles>
               <Phone />
               {telephones[0]}
             </PhoneStyles>
           </ProductDetails>
           <BackButton onClick={handleGoBack}>
-            <Arrow width="8" /> Powrót
+            <Arrow width="8" /> <span>Powrót</span>
           </BackButton>
         </ProductMainInfo>
-        <ProductDescription>{product.description}</ProductDescription>
+        <ProductDescription>
+          <P>{product.description}</P>
+        </ProductDescription>
       </ProductMainInfoGrid>
+      <BusinessFeatures />
     </ProductWrapper>
   )
 }
