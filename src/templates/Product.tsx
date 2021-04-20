@@ -21,6 +21,9 @@ type MainCategoryProps = {
 const ProductWrapper = styled.div`
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
   width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.dimensions.equipmentMargin};
   margin-top: ${({ theme }) => theme.dimensions.equipmentMargin};
 
   section {
