@@ -8,7 +8,7 @@ import { H4 } from '../../../theme/Typography'
 
 const BusinessFeaturesWrapper = styled.section`
   display: flex;
-  margin: ${({ theme }) => theme.dimensions.equipmentMargin} 0;
+  margin-top: ${({ theme }) => theme.dimensions.equipmentMargin};
 `
 const FeaturesStyles = styled.ul`
   display: flex;

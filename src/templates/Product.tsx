@@ -21,7 +21,7 @@ type MainCategoryProps = {
 const ProductWrapper = styled.div`
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
   width: 90vw;
-  margin: ${({ theme }) => theme.dimensions.equipmentMargin} 0;
+  margin-top: ${({ theme }) => theme.dimensions.equipmentMargin};
 
   section {
     ${cardBasicStyle}
