@@ -11,6 +11,7 @@ import { Product as ProductType } from '../../types/sanity'
 import CategoryMenu from '../components/equipment/CategoryMenu'
 import BusinessFeatures from '../components/shared/BusinessFeatures'
 import { getImageFromId } from '../components/utils/getHeroImageFromId'
+import SimilarProducts from '../components/shared/SimilarProducts'
 
 type MainCategoryProps = {
   data: {
@@ -122,6 +123,7 @@ const Category = ({ data: { product } }: MainCategoryProps) => {
         </ProductDescription>
       </ProductMainInfoGrid>
       <BusinessFeatures />
+      <SimilarProducts />
     </ProductWrapper>
   )
 }
