@@ -4,6 +4,7 @@ const mainTheme = {
     secondary: '#204AAB',
     accent1: '#083358',
     accent2: '#001F3F',
+    accent3: '#0F358C',
     primaryText: '#222222',
     lightText: '#FFFFFF',
     white: '#FFFFFF',
@@ -39,6 +40,8 @@ const mainTheme = {
     navbarHeight: '70px',
     mainContentWidth: '1200px',
     mainContentGap: '12rem',
+    equipmentMargin: '6rem',
+    equipmentGap: '4rem',
   },
 }
 

@@ -12,15 +12,12 @@ const CategoryMenuWrapper = styled.aside`
   grid-row: 1/-1;
   grid-column: 1/1;
   // align-self: start;
+  min-height: 70rem;
 `
 const LinksStyles = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3rem;
-
-  ${H4}:not(:first-child) {
-    margin-top: 4rem;
-  }
 `
 const MenuLinkStyles = styled(Link)`
   text-decoration: none;
@@ -66,14 +63,18 @@ const CategoryMenu = () => {
           return (
             <LinksStyles key={mainCategory.id}>
               <MenuLinkStyles to={`/${mainCategory.slug.current}`}>
-                <H4>{mainCategory.title}</H4>
+                <H4 smaller>{mainCategory.title}</H4>
               </MenuLinkStyles>
               {categories.nodes
                 .sort((a, b) => a.title.localeCompare(b.title))
                 .map(
                   (category: Category) =>
                     category.mainCategory.id === mainCategory.id && (
-                      <SimpleLink to={`/${mainCategory.slug.current}/${category.slug.current}`}>
+                      <SimpleLink
+                        smaller
+                        key={category.id}
+                        to={`/${mainCategory.slug.current}/${category.slug.current}`}
+                      >
                         {category.title}
                       </SimpleLink>
                     )

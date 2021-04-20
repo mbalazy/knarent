@@ -12,8 +12,9 @@ const EquipmentOverviewWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 9rem repeat(2, 36rem);
-  margin: 6rem;
-  gap: 4rem;
+  max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
+  margin: ${({ theme }) => theme.dimensions.equipmentMargin};
+  gap: ${({ theme }) => theme.dimensions.equipmentGap};
 `
 const EquipmentHeadingWrapper = styled.div`
   ${cardBasicStyle}

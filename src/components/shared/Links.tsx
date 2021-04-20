@@ -6,6 +6,7 @@ import type { ButtonProps } from './Button'
 
 interface LinkProps extends ButtonProps {
   to: string
+  smaller?: boolean
 }
 const BaseLinkStyles = css`
   text-decoration: none;
@@ -14,7 +15,7 @@ const BaseLinkStyles = css`
   font-size: ${({ theme }) => theme.fontSize.m};
 `
 
-const BigLinkStyles = styled(Link)`
+const BigLinkStyles = styled(Link)<LinkProps>`
   ${BaseLinkStyles}
   ${LikeAButtonStyles}
   text-align: center;
@@ -27,10 +28,19 @@ export const BigLink = ({ variant = 'primary', children, to }: LinkProps) => {
   )
 }
 
-const SimpleLinkStyles = styled(Link)`
+const SimpleLinkStyles = styled(Link)<LinkProps>`
   ${BaseLinkStyles}
   padding: 1.4rem;
+  ${({ smaller }) =>
+    smaller &&
+    css`
+      font-size: ${({ theme }) => theme.fontSize.s};
+    `}
 `
-export const SimpleLink = ({ children, to }: LinkProps) => {
-  return <SimpleLinkStyles to={to}>{children}</SimpleLinkStyles>
+export const SimpleLink = ({ children, to, smaller }: LinkProps) => {
+  return (
+    <SimpleLinkStyles to={to} smaller={smaller}>
+      {children}
+    </SimpleLinkStyles>
+  )
 }

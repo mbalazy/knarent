@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 type Props = {
   bigger?: boolean
+  smaller?: boolean
 }
 
 export const H1 = styled.h1`
@@ -34,6 +35,11 @@ export const H4 = styled.h4<Props>`
     bigger &&
     css`
       font-size: ${({ theme }) => theme.fontSize.l};
+    `}
+  ${({ smaller }) =>
+    smaller &&
+    css`
+      font-size: ${({ theme }) => theme.fontSize.s};
     `}
 `
 export const P = styled.p`
