@@ -65,6 +65,7 @@ const turnProductsIntoPages = async ({ graphql, actions }) => {
             current
           }
           category {
+            id
             slug {
               current
             }
@@ -84,6 +85,7 @@ const turnProductsIntoPages = async ({ graphql, actions }) => {
       component: productTemplate,
       context: {
         slug: product.slug.current,
+        thisProductCategory: product.category.id,
       },
     })
   })

@@ -13,9 +13,10 @@ import BusinessFeatures from '../components/shared/BusinessFeatures'
 import { getImageFromId } from '../components/utils/getHeroImageFromId'
 import SimilarProducts from '../components/shared/SimilarProducts'
 
-type MainCategoryProps = {
+type ProductProps = {
   data: {
     product: ProductType
+    similarProducts: { nodes: ProductType[] }
   }
 }
 
@@ -94,7 +95,7 @@ const ProductDescription = styled.section`
   grid-column: 2/-1;
   grid-row: -2/-1;
 `
-const Category = ({ data: { product } }: MainCategoryProps) => {
+const Product = ({ data: { product, similarProducts } }: ProductProps) => {
   const { telephones } = CONSTS
   const handleGoBack = () => navigate(-1)
   const sampleOnePhoto = getImageFromId(product.images[0].asset.id)
@@ -123,15 +124,15 @@ const Category = ({ data: { product } }: MainCategoryProps) => {
         </ProductDescription>
       </ProductMainInfoGrid>
       <BusinessFeatures />
-      <SimilarProducts />
+      <SimilarProducts products={similarProducts.nodes} />
     </ProductWrapper>
   )
 }
 
-export default Category
+export default Product
 
 export const query = graphql`
-  query SanityProducts($slug: String!) {
+  query SanityProducts($slug: String!, $thisProductCategory: String!) {
     product: sanityEquipment(slug: { current: { eq: $slug } }) {
       id
       title
@@ -139,6 +140,19 @@ export const query = graphql`
       images {
         asset {
           id
+        }
+      }
+    }
+    similarProducts: allSanityEquipment(
+      filter: { slug: { current: { ne: $slug } }, category: { id: { eq: $thisProductCategory } } }
+    ) {
+      nodes {
+        id
+        title
+        images {
+          asset {
+            id
+          }
         }
       }
     }

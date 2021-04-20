@@ -6,10 +6,11 @@ type SimilarProductsProps = {
 }
 
 const SimilarProducts = ({ products }: SimilarProductsProps) => {
+  console.log(products)
   return (
     <>
-      component
-      <p>SimilarProducts</p>
+      <h4>SimilarProducts</h4>
+      {products.map((product) => product.title)}
     </>
   )
 }
