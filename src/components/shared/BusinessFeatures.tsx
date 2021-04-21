@@ -23,17 +23,21 @@ const FeatureBullet = styled.li`
   align-items: center;
   gap: 2rem;
 `
-const LogoStyles = styled.div`
+const LogoWrapper = styled.div`
   flex: 5;
   ${centerMe}
+
+  svg {
+    height: 250px;
+  }
 `
 
 const BusinessFeatures = () => {
   return (
     <BusinessFeaturesWrapper>
-      <LogoStyles>
-        <BigLogo style={{ height: '280' }} />
-      </LogoStyles>
+      <LogoWrapper>
+        <BigLogo />
+      </LogoWrapper>
       <FeaturesStyles>
         {listOfBusinnesFeatures.map((feature) => (
           <FeatureBullet key={feature}>
