@@ -153,6 +153,19 @@ export const query = graphql`
             id
           }
         }
+        slug {
+          current
+        }
+        category {
+          slug {
+            current
+          }
+          mainCategory {
+            slug {
+              current
+            }
+          }
+        }
       }
     }
   }
