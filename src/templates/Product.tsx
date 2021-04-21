@@ -27,16 +27,15 @@ const ProductWrapper = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.dimensions.equipmentMargin};
   margin-top: ${({ theme }) => theme.dimensions.equipmentMargin};
-
-  section {
-    ${cardBasicStyle}
-  }
 `
 const ProductMainInfoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: ${({ theme }) => theme.dimensions.equipmentGap};
+  section {
+    ${cardBasicStyle}
+  }
 `
 const ProductMainInfo = styled.section`
   grid-column: 2/-1;

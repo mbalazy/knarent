@@ -3,11 +3,12 @@ import styled from 'styled-components'
 import { ReactComponent as SmallArrow } from '../../../images/arrow19h.svg'
 import { ReactComponent as BigLogo } from '../../../images/logo_knarent_big.svg'
 import { listOfBusinnesFeatures } from '../../../theme/CONSTS'
-import { centerMe } from '../../../theme/globalStyle'
+import { cardBasicStyle, centerMe } from '../../../theme/globalStyle'
 import { H4 } from '../../../theme/Typography'
 
 const BusinessFeaturesWrapper = styled.section`
   display: flex;
+  ${cardBasicStyle}
 `
 const FeaturesStyles = styled.ul`
   display: flex;

@@ -10,6 +10,7 @@ const mainTheme = {
     white: '#FFFFFF' as const,
     grey100: 'hsl(0, 0%, 90%)' as const,
     grey002: 'hsl(0, 0%, 98%)' as const,
+    grey005: 'hsl(0, 0%, 95%)' as const,
     grey850: 'hsl(0, 0%, 15%)' as const,
     black: 'hsl(0, 0%, 0%)' as const,
   },
