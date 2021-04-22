@@ -9,13 +9,13 @@ type ProductGalleryProps = {
   productTitle: string
 }
 const ProductGalleryWrapper = styled.div`
-  flex: 2;
+  flex: 1;
+  height: 90%;
   padding: ${({ theme }) => theme.dimensions.equipmentGap};
 
   display: flex;
   gap: ${({ theme }) => theme.dimensions.equipmentGap};
   justify-content: center;
-  height: 90%;
 `
 const BigImageStyles = styled.div`
   flex: 0 1 320px;

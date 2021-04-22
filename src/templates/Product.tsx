@@ -46,7 +46,7 @@ const ProductMainInfo = styled.section`
   position: relative;
 `
 const ProductDetails = styled.div`
-  flex: 2;
+  flex: 1;
   display: flex;
   flex-direction: column;
   text-align: center;
