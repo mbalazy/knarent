@@ -12,31 +12,36 @@ type SimilarProductsProps = {
 const SimilarProductsWrapper = styled.section`
   ${cardBasicStyle}
   background-color: ${({ theme }) => theme.colors.grey005};
-  padding: ${({ theme }) => theme.dimensions.equipmentMargin};
 
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.dimensions.equipmentGap};
 `
-const SimilarProductsList = styled.div`
+const SimilarProductsList = styled.ul`
   display: flex;
   flex-wrap: nowrap;
   gap: 6rem;
   overflow-x: auto;
 
+  padding: ${({ theme }) => theme.dimensions.equipmentMargin};
+  padding-top: ${({ theme }) => theme.dimensions.equipmentGap};
   & > * {
     flex: 0 0 270px;
   }
 `
+const SimilarProductsHeading = styled(H3)`
+  margin: ${({ theme }) => theme.dimensions.equipmentMargin} 0 0
+    ${({ theme }) => theme.dimensions.equipmentMargin};
+`
 
 const SimilarProducts = ({ products }: SimilarProductsProps) => {
-  console.log(products)
   return (
     <SimilarProductsWrapper>
-      <H3>Inne przedmioty z tej kategorii</H3>
+      <SimilarProductsHeading>Inne przedmioty z tej kategorii</SimilarProductsHeading>
       <SimilarProductsList>
         {products.map((product) => (
-          <ProductThumbnail key={product.id} product={product} />
+          <li key={product.id}>
+            <ProductThumbnail product={product} />
+          </li>
         ))}
       </SimilarProductsList>
     </SimilarProductsWrapper>

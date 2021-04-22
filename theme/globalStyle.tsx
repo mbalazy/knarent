@@ -24,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-family: 'Work Sans', sans-serif;
   }
+
+  li {
+    list-style: none; 
+  }
 `
 export default GlobalStyle
 
