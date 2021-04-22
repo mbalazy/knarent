@@ -98,7 +98,7 @@ const Product = ({ data: { product, similarProducts } }: ProductProps) => {
       <ProductMainInfoGrid>
         <CategoryMenu />
         <ProductMainInfo>
-          <ProductGallery images={product.images} productTitle={product.title} />
+          <ProductGallery sanityImagesData={product.images} productTitle={product.title} />
           <ProductDetails>
             <H2>{product.title}</H2>
             <PhoneStyles>
