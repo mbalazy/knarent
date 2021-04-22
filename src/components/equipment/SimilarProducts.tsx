@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import { H3 } from '../../../theme/Typography'
 import { Product } from '../../../types/sanity'
-import ProductThumbnail from './ProductThumbnail'
+import ProductThumbnail from '../shared/ProductThumbnail'
 
 type SimilarProductsProps = {
   products: Product[]
