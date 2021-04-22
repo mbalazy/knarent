@@ -85,9 +85,11 @@ const BackButton = styled.button`
   gap: 1rem;
 `
 const ProductDescription = styled.section`
-  padding: 4rem;
+  padding: 3rem 4rem;
   grid-column: 2/-1;
   grid-row: -2/-1;
+  max-height: 22rem;
+  overflow-y: auto;
 `
 const Product = ({ data: { product, similarProducts } }: ProductProps) => {
   const { telephones } = CONSTS
