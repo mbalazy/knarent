@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql, navigate } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import { ReactComponent as Arrow } from '../../images/arrow.svg'
 import { ReactComponent as Phone } from '../../images/phone1.svg'
@@ -10,8 +9,8 @@ import { H2, P } from '../../theme/Typography'
 import { Product as ProductType } from '../../types/sanity'
 import CategoryMenu from '../components/equipment/CategoryMenu'
 import BusinessFeatures from '../components/shared/BusinessFeatures'
-import { getImageFromId } from '../components/utils/getHeroImageFromId'
 import SimilarProducts from '../components/equipment/SimilarProducts'
+import ProductGallery from '../components/equipment/ProductGallery'
 
 type ProductProps = {
   data: {
@@ -45,10 +44,6 @@ const ProductMainInfo = styled.section`
   justify-content: space-between;
 
   position: relative;
-`
-const ImagesStyles = styled.div`
-  flex: 1;
-  padding: 9rem;
 `
 const ProductDetails = styled.div`
   flex: 2;
@@ -97,16 +92,13 @@ const ProductDescription = styled.section`
 const Product = ({ data: { product, similarProducts } }: ProductProps) => {
   const { telephones } = CONSTS
   const handleGoBack = () => navigate(-1)
-  const sampleOnePhoto = getImageFromId(product.images[0].asset.id)
 
   return (
     <ProductWrapper>
       <ProductMainInfoGrid>
         <CategoryMenu />
         <ProductMainInfo>
-          <ImagesStyles>
-            <GatsbyImage image={sampleOnePhoto} alt={product.title} />
-          </ImagesStyles>
+          <ProductGallery images={product.images} productTitle={product.title} />
           <ProductDetails>
             <H2>{product.title}</H2>
             <PhoneStyles>
