@@ -21,6 +21,7 @@ const MenuStyles = styled.ul<MenuProps>`
       flex-direction: column;
       width: auto;
       margin: 0;
+      gap: 2rem;
     `}
 `
 

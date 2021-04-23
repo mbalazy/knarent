@@ -13,6 +13,7 @@ const CategoryMenuWrapper = styled.aside`
   grid-column: 1/1;
   // align-self: start;
   min-height: 70rem;
+  overflow-y: auto;
 `
 const LinksStyles = styled.div`
   display: flex;
