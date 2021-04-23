@@ -36,7 +36,7 @@ export const cardBasicStyle = css`
   border-radius: ${({ theme }) => theme.border.standard};
   background-color: ${({ theme }) => theme.colors.white};
 `
-export const centerMe = css`
+export const centerInsideMe = css`
   display: flex;
   justify-content: center;
   align-items: center;

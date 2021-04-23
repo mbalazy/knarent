@@ -2,7 +2,7 @@ import React from 'react'
 import CategoryMenu from './CategoryMenu'
 import styled from 'styled-components'
 import { H3 } from '../../../theme/Typography'
-import { cardBasicStyle, centerMe } from '../../../theme/globalStyle'
+import { cardBasicStyle, centerInsideMe } from '../../../theme/globalStyle'
 
 type EquipmentOverviewProps = {
   title?: string
@@ -20,7 +20,7 @@ const EquipmentOverviewWrapper = styled.div`
 `
 const EquipmentHeadingWrapper = styled.div`
   ${cardBasicStyle}
-  ${centerMe}
+  ${centerInsideMe}
   grid-column: 2/-1;
   color: ${({ theme }) => theme.colors.lightText};
   background-color: ${({ theme }) => theme.colors.accent2};

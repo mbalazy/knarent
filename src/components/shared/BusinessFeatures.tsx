@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { ReactComponent as SmallArrow } from '../../../images/arrow19h.svg'
 import { ReactComponent as BigLogo } from '../../../images/logo_knarent_big.svg'
 import { listOfBusinnesFeatures } from '../../../theme/CONSTS'
-import { cardBasicStyle, centerMe } from '../../../theme/globalStyle'
+import { cardBasicStyle, centerInsideMe } from '../../../theme/globalStyle'
 import { H4 } from '../../../theme/Typography'
 
 const BusinessFeaturesWrapper = styled.section`
@@ -25,7 +25,7 @@ const FeatureBullet = styled.li`
 `
 const LogoWrapper = styled.div`
   flex: 5;
-  ${centerMe}
+  ${centerInsideMe}
 
   svg {
     height: 250px;
