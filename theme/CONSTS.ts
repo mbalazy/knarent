@@ -26,7 +26,7 @@ const CONSTS = {
   faqHeading: 'Najczęściej zadawane pytania',
   menuItemList: [
     { label: 'Strona główna', link: '/' },
-    { label: 'Szukaj', link: '/szukaj' },
+    { label: 'Szukaj', link: '/search' },
     { label: 'Kontakt', link: '/#kontakt' },
     { label: 'FAQ', link: '/#faq' },
   ],

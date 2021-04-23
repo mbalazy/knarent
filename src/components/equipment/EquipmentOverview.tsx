@@ -32,7 +32,7 @@ const EquipmentOverview = ({ title, searchForm, children }: EquipmentOverviewPro
       <CategoryMenu />
       <EquipmentHeadingWrapper>
         {title && <H3 bigger>{title}</H3>}
-        {searchForm && { searchForm }}
+        {searchForm}
       </EquipmentHeadingWrapper>
       {children}
     </EquipmentOverviewWrapper>
