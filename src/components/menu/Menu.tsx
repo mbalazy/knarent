@@ -7,7 +7,7 @@ type MenuProps = {
   vertical?: boolean
 }
 
-const MenuStyles = styled.div<MenuProps>`
+const MenuStyles = styled.ul<MenuProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -8,9 +8,9 @@ type MenuItemProps = {
 
 const MenuItem = ({ item: { label, link } }: MenuItemProps) => {
   return (
-    <>
+    <li>
       <SimpleLink to={link}>{label}</SimpleLink>
-    </>
+    </li>
   )
 }
 
