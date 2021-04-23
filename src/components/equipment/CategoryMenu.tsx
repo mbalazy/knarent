@@ -58,7 +58,7 @@ const CategoryMenu = () => {
   return (
     <CategoryMenuWrapper>
       {mainCategories.nodes
-        .sort((a, b) => a.title.localeCompare(b.title))
+        .sort((a: MainCategory, b: MainCategory) => a.title.localeCompare(b.title))
         .map((mainCategory: MainCategory) => {
           return (
             <LinksStyles key={mainCategory.id}>
@@ -66,7 +66,7 @@ const CategoryMenu = () => {
                 <H4 smaller>{mainCategory.title}</H4>
               </MenuLinkStyles>
               {categories.nodes
-                .sort((a, b) => a.title.localeCompare(b.title))
+                .sort((a: Category, b: Category) => a.title.localeCompare(b.title))
                 .map(
                   (category: Category) =>
                     category.mainCategory.id === mainCategory.id && (
