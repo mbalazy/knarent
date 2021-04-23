@@ -5,8 +5,9 @@ import { H3 } from '../../../theme/Typography'
 import { cardBasicStyle, centerMe } from '../../../theme/globalStyle'
 
 type EquipmentOverviewProps = {
-  title: string
+  title?: string
   children: JSX.Element | JSX.Element[]
+  searchForm?: JSX.Element | JSX.Element[]
 }
 const EquipmentOverviewWrapper = styled.div`
   display: grid;
@@ -25,12 +26,13 @@ const EquipmentHeadingWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.accent2};
 `
 
-const EquipmentOverview = ({ title, children }: EquipmentOverviewProps) => {
+const EquipmentOverview = ({ title, searchForm, children }: EquipmentOverviewProps) => {
   return (
     <EquipmentOverviewWrapper>
       <CategoryMenu />
       <EquipmentHeadingWrapper>
-        <H3 bigger>{title}</H3>
+        {title && <H3 bigger>{title}</H3>}
+        {searchForm && { searchForm }}
       </EquipmentHeadingWrapper>
       {children}
     </EquipmentOverviewWrapper>
