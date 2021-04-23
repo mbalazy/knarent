@@ -88,7 +88,7 @@ const ProductDescription = styled.section`
   padding: 3rem 4rem;
   grid-column: 2/-1;
   grid-row: -2/-1;
-  max-height: 22rem;
+  max-height: 26rem;
   overflow-y: auto;
 `
 const Product = ({ data: { product, similarProducts } }: ProductProps) => {
