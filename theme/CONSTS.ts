@@ -27,7 +27,7 @@ const CONSTS = {
   menuItemList: [
     { label: 'Strona główna', link: '/' },
     { label: 'Szukaj', link: '/szukaj' },
-    { label: 'Kontakt', link: '/kontakt' },
+    { label: 'Kontakt', link: '/#kontakt' },
     { label: 'FAQ', link: '/#faq' },
   ],
 

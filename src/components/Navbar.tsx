@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { ReactComponent as Logo } from '../../images/logo_knarent.svg'
@@ -38,7 +39,9 @@ const Navbar = ({ sticky }: NavProps) => {
   const [firstPhoneNumber] = CONSTS.telephones
   return (
     <NavWrapper sticky={sticky}>
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
       <Menu />
       <PhoneWrapperStyles>
         <Phone />

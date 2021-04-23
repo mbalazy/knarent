@@ -59,7 +59,7 @@ const Contact = () => {
   const { contactHeading, fullTitle, openHours } = CONSTS
 
   return (
-    <Section heading={contactHeading}>
+    <Section id="kontakt" heading={contactHeading}>
       <ContactWrapper>
         <MapStyles>
           <Map infoWindow />

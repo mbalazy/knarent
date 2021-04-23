@@ -3,6 +3,7 @@ type SectionProps = {
   heading?: string
   subheading?: string
   children: JSX.Element | string | JSX.Element[]
+  id?: string
 }
 import styled from 'styled-components'
 import { H2, H3 } from '../../../theme/Typography'
@@ -22,9 +23,9 @@ const ChildrenWrapper = styled.div`
   max-width: 1200px;
 `
 
-const Section = ({ heading, subheading, children }: SectionProps) => {
+const Section = ({ heading, subheading, children, id }: SectionProps) => {
   return (
-    <SectionWrapper>
+    <SectionWrapper id={id}>
       {heading && <H2>{heading}</H2>}
       {subheading && <H3>{subheading}</H3>}
       <ChildrenWrapper>{children}</ChildrenWrapper>

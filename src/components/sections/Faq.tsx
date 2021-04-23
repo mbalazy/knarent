@@ -13,7 +13,7 @@ const FaqWrapper = styled.div`
 const Faq = () => {
   const { faqHeading } = CONSTS
   return (
-    <Section heading={faqHeading}>
+    <Section id="faq" heading={faqHeading}>
       <FaqWrapper>
         {faqContent.map((issue) => (
           <FaqIssue key={issue.question} issue={issue} />
