@@ -17,6 +17,7 @@ export type Product = {
   description?: string
   id?: string
   featured: boolean
+  keywords?: string
   slug?: {
     current: string
   }
