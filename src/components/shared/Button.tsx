@@ -2,14 +2,24 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 export interface ButtonProps {
-  variant?: 'primary' | 'secondary'
-  children: string
+  variant?: 'primary' | 'secondary' | 'secondarySmall'
+  disabled?: boolean
+  children: string | number
+  onClick: () => void
 }
 
 export const BottomBaseStyles = css<ButtonProps>`
   border: none;
   cursor: pointer;
   display: inline-block;
+
+  &:disabled,
+  &[disabled] {
+    border: 1px solid #999999;
+    background-color: transparent;
+    color: #666666;
+    cursor: default;
+  }
 
   ${({ variant }) => {
     switch (variant) {
@@ -27,6 +37,14 @@ export const BottomBaseStyles = css<ButtonProps>`
           background-color: ${({ theme }) => theme.colors.primary};
           font-size: ${({ theme }) => theme.fontSize.s};
           padding: 1.5rem 5rem;
+          border-radius: 10px;
+        `
+      case 'secondarySmall':
+        return css`
+          color: ${({ theme }) => theme.colors.primaryText};
+          background-color: ${({ theme }) => theme.colors.primary};
+          font-size: ${({ theme }) => theme.fontSize.s};
+          padding: 1rem 1.5rem;
           border-radius: 10px;
         `
     }

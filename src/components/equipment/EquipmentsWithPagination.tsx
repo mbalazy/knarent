@@ -1,69 +1,31 @@
-import React from 'react'
-import { useState } from 'react'
-import styled, { css } from 'styled-components'
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import Button from '../shared/Button'
 
 type EquipmentPaginationProps = {
   elements: JSX.Element[]
 }
-type PageButtonProps = {
-  active: boolean
-}
 
 const PaginationStyles = styled.div`
   grid-column: 2/-1;
+  grid-row: 4/-1;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
 `
-const ButtonStyles = css`
-  color: ${({ theme }) => theme.colors.lightText};
-  background-color: ${({ theme }) => theme.colors.accent1};
-  border-radius: ${({ theme }) => theme.border.light};
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  padding: 1rem 1.5rem;
-  font-size: ${({ theme }) => theme.fontSize.s};
-  font-family: inherit;
-
-  &:disabled,
-  &[disabled] {
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #666666;
-    cursor: default;
-  }
-`
 const PageButtonsWrapper = styled.div`
   display: flex;
-`
-const NextPage = styled.button`
-  ${ButtonStyles}
-`
-const PrevPage = styled.button`
-  ${ButtonStyles}
-`
-const PageButton = styled.button<PageButtonProps>`
-  ${ButtonStyles}
-  border: 1px solid ${({ theme }) => theme.colors.accent1};
-  background-color: white;
-  color: ${({ theme }) => theme.colors.primaryText};
-
-  ${({ active }) =>
-    active &&
-    css`
-      color: ${({ theme }) => theme.colors.lightText};
-      background-color: ${({ theme }) => theme.colors.accent1};
-    `}
+  gap: 1rem;
 `
 
 const EquipmentsWithPagination = ({ elements }: EquipmentPaginationProps) => {
   const elementsPerPage = 6
+  const numberOfElements = elements.length
   const [currentPage, setCurrentPage] = useState(1)
 
-  const pagesCount = Math.ceil(elements.length / elementsPerPage)
+  const pagesCount = Math.ceil(numberOfElements / elementsPerPage)
   const pagesArr = Array.from(Array(pagesCount).keys())
 
   const indexStart = elementsPerPage * (currentPage - 1)
@@ -72,31 +34,40 @@ const EquipmentsWithPagination = ({ elements }: EquipmentPaginationProps) => {
   return (
     <>
       {elements.slice(indexStart, indexEnd)}
-      <PaginationStyles>
-        <PrevPage disabled={currentPage === 1} onClick={() => handleChangePage(currentPage - 1)}>
-          Poprzednia
-        </PrevPage>
-        <PageButtonsWrapper>
-          {pagesArr.map((i) => {
-            const page = i + 1
-            return (
-              <PageButton
-                active={page === currentPage}
-                key={i}
-                onClick={() => handleChangePage(page)}
-              >
-                {page}
-              </PageButton>
-            )
-          })}
-        </PageButtonsWrapper>
-        <NextPage
-          disabled={currentPage === pagesCount}
-          onClick={() => handleChangePage(currentPage + 1)}
-        >
-          Następna
-        </NextPage>
-      </PaginationStyles>
+
+      {numberOfElements >= elementsPerPage && (
+        <PaginationStyles>
+          <Button
+            variant="secondarySmall"
+            disabled={currentPage === 1}
+            onClick={() => handleChangePage(currentPage - 1)}
+          >
+            Poprzednia
+          </Button>
+          <PageButtonsWrapper>
+            {pagesArr.map((i) => {
+              const page = i + 1
+              return (
+                <Button
+                  variant="secondarySmall"
+                  disabled={page === currentPage}
+                  key={i}
+                  onClick={() => handleChangePage(page)}
+                >
+                  {page}
+                </Button>
+              )
+            })}
+          </PageButtonsWrapper>
+          <Button
+            variant="secondarySmall"
+            disabled={currentPage === pagesCount}
+            onClick={() => handleChangePage(currentPage + 1)}
+          >
+            Następna
+          </Button>
+        </PaginationStyles>
+      )}
     </>
   )
 }
