@@ -9,7 +9,7 @@ import { SimpleLink } from '../shared/Links'
 
 const CategoryMenuWrapper = styled.aside`
   ${cardBasicStyle}
-  grid-row: 1/-1;
+  grid-row: 1/span 3;
   grid-column: 1/1;
   // align-self: start;
   min-height: 70rem;

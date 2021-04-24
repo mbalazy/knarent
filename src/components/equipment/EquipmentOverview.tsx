@@ -3,6 +3,7 @@ import CategoryMenu from './CategoryMenu'
 import styled from 'styled-components'
 import { H3 } from '../../../theme/Typography'
 import { cardBasicStyle, centerInsideMe } from '../../../theme/globalStyle'
+import EquipmentPagination from './EquipmentPagination'
 
 type EquipmentOverviewProps = {
   title?: string
@@ -12,7 +13,7 @@ type EquipmentOverviewProps = {
 const EquipmentOverviewWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 9rem repeat(2, 36rem);
+  grid-template-rows: 9rem repeat(2, 36rem) 6rem;
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
   width: 90vw;
   margin: ${({ theme }) => theme.dimensions.equipmentMargin};
@@ -35,7 +36,7 @@ const EquipmentOverview = ({ title, searchForm, children }: EquipmentOverviewPro
         {title && <H3 bigger>{title}</H3>}
         {searchForm}
       </EquipmentHeadingWrapper>
-      {children}
+      <EquipmentPagination elements={children as JSX.Element[]} />
     </EquipmentOverviewWrapper>
   )
 }
