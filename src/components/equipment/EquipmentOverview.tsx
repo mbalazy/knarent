@@ -3,7 +3,7 @@ import CategoryMenu from './CategoryMenu'
 import styled from 'styled-components'
 import { H3 } from '../../../theme/Typography'
 import { cardBasicStyle, centerInsideMe } from '../../../theme/globalStyle'
-import EquipmentPagination from './EquipmentPagination'
+import EquipmentsWithPagination from './EquipmentsWithPagination'
 
 type EquipmentOverviewProps = {
   title?: string
@@ -28,7 +28,6 @@ const EquipmentHeadingWrapper = styled.div`
 `
 
 const EquipmentOverview = ({ title, searchForm, children }: EquipmentOverviewProps) => {
-  console.log(children)
   return (
     <EquipmentOverviewWrapper>
       <CategoryMenu />
@@ -36,7 +35,7 @@ const EquipmentOverview = ({ title, searchForm, children }: EquipmentOverviewPro
         {title && <H3 bigger>{title}</H3>}
         {searchForm}
       </EquipmentHeadingWrapper>
-      <EquipmentPagination elements={children as JSX.Element[]} />
+      <EquipmentsWithPagination elements={children as JSX.Element[]} />
     </EquipmentOverviewWrapper>
   )
 }
