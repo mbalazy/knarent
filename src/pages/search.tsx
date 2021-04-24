@@ -11,8 +11,16 @@ const InputStyles = styled.input`
   background-color: transparent;
   color: ${({ theme }) => theme.colors.lightText};
   border: none;
-  font-size: inherit;
+  font-size: ${({ theme }) => theme.fontSize.l};
   border-bottom: 1px solid white;
+  outline: none;
+  padding: 1rem 1.8rem;
+
+  &:active,
+  &:hover,
+  &:focus {
+    outline: 1px solid ${({ theme }) => theme.colors.lightText};
+  }
 `
 
 const Search = () => {
