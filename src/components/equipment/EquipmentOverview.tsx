@@ -13,7 +13,7 @@ type EquipmentOverviewProps = {
 const EquipmentOverviewWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 9rem repeat(2, 36rem) 6rem;
+  grid-template-rows: 7rem repeat(2, 30rem) 6rem;
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
   width: 90vw;
   margin: ${({ theme }) => theme.dimensions.equipmentMargin};

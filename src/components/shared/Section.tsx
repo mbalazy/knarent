@@ -12,6 +12,7 @@ const SectionWrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   gap: 6rem;
 
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
@@ -20,7 +21,7 @@ const SectionWrapper = styled.section`
 `
 const ChildrenWrapper = styled.div`
   width: 90vw;
-  max-width: 1200px;
+  max-width: 1100px;
 `
 
 const Section = ({ heading, subheading, children, id }: SectionProps) => {

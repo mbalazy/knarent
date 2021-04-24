@@ -35,7 +35,7 @@ const EquipmentsWithPagination = ({ elements }: EquipmentPaginationProps) => {
     <>
       {elements.slice(indexStart, indexEnd)}
 
-      {numberOfElements >= elementsPerPage && (
+      {numberOfElements > elementsPerPage && (
         <PaginationStyles>
           <Button
             variant="secondarySmall"

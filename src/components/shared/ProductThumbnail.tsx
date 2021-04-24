@@ -18,7 +18,7 @@ const ProductThumbnailWrapper = styled(Link)`
   flex-direction: column;
 `
 const ImageStyles = styled(GatsbyImage)`
-  flex: 1 0 250px;
+  flex: 1 0 200px;
   margin: 2rem;
 `
 const CopyWrapper = styled.div`
