@@ -27,6 +27,7 @@ const EquipmentHeadingWrapper = styled.div`
 `
 
 const EquipmentOverview = ({ title, searchForm, children }: EquipmentOverviewProps) => {
+  console.log(children)
   return (
     <EquipmentOverviewWrapper>
       <CategoryMenu />

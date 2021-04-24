@@ -4,6 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Product } from '../../types/sanity'
 import EquipmentOverview from '../components/equipment/EquipmentOverview'
+import ProductThumbnail from '../components/shared/ProductThumbnail'
 
 const InputStyles = styled.input`
   background-color: transparent;
@@ -24,12 +25,13 @@ const Search = () => {
       allSanityEquipment {
         nodes {
           title
-          keywords
-          slug {
-            current
+          images {
+            asset {
+              id
+            }
           }
+          id
           category {
-            id
             slug {
               current
             }
@@ -38,6 +40,9 @@ const Search = () => {
                 current
               }
             }
+          }
+          slug {
+            current
           }
         }
       }
@@ -53,15 +58,14 @@ const Search = () => {
       return product
     }
   })
-  console.log(filteredProducts)
   return (
     <>
       <EquipmentOverview
         searchForm={<InputStyles onChange={handleChange} defaultValue={searchQuery} />}
       >
-        <p>prod</p>
-        <p>prod</p>
-        <p>prod</p>
+        {filteredProducts.map((product: Product) => (
+          <ProductThumbnail key={product.id} product={product} />
+        ))}
       </EquipmentOverview>
     </>
   )
