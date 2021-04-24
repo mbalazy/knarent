@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { Product } from '../../types/sanity'
 import EquipmentOverview from '../components/equipment/EquipmentOverview'
 import ProductThumbnail from '../components/shared/ProductThumbnail'
+import filterProducts from '../components/utils/filterProducts'
 
 const InputStyles = styled.input`
   background-color: transparent;
@@ -49,21 +50,12 @@ const Search = () => {
     }
   `)
 
-  const filteredProducts = allProducts.filter((product: Product) => {
-    if (searchQuery === '' || searchQuery === null) return false
-    else if (
-      product.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.keywords?.toLowerCase().includes(searchQuery.toLowerCase())
-    ) {
-      return product
-    }
-  })
+  const filteredProduct = filterProducts(allProducts, searchQuery)
+  const searchForm = <InputStyles onChange={handleChange} defaultValue={searchQuery} />
   return (
     <>
-      <EquipmentOverview
-        searchForm={<InputStyles onChange={handleChange} defaultValue={searchQuery} />}
-      >
-        {filteredProducts.map((product: Product) => (
+      <EquipmentOverview searchForm={searchForm}>
+        {filteredProduct.map((product: Product) => (
           <ProductThumbnail key={product.id} product={product} />
         ))}
       </EquipmentOverview>
