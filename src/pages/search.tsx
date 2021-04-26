@@ -6,20 +6,34 @@ import { Product } from '../../types/sanity'
 import EquipmentOverview from '../components/equipment/EquipmentOverview'
 import ProductThumbnail from '../components/shared/ProductThumbnail'
 import filterProducts from '../components/utils/filterProducts'
+import { ReactComponent as SearchIcon } from '../../images/loupe.svg'
 
+const InputWrapper = styled.form`
+  border-bottom: 1px solid white;
+  padding: 0 1rem;
+  label {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    align-items: center;
+  }
+`
+const SearchIconStyles = styled(SearchIcon)`
+  fill: white;
+  transition: transform 0.2s;
+`
 const InputStyles = styled.input`
   background-color: transparent;
   color: ${({ theme }) => theme.colors.lightText};
   border: none;
   font-size: ${({ theme }) => theme.fontSize.l};
-  border-bottom: 1px solid white;
   outline: none;
-  padding: 1rem 1.8rem;
+  padding: 1rem;
 
-  &:active,
-  &:hover,
-  &:focus {
-    outline: 1px solid ${({ theme }) => theme.colors.lightText};
+  &:hover ~ svg,
+  &:active ~ svg,
+  &:focus ~ svg {
+    transform: scale(1.2);
   }
 `
 
@@ -59,7 +73,14 @@ const Search = () => {
   `)
 
   const filteredProduct = filterProducts(allProducts, searchQuery)
-  const searchForm = <InputStyles onChange={handleChange} defaultValue={searchQuery} />
+  const searchForm = (
+    <InputWrapper>
+      <label htmlFor="szukaj">
+        <InputStyles id="szukaj" name="szukaj" onChange={handleChange} defaultValue={searchQuery} />
+        <SearchIconStyles />
+      </label>
+    </InputWrapper>
+  )
   return (
     <>
       <EquipmentOverview searchForm={searchForm}>
