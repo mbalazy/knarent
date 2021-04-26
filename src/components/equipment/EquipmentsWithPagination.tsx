@@ -49,8 +49,8 @@ const EquipmentsWithPagination = ({ elements }: EquipmentPaginationProps) => {
               const page = i + 1
               return (
                 <Button
-                  variant="secondarySmall"
-                  disabled={page === currentPage}
+                  variant="ghost"
+                  active={page === currentPage}
                   key={i}
                   onClick={() => handleChangePage(page)}
                 >

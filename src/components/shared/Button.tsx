@@ -2,8 +2,9 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 export interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'secondarySmall'
+  variant?: 'primary' | 'secondary' | 'secondarySmall' | 'ghost'
   disabled?: boolean
+  active?: boolean
   children: string | number
   onClick: () => void
 }
@@ -15,7 +16,7 @@ export const BottomBaseStyles = css<ButtonProps>`
 
   &:disabled,
   &[disabled] {
-    border: 1px solid #999999;
+    border: 1px solid ${({ theme }) => theme.colors.grey100};
     background-color: transparent;
     color: #666666;
     cursor: default;
@@ -39,16 +40,33 @@ export const BottomBaseStyles = css<ButtonProps>`
           padding: 1.5rem 5rem;
           border-radius: 10px;
         `
+      case 'ghost':
+        return css`
+          color: #666666;
+          background-color: transparent;
+          font-size: ${({ theme }) => theme.fontSize.s};
+          padding: 1rem 1.5rem;
+          border: 1px solid ${({ theme }) => theme.colors.grey100};
+          border-radius: 10px;
+        `
       case 'secondarySmall':
         return css`
           color: ${({ theme }) => theme.colors.primaryText};
           background-color: ${({ theme }) => theme.colors.primary};
           font-size: ${({ theme }) => theme.fontSize.s};
           padding: 1rem 1.5rem;
+          border: 1px solid transparent;
           border-radius: 10px;
         `
     }
   }}
+  ${({ active }) =>
+    active &&
+    css`
+      color: ${({ theme }) => theme.colors.primaryText};
+      background-color: ${({ theme }) => theme.colors.primary};
+      cursor: default;
+    `}
 `
 const ButtonStyles = styled.button`
   ${BottomBaseStyles}
