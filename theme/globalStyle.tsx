@@ -25,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Work Sans', sans-serif;
   }
 
+  a {
+    text-decoration: none
+  }
+
   li {
     list-style: none; 
   }

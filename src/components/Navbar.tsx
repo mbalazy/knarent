@@ -66,7 +66,7 @@ const Navbar = ({ sticky }: NavProps) => {
   const [firstPhoneNumber] = CONSTS.telephones
   return (
     <NavWrapper sticky={sticky}>
-      <Link to="/">
+      <Link to="/" style={{ display: 'flex' }}>
         <Logo />
       </Link>
       <DesktopMenuStyles>
