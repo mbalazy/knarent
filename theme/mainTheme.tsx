@@ -44,6 +44,21 @@ const mainTheme = {
     equipmentMargin: '6rem' as const,
     equipmentGap: '4rem' as const,
   },
+
+  up: (breakpoint: string, vertical = false) =>
+    `@media (min-${vertical ? 'height' : 'width'}: calc(${breakpoint} + 1px))`,
+  down: (breakpoint: string, vertical = false) =>
+    `@media (max-${vertical ? 'height' : 'width'}: ${breakpoint})`,
+  between: (breakpointMin: string, breakpointMax: string, vertical = false) =>
+    `@media (max-${vertical ? 'height' : 'width'}: ${breakpointMax}) and (min-${
+      vertical ? 'height' : 'width'
+    }: calc(${breakpointMin} + 1px))`,
+
+  breakpoints: {
+    l: '900px' as const,
+    m: '768px' as const,
+    s: '400px' as const,
+  },
 }
 
 export type MainThemeType = typeof mainTheme
