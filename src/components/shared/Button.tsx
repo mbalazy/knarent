@@ -6,7 +6,7 @@ export interface ButtonProps {
   disabled?: boolean
   active?: boolean
   children: string | number
-  onClick: () => void
+  onClick?: () => void
 }
 
 export const BottomBaseStyles = css<ButtonProps>`
