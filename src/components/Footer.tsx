@@ -14,8 +14,8 @@ const FooterWrapper = styled.footer`
   align-items: center;
 `
 const FooterInnerWrapper = styled.div`
-  max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
   width: 90vw;
+  max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
 
   display: flex;
   justify-content: space-between;

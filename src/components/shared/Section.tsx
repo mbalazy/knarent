@@ -21,7 +21,7 @@ const SectionWrapper = styled.section`
 `
 const ChildrenWrapper = styled.div`
   width: 90vw;
-  max-width: 1100px;
+  max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
 `
 
 const Section = ({ heading, subheading, children, id }: SectionProps) => {

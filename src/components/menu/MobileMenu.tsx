@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
+import { cardBasicStyle } from '../../../theme/globalStyle'
+import CategoryMenu from '../equipment/CategoryMenu'
+import Menu from './Menu'
 type MobileMenuProps = {
   showMenu: boolean
 }
@@ -16,10 +19,14 @@ const MobileMenuStyles = styled.section<MobileMenuProps>`
   position: fixed;
   top: ${({ theme }) => theme.dimensions.navbarHeight};
   bottom: 0px;
-  left: 10%;
+  left: 0%;
   right: 0px;
-  border-radius: 10px;
-  background-color: hsla(0, 100%, 100%, 0.97);
+  background-color: ${({ theme }) => theme.colors.accent2};
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
   ${({ showMenu }) =>
     showMenu &&
     css`
@@ -40,8 +47,8 @@ const ToggleMenuButton = styled.button`
 `
 const ButtonStyles = styled.div<CloseButtonProps>`
   position: relative;
-  width: 80%;
-  height: 4px;
+  width: 70%;
+  height: 3px;
   background: ${({ theme }) => theme.colors.black};
   border-radius: 4px;
   ${MobileMenuTransition}
@@ -67,7 +74,7 @@ const ButtonStyles = styled.div<CloseButtonProps>`
     ${MobileMenuTransition}
   }
   &:before {
-    transform: translateY(-12px);
+    transform: translateY(-1rem);
     ${({ showCloseIcon }) =>
       showCloseIcon &&
       css`
@@ -75,13 +82,17 @@ const ButtonStyles = styled.div<CloseButtonProps>`
       `}
   }
   &:after {
-    transform: translateY(12px);
+    transform: translateY(1rem);
     ${({ showCloseIcon }) =>
       showCloseIcon &&
       css`
         transform: rotate(-45deg);
       `}
   }
+`
+const MobileNavWrapper = styled.div`
+  ${cardBasicStyle}
+  padding: 3rem;
 `
 
 const MobileMenu = () => {
@@ -93,8 +104,10 @@ const MobileMenu = () => {
         <ButtonStyles showCloseIcon={showMenu} />
       </ToggleMenuButton>
       <MobileMenuStyles showMenu={showMenu}>
-        component
-        <p>MobileMenu</p>
+        <MobileNavWrapper>
+          <Menu vertical />
+        </MobileNavWrapper>
+        <CategoryMenu />
       </MobileMenuStyles>
     </>
   )

@@ -33,7 +33,7 @@ const NavWrapper = styled.nav<NavProps>`
     }
   `}
 `
-const PhoneWrapperStyles = styled.div`
+const PhoneWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -47,7 +47,7 @@ const PhoneWrapperStyles = styled.div`
     }
   `}
 `
-const DesktopMenuStyles = styled.div`
+const DesktopMenu = styled.div`
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
       display: none;
@@ -69,13 +69,13 @@ const Navbar = ({ sticky }: NavProps) => {
       <Link to="/" style={{ display: 'flex' }}>
         <Logo />
       </Link>
-      <DesktopMenuStyles>
+      <DesktopMenu>
         <Menu />
-      </DesktopMenuStyles>
-      <PhoneWrapperStyles>
+      </DesktopMenu>
+      <PhoneWrapper>
         <Phone />
         {firstPhoneNumber}
-      </PhoneWrapperStyles>
+      </PhoneWrapper>
       <MobileMenuWrapper>
         <MobileMenu />
       </MobileMenuWrapper>

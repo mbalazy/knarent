@@ -20,6 +20,7 @@ const MenuStyles = styled.ul<MenuProps>`
     vertical &&
     css`
       flex-direction: column;
+      align-items: flex-start;
       width: auto;
       margin: 0;
       gap: 2rem;

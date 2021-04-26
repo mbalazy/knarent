@@ -39,7 +39,7 @@ const mainTheme = {
 
   dimensions: {
     navbarHeight: '70px' as const,
-    mainContentWidth: '1200px' as const,
+    mainContentWidth: '1100px' as const,
     mainContentGap: '12rem' as const,
     equipmentMargin: '6rem' as const,
     equipmentGap: '4rem' as const,
@@ -56,7 +56,7 @@ const mainTheme = {
 
   breakpoints: {
     l: '900px' as const,
-    m: '768px' as const,
+    m: '767px' as const,
     s: '450px' as const,
   },
 }

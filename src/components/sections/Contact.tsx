@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import CONSTS from '../../../theme/CONSTS'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import { H4 } from '../../../theme/Typography'
@@ -19,40 +19,41 @@ const ContactWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
-    @media (max-width: 767px) {
-    }
   }
 `
 const MapStyles = styled.article`
   grid-row: 1/-1;
   grid-column: 2/-1;
   overflow: hidden;
-
-  @media (max-width: 767px) {
-    grid-column: 1/-1;
-    grid-row: 3 / -1;
-  }
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      grid-column: 1/-1;
+      grid-row: 3 / -1;
+    }
+  `}
 `
 const AderesStyles = styled.article`
   padding: 3rem;
   grid-row: 1 / span 2;
   grid-column: 1/1;
 
-  @media (max-width: 767px) {
-    grid-column: 1/-1;
-    grid-row: 1 / span 1;
-  }
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      grid-column: 1/-1;
+      grid-row: 1 / span 1;
+    }
+  `}
 `
 const WorkingHoursStyles = styled.article`
   padding: 3rem;
   grid-row: 3 / span 2;
   grid-column: 1/1;
-
-  @media (max-width: 767px) {
-    grid-column: 1/-1;
-    grid-row: 2 / span 1;
-  }
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      grid-column: 1/-1;
+      grid-row: 2 / span 1;
+    }
+  `}
 `
 
 const Contact = () => {
