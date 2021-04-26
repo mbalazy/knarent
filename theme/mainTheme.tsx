@@ -17,12 +17,12 @@ const mainTheme = {
 
   fontSize: {
     xs: '1.2rem' as const,
-    s: '1.6rem' as const,
-    m: '1.8rem' as const,
-    l: '2rem' as const,
-    xl: '2.4rem' as const,
-    '2xl': '2.8rem' as const,
-    '3xl': '3.4rem' as const,
+    s: '1.5rem' as const,
+    m: '1.6rem' as const,
+    l: '1.8rem' as const,
+    xl: '2.2rem' as const,
+    '2xl': '2.4rem' as const,
+    '3xl': '3rem' as const,
   },
 
   fontWeight: {
@@ -57,7 +57,7 @@ const mainTheme = {
   breakpoints: {
     l: '900px' as const,
     m: '768px' as const,
-    s: '400px' as const,
+    s: '450px' as const,
   },
 }
 

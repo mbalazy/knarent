@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroImage from './HeroImage'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { ReactComponent as BigLogo } from '../../../images/logo_knarent_big.svg'
 import { BigLink } from '../shared/Links'
 import { H1, H2 } from '../../../theme/Typography'
@@ -22,6 +22,14 @@ const Content = styled.div`
   justify-content: space-between;
   gap: 6rem;
   flex-wrap: wrap;
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.s)} {
+      padding: 3rem;
+      gap: 1rem;
+      justify-content: center;
+    }
+  `}
 `
 const Copy = styled.section`
   flex: 1 1 350px;
@@ -32,8 +40,22 @@ const Copy = styled.section`
   gap: 2rem;
 
   & > a {
-    margin-top: 6vh;
+    margin-top: 5vh;
   }
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.s)} {
+      h1 {
+        font-size: 2.4rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      a {
+        font-size: 1.6rem;
+        align-self: center;
+      }
+    }
+  `}
 `
 const LogoWrapper = styled.section`
   flex: 1 1 300px;
@@ -44,9 +66,19 @@ const LogoWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.s)} {
+      flex: 1 1 300px;
+    }
+  `}
 `
 const LogoStyles = styled(BigLogo)`
   padding: 8rem 6rem;
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.s)} {
+      padding: 3rem;
+    }
+  `}
 `
 
 const Hero = () => {

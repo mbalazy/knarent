@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { getImage } from 'gatsby-plugin-image'
 import { graphql, useStaticQuery } from 'gatsby'
 import { ImageOverlayWrapper, FullImageStyles } from '../shared/ImageOverlay'
@@ -13,6 +13,11 @@ const HeroContentWrapper = styled.div`
   height: calc(100vh - 70px);
   height: calc(100vh - ${({ theme }) => theme.dimensions.navbarHeight});
   width: 100%;
+  ${({ theme: { down } }) => css`
+    ${down('620px', true)} {
+      min-height: 100vh;
+    }
+  `}
 `
 
 const HeroImage = ({ children }: HeroContentProps) => {

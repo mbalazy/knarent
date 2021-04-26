@@ -14,6 +14,7 @@ const MenuStyles = styled.ul<MenuProps>`
   width: 40%;
   margin: 0 4rem;
   white-space: nowrap;
+  gap: 4rem;
 
   ${({ vertical }) =>
     vertical &&

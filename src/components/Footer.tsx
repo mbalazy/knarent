@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { cardBasicStyle } from '../../theme/globalStyle'
 import { H4 } from '../../theme/Typography'
 import Menu from './menu/Menu'
@@ -21,6 +21,17 @@ const FooterInnerWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 4rem;
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.s)} {
+      flex-direction: column;
+      gap: 4rem;
+
+      & ul {
+        display: none;
+      }
+    }
+  `}
 `
 const FooterContentStyles = styled.div`
   display: flex;

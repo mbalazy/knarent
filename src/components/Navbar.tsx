@@ -29,7 +29,7 @@ const NavWrapper = styled.nav<NavProps>`
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
-      padding: 0 5rem;
+      padding: 0 4rem;
     }
   `}
 `
