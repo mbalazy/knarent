@@ -38,9 +38,9 @@ const EquipmentOverviewWrapper = styled.div`
     }
   `}
 `
-const CategoryMenuStyles = styled.div`
+export const CategoryMenuStyles = styled.div`
   grid-column: 1 / span 1;
-  grid-row: 1 / span 4;
+  grid-row: 1 / span 3;
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {

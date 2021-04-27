@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Product as ProductType } from '../../../types/sanity'
 import { getImageFromId } from '../utils/getHeroImageFromId'
 
@@ -16,6 +16,13 @@ const ProductGalleryWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.l)} {
+      width: 70%;
+      padding: 0;
+    }
+  `}
 `
 const BigImageStyles = styled.div`
   margin-top: auto;

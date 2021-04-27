@@ -1,6 +1,6 @@
-import React from 'react'
 import { graphql, navigate } from 'gatsby'
-import styled from 'styled-components'
+import React from 'react'
+import styled, { css } from 'styled-components'
 import { ReactComponent as Arrow } from '../../images/arrow.svg'
 import { ReactComponent as Phone } from '../../images/phone1.svg'
 import CONSTS from '../../theme/CONSTS'
@@ -8,9 +8,10 @@ import { cardBasicStyle } from '../../theme/globalStyle'
 import { H2, P } from '../../theme/Typography'
 import { Product as ProductType } from '../../types/sanity'
 import CategoryMenu from '../components/equipment/CategoryMenu'
-import BusinessFeatures from '../components/shared/BusinessFeatures'
-import SimilarProducts from '../components/equipment/SimilarProducts'
+import { CategoryMenuStyles } from '../components/equipment/EquipmentOverview'
 import ProductGallery from '../components/equipment/ProductGallery'
+import SimilarProducts from '../components/equipment/SimilarProducts'
+import BusinessFeatures from '../components/shared/BusinessFeatures'
 
 type ProductProps = {
   data: {
@@ -35,6 +36,12 @@ const ProductMainInfoGrid = styled.div`
   section {
     ${cardBasicStyle}
   }
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      display: flex;
+      flex-direction: column;
+    }
+  `}
 `
 const ProductMainInfo = styled.section`
   grid-column: 2/-1;
@@ -44,6 +51,19 @@ const ProductMainInfo = styled.section`
   justify-content: space-between;
 
   position: relative;
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.l)} {
+      grid-column: 2/-1;
+      flex-direction: column;
+      padding: 2rem;
+      gap: 4rem;
+    }
+  `}
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      flex: 1 1 30rem;
+    }
+  `}
 `
 const ProductDetails = styled.div`
   flex: 1;
@@ -51,6 +71,14 @@ const ProductDetails = styled.div`
   flex-direction: column;
   text-align: center;
   gap: 4rem;
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      flex: 1 1 10rem;
+      justify-content: space-evenly;
+      gap: 2rem;
+    }
+  `}
 `
 const PhoneStyles = styled.div`
   padding: 2rem;
@@ -87,9 +115,16 @@ const BackButton = styled.button`
 const ProductDescription = styled.section`
   padding: 3rem 4rem;
   grid-column: 2/-1;
-  grid-row: -2/-1;
+  grid-row: -2 / span 1;
   max-height: 26rem;
   overflow-y: auto;
+
+  position: relative;
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      flex: 1 1 30rem;
+    }
+  `}
 `
 const Product = ({ data: { product, similarProducts } }: ProductProps) => {
   const { telephones } = CONSTS
@@ -98,7 +133,9 @@ const Product = ({ data: { product, similarProducts } }: ProductProps) => {
   return (
     <ProductWrapper>
       <ProductMainInfoGrid>
-        <CategoryMenu />
+        <CategoryMenuStyles>
+          <CategoryMenu />
+        </CategoryMenuStyles>
         <ProductMainInfo>
           <ProductGallery sanityImagesData={product.images} productTitle={product.title} />
           <ProductDetails>
