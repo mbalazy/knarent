@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import { H3 } from '../../../theme/Typography'
 import { Product } from '../../../types/sanity'
@@ -24,13 +24,31 @@ const SimilarProductsList = styled.ul`
 
   padding: ${({ theme }) => theme.dimensions.equipmentMargin};
   padding-top: ${({ theme }) => theme.dimensions.equipmentGap};
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      gap: 3rem;
+    }
+  `}
   & > * {
     flex: 0 0 270px;
   }
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      padding: 2rem;
+    }
+  `}
 `
 const SimilarProductsHeading = styled(H3)`
   margin: ${({ theme }) => theme.dimensions.equipmentMargin} 0 0
     ${({ theme }) => theme.dimensions.equipmentMargin};
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      margin: 4rem 0 1rem 3rem;
+    }
+  `}
 `
 
 const SimilarProducts = ({ products }: SimilarProductsProps) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from '@reach/router'
 import { graphql, Link, useStaticQuery } from 'gatsby'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import { Category, MainCategory } from '../../../types/sanity'
 import { H4 } from '../../../theme/Typography'
@@ -18,6 +18,12 @@ const LinksStyles = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3rem;
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      padding: 2rem 3rem;
+    }
+  `}
 `
 const MenuLinkStyles = styled(Link)`
   text-decoration: none;

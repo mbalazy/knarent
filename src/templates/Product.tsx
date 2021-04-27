@@ -95,6 +95,12 @@ const PhoneStyles = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      padding: 2rem 3rem;
+    }
+  `}
 `
 const BackButton = styled.button`
   position: absolute;
