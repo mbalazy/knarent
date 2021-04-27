@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 export interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'secondarySmall' | 'ghost'
+  variant?: 'primary' | 'secondary' | 'secondarySmall' | 'ghost' | 'ghostOutline' | 'active'
   disabled?: boolean
   active?: boolean
   children: string | number
@@ -40,15 +40,6 @@ export const BottomBaseStyles = css<ButtonProps>`
           padding: 1.5rem 5rem;
           border-radius: 10px;
         `
-      case 'ghost':
-        return css`
-          color: #666666;
-          background-color: transparent;
-          font-size: ${({ theme }) => theme.fontSize.s};
-          padding: 1rem 1.5rem;
-          border: 1px solid ${({ theme }) => theme.colors.grey100};
-          border-radius: 10px;
-        `
       case 'secondarySmall':
         return css`
           color: ${({ theme }) => theme.colors.primaryText};
@@ -56,6 +47,21 @@ export const BottomBaseStyles = css<ButtonProps>`
           font-size: ${({ theme }) => theme.fontSize.s};
           padding: 1rem 1.5rem;
           border: 1px solid transparent;
+          border-radius: 10px;
+        `
+      case 'ghost':
+        return css`
+          color: #666666;
+          background-color: transparent;
+          border: 1px solid ${({ theme }) => theme.colors.grey100};
+          border-radius: 10px;
+        `
+      case 'ghostOutline':
+        return css`
+          color: #666666;
+          background-color: transparent;
+          padding: 1rem 1.5rem;
+          border: 2px solid ${({ theme }) => theme.colors.primary};
           border-radius: 10px;
         `
     }

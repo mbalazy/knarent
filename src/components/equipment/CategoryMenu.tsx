@@ -7,13 +7,12 @@ import { Category, MainCategory } from '../../../types/sanity'
 import { H4 } from '../../../theme/Typography'
 import { SimpleLink } from '../shared/Links'
 
-const CategoryMenuWrapper = styled.aside`
+const CategoryMenuStyles = styled.aside`
   ${cardBasicStyle}
-  grid-row: 1/span 3;
-  grid-column: 1/1;
-  // align-self: start;
-  min-height: 70rem;
   overflow-y: auto;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 3;
+  height: 100%;
 `
 const LinksStyles = styled.div`
   display: flex;
@@ -57,7 +56,7 @@ const CategoryMenu = () => {
   `)
 
   return (
-    <CategoryMenuWrapper>
+    <CategoryMenuStyles>
       {mainCategories.nodes
         .sort((a: MainCategory, b: MainCategory) => a.title.localeCompare(b.title))
         .map((mainCategory: MainCategory) => {
@@ -83,7 +82,7 @@ const CategoryMenu = () => {
             </LinksStyles>
           )
         })}
-    </CategoryMenuWrapper>
+    </CategoryMenuStyles>
   )
 }
 
