@@ -1,6 +1,6 @@
 import React from 'react'
 import { Category } from '../../../types/sanity'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import { getImageFromId } from '../utils/getHeroImageFromId'
 import { ImageOverlayWrapper, FullImageStyles } from '../shared/ImageOverlay'
@@ -15,6 +15,12 @@ const CategoryThumbnailWrapper = styled(Link)`
   ${cardBasicStyle}
   overflow: hidden;
   position: relative;
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.l)} {
+      height: 36rem;
+    }
+  `}
 `
 const TitleWrapper = styled.div`
   position: absolute;
@@ -22,6 +28,14 @@ const TitleWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   color: ${({ theme }) => theme.colors.lightText};
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      h3 {
+        font-size: 2.2rem;
+      }
+    }
+  `}
 `
 
 const CategoryThumbnail = ({ category }: CategoryThumbnailProps) => {
