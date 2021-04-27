@@ -13,11 +13,12 @@ type EquipmentOverviewProps = {
 const EquipmentOverviewWrapper = styled.div`
   width: 90vw;
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
+  margin: ${({ theme }) => theme.dimensions.equipmentMargin};
+
   display: grid;
+  gap: ${({ theme }) => theme.dimensions.equipmentGap};
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 7rem repeat(2, 30rem) 6rem;
-  margin: ${({ theme }) => theme.dimensions.equipmentMargin};
-  gap: ${({ theme }) => theme.dimensions.equipmentGap};
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
@@ -25,14 +26,12 @@ const EquipmentOverviewWrapper = styled.div`
       grid-template-rows: 7rem repeat(auto-fill, 36rem);
     }
   `}
-
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 7rem repeat(auto-fit, 36rem);
     }
   `}
-
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.s)} {
       grid-template-columns: 1fr;
@@ -42,6 +41,7 @@ const EquipmentOverviewWrapper = styled.div`
 const CategoryMenuStyles = styled.div`
   grid-column: 1 / span 1;
   grid-row: 1 / span 4;
+
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
       grid-row: 1 / 6;
@@ -56,9 +56,9 @@ const CategoryMenuStyles = styled.div`
 const EquipmentHeadingWrapper = styled.div`
   ${cardBasicStyle}
   ${centerInsideMe}
-  grid-column: 2/-1;
   color: ${({ theme }) => theme.colors.lightText};
   background-color: ${({ theme }) => theme.colors.accent2};
+  grid-column: 2/-1;
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {

@@ -9,17 +9,18 @@ type EquipmentPaginationProps = {
 const PaginationStyles = styled.div`
   grid-column: 2/-1;
   grid-row: 4/-1;
+  gap: 2rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
       grid-column: 2 / -1;
       grid-row: 5 / span 1;
     }
   `}
-
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
       grid-column: 1 / span 2;
@@ -49,6 +50,7 @@ const EquipmentsWithPagination = ({ elements }: EquipmentPaginationProps) => {
 
   const indexStart = elementsPerPage * (currentPage - 1)
   const indexEnd = elementsPerPage * currentPage
+
   const handleChangePage = (nextPage: number) => setCurrentPage(nextPage)
   return (
     <>
