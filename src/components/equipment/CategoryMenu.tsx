@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useLocation } from '@reach/router'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import styled, { css } from 'styled-components'
@@ -6,6 +6,11 @@ import { cardBasicStyle } from '../../../theme/globalStyle'
 import { Category, MainCategory } from '../../../types/sanity'
 import { H4 } from '../../../theme/Typography'
 import { SimpleLink } from '../shared/Links'
+import { MenuContext } from '../menu/MobileMenuContext'
+
+type CategoryMenuProps = {
+  onMobile?: boolean
+}
 
 const CategoryMenuStyles = styled.aside`
   ${cardBasicStyle}
@@ -21,7 +26,7 @@ const LinksStyles = styled.div`
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
-      padding: 2rem 3rem;
+      padding: 3rem 3rem 0;
     }
   `}
 `
@@ -30,8 +35,10 @@ const MenuLinkStyles = styled(Link)`
   color: inherit;
 `
 
-const CategoryMenu = () => {
+const CategoryMenu = ({ onMobile }: CategoryMenuProps) => {
   const location = useLocation()
+  const { setShowMobileMenu } = useContext(MenuContext)
+  const handleCloseMenu = () => onMobile && setShowMobileMenu(false)
   const {
     allSanityMainCategory: mainCategories,
     allSanityCategory: categories,
@@ -68,7 +75,7 @@ const CategoryMenu = () => {
         .map((mainCategory: MainCategory) => {
           return (
             <LinksStyles key={mainCategory.id}>
-              <MenuLinkStyles to={`/${mainCategory.slug.current}`}>
+              <MenuLinkStyles to={`/${mainCategory.slug.current}`} onClick={handleCloseMenu}>
                 <H4 smaller>{mainCategory.title}</H4>
               </MenuLinkStyles>
               {categories.nodes
@@ -80,6 +87,7 @@ const CategoryMenu = () => {
                         smaller
                         key={category.id}
                         to={`/${mainCategory.slug.current}/${category.slug.current}`}
+                        onClick={handleCloseMenu}
                       >
                         {category.title}
                       </SimpleLink>

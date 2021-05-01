@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import styled, { css } from 'styled-components'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import CategoryMenu from '../equipment/CategoryMenu'
 import DesktopMenu from './DesktopMenu'
+import { MenuContext } from './MobileMenuContext'
 
 type MobileMenuProps = {
   showMenu: boolean
@@ -97,18 +98,18 @@ const MobileNavWrapper = styled.div`
 `
 
 const MobileMenu = () => {
-  const [showMenu, setShowMenu] = useState(false)
-  const handleToggleMenu = () => setShowMenu(!showMenu)
+  const { showMobileMenu, setShowMobileMenu } = useContext(MenuContext)
+  const handleToggleMenu = () => setShowMobileMenu(!showMobileMenu)
   return (
     <>
       <ToggleMenuButton onClick={handleToggleMenu}>
-        <ButtonStyles showCloseIcon={!!showMenu} />
+        <ButtonStyles showCloseIcon={!!showMobileMenu} />
       </ToggleMenuButton>
-      <MobileMenuStyles showMenu={!!showMenu}>
+      <MobileMenuStyles showMenu={!!showMobileMenu}>
         <MobileNavWrapper>
-          <DesktopMenu vertical />
+          <DesktopMenu vertical onMobile />
         </MobileNavWrapper>
-        <CategoryMenu />
+        <CategoryMenu onMobile />
       </MobileMenuStyles>
     </>
   )

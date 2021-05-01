@@ -37,9 +37,9 @@ const SimpleLinkStyles = styled(Link)<LinkProps>`
       font-size: ${({ theme }) => theme.fontSize.s};
     `}
 `
-export const SimpleLink = ({ children, to, smaller }: LinkProps) => {
+export const SimpleLink = ({ children, to, smaller, ...delegated }: LinkProps) => {
   return (
-    <SimpleLinkStyles to={to} smaller={smaller}>
+    <SimpleLinkStyles to={to} smaller={smaller} {...delegated}>
       {children}
     </SimpleLinkStyles>
   )

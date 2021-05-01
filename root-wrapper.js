@@ -4,6 +4,7 @@ import theme from './theme/mainTheme'
 import GlobalStyle from './theme/globalStyle'
 import Navbar from './src/components/Navbar'
 import Footer from './src/components/Footer'
+import { MenuProvider } from './src/components/menu/MobileMenuContext'
 import '@fontsource/work-sans'
 import '@fontsource/montserrat'
 
@@ -19,9 +20,11 @@ const PageWrapper = styled.main`
 
 export const wrapPageElement = ({ element }) => (
   <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Navbar sticky />
-    <PageWrapper>{element}</PageWrapper>
-    <Footer />
+    <MenuProvider>
+      <GlobalStyle />
+      <Navbar sticky />
+      <PageWrapper>{element}</PageWrapper>
+      <Footer />
+    </MenuProvider>
   </ThemeProvider>
 )

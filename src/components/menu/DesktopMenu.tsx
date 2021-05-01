@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled, { css } from 'styled-components'
 import CONSTS from '../../../theme/CONSTS'
 import MenuItem from './MenuItem'
+import { MenuContext } from './MobileMenuContext'
 
 type MenuProps = {
   vertical?: boolean
+  onMobile?: boolean
 }
 
 const MenuStyles = styled.ul<MenuProps>`
@@ -27,12 +29,14 @@ const MenuStyles = styled.ul<MenuProps>`
     `}
 `
 
-const DesktopMenu = ({ vertical }: MenuProps) => {
+const DesktopMenu = ({ vertical, onMobile }: MenuProps) => {
   const { menuItemList } = CONSTS
+  const { setShowMobileMenu } = useContext(MenuContext)
+  const handleCloseMenu = () => onMobile && setShowMobileMenu(false)
   return (
     <MenuStyles vertical={vertical}>
       {menuItemList.map((menuItem) => (
-        <MenuItem item={menuItem} key={menuItem.label} />
+        <MenuItem item={menuItem} key={menuItem.label} onClick={handleCloseMenu} />
       ))}
     </MenuStyles>
   )
