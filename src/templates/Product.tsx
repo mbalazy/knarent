@@ -62,6 +62,7 @@ const ProductMainInfo = styled.section`
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
       flex: 1 1 30rem;
+      position: static;
     }
   `}
 `
@@ -117,6 +118,16 @@ const BackButton = styled.button`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      top: 8rem;
+      right: auto;
+      left: 3rem;
+      padding: 0.3rem 1.2rem;
+      z-index: 2;
+    }
+  `}
 `
 const ProductDescription = styled.section`
   padding: 3rem 4rem;
@@ -128,12 +139,12 @@ const ProductDescription = styled.section`
   position: relative;
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
-      flex: 1 1 30rem;
+      max-height: 44rem;
     }
   `}
 `
 const Product = ({ data: { product, similarProducts } }: ProductProps) => {
-  const { telephones } = CONSTS
+  const [telephone] = CONSTS.telephones
   const handleGoBack = () => navigate(-1)
 
   return (
@@ -148,7 +159,7 @@ const Product = ({ data: { product, similarProducts } }: ProductProps) => {
             <H2>{product.title}</H2>
             <PhoneStyles>
               <Phone />
-              {telephones[0]}
+              {telephone}
             </PhoneStyles>
           </ProductDetails>
           <BackButton onClick={handleGoBack}>

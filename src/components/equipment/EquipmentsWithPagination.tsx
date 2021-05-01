@@ -32,6 +32,7 @@ const PaginationStyles = styled.div`
       grid-column: 1 / span 1;
       grid-row: 8 / span 1;
       flex-direction: column;
+      gap: 2.4rem;
     }
   `}
 `

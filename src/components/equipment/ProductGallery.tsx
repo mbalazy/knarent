@@ -23,6 +23,11 @@ const ProductGalleryWrapper = styled.div`
       padding: 0;
     }
   `}
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.s)} {
+      gap: 1rem;
+    }
+  `}
 `
 const BigImageStyles = styled.div`
   margin-top: auto;
