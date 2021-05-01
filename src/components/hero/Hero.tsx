@@ -88,7 +88,7 @@ const Hero = () => {
         <Copy>
           <H1>FHU Knarent Artur Knap</H1>
           <H2>Wypożyczalnia sprzętu budowlanego, ogrodniczego i sprzątającego.</H2>
-          <BigLink to="/">Zobacz nasz asortyment</BigLink>
+          <BigLink to="/#kontakt">Sprawdź adres</BigLink>
         </Copy>
         <LogoWrapper>
           <LogoStyles />

@@ -27,15 +27,15 @@ const MenuStyles = styled.ul<MenuProps>`
     `}
 `
 
-const Menu = ({ vertical }: MenuProps) => {
-  const allLinks = CONSTS.menuItemList
+const DesktopMenu = ({ vertical }: MenuProps) => {
+  const { menuItemList } = CONSTS
   return (
     <MenuStyles vertical={vertical}>
-      {allLinks.map((menuItem) => (
+      {menuItemList.map((menuItem) => (
         <MenuItem item={menuItem} key={menuItem.label} />
       ))}
     </MenuStyles>
   )
 }
 
-export default Menu
+export default DesktopMenu

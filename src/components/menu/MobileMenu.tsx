@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import CategoryMenu from '../equipment/CategoryMenu'
-import Menu from './Menu'
+import DesktopMenu from './DesktopMenu'
+
 type MobileMenuProps = {
   showMenu: boolean
 }
@@ -101,11 +102,11 @@ const MobileMenu = () => {
   return (
     <>
       <ToggleMenuButton onClick={handleToggleMenu}>
-        <ButtonStyles showCloseIcon={showMenu} />
+        <ButtonStyles showCloseIcon={!!showMenu} />
       </ToggleMenuButton>
-      <MobileMenuStyles showMenu={showMenu}>
+      <MobileMenuStyles showMenu={!!showMenu}>
         <MobileNavWrapper>
-          <Menu vertical />
+          <DesktopMenu vertical />
         </MobileNavWrapper>
         <CategoryMenu />
       </MobileMenuStyles>

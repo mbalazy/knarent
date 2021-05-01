@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { ReactComponent as Logo } from '../../images/logo_knarent.svg'
 import { ReactComponent as Phone } from '../../images/phone1.svg'
 import CONSTS from '../../theme/CONSTS'
-import Menu from './menu/Menu'
+import DesktopMenu from './menu/DesktopMenu'
 import MobileMenu from './menu/MobileMenu'
 
 type NavProps = {
@@ -47,7 +47,7 @@ const PhoneWrapper = styled.div`
     }
   `}
 `
-const DesktopMenu = styled.div`
+const DesktopMenuWrapper = styled.div`
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
       display: none;
@@ -69,9 +69,9 @@ const Navbar = ({ sticky }: NavProps) => {
       <Link to="/" style={{ display: 'flex' }}>
         <Logo />
       </Link>
-      <DesktopMenu>
-        <Menu />
-      </DesktopMenu>
+      <DesktopMenuWrapper>
+        <DesktopMenu />
+      </DesktopMenuWrapper>
       <PhoneWrapper>
         <Phone />
         {firstPhoneNumber}
