@@ -27,7 +27,7 @@ const MobileMenuStyles = styled.section<MobileMenuProps>`
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   padding: 2rem;
   ${({ showMenu }) =>
     showMenu &&

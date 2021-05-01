@@ -43,7 +43,8 @@ const Copy = styled.section`
     margin-top: 5vh;
   }
   ${({ theme: { down, breakpoints } }) => css`
-    ${down(breakpoints.s)} {
+    ${down(breakpoints.m)} {
+      order: 2;
       h1 {
         font-size: 2.4rem;
       }
@@ -67,8 +68,8 @@ const LogoWrapper = styled.section`
   align-items: center;
   justify-content: center;
   ${({ theme: { down, breakpoints } }) => css`
-    ${down(breakpoints.s)} {
-      flex: 1 1 300px;
+    ${down(breakpoints.m)} {
+      order: 1;
     }
   `}
 `
