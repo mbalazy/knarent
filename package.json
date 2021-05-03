@@ -28,7 +28,6 @@
     "esm": "^3.2.25",
     "gatsby": "^3.2.1",
     "gatsby-background-image": "^1.5.0",
-    "gatsby-env-variables": "^2.0.0",
     "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-image": "^1.2.0",
     "gatsby-plugin-preload-fonts": "^2.2.0",

@@ -1,5 +1,4 @@
 import { GoogleMap, InfoWindow, useJsApiLoader, Marker } from '@react-google-maps/api'
-import { GOOGLE_MAPS } from 'gatsby-env-variables'
 import React from 'react'
 import styled from 'styled-components'
 import CONSTS from '../../../theme/CONSTS'
@@ -38,7 +37,7 @@ const LinkStyles = styled.a`
 const Map = ({ infoWindow, disableDefaultUI, zoom = 14 }: MapProps) => {
   const { adress, linkToExternalMap, mapCenter } = CONSTS
   const { isLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: `${GOOGLE_MAPS}`,
+    googleMapsApiKey: `${process.env.GATSBY_GOOGLE_MAPS}`,
   })
   if (loadError) {
     return <div>Błąd mapy, nie możemy jej w tej chwili wyświetlić. Przepraszamy :(</div>
