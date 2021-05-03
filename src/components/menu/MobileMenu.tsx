@@ -17,6 +17,7 @@ const MobileMenuTransition = css`
 `
 
 const MobileMenuStyles = styled.section<MobileMenuProps>`
+  ${MobileMenuTransition}
   transform: translateX(100vw);
   position: fixed;
   top: ${({ theme }) => theme.dimensions.navbarHeight};
@@ -34,9 +35,9 @@ const MobileMenuStyles = styled.section<MobileMenuProps>`
     css`
       transform: translateX(0);
     `}
-  ${MobileMenuTransition}
 `
 const ToggleMenuButton = styled.button`
+  ${MobileMenuTransition}
   width: 50px;
   height: 60px;
   display: flex;
@@ -45,15 +46,14 @@ const ToggleMenuButton = styled.button`
   cursor: pointer;
   background-color: transparent;
   border: none;
-  ${MobileMenuTransition}
 `
 const ButtonStyles = styled.div<CloseButtonProps>`
+  ${MobileMenuTransition}
   position: relative;
   width: 70%;
   height: 3px;
   background: ${({ theme }) => theme.colors.black};
   border-radius: 4px;
-  ${MobileMenuTransition}
 
   display: flex;
   justify-content: center;
@@ -67,13 +67,13 @@ const ButtonStyles = styled.div<CloseButtonProps>`
 
   &:before,
   &:after {
+    ${MobileMenuTransition}
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
     background: ${({ theme }) => theme.colors.black};
     border-radius: 4px;
-    ${MobileMenuTransition}
   }
   &:before {
     transform: translateY(-1rem);

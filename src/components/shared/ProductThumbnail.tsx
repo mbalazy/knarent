@@ -22,7 +22,7 @@ const ImageStyles = styled(GatsbyImage)`
   margin: 2rem;
 `
 const CopyWrapper = styled.div`
-  flex: 1 1 80px;
+  flex: 1 1 60px;
   color: ${({ theme }) => theme.colors.lightText};
   background-color: ${({ theme }) => theme.colors.accent1};
   font-size: ${({ theme }) => theme.fontSize.m};
