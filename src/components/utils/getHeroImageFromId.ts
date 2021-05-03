@@ -1,4 +1,3 @@
-import { GATSBY_SANITY_PROJECT_ID } from 'gatsby-env-variables'
 import { getGatsbyImageData } from 'gatsby-source-sanity'
 import {
   GatsbyImageDataArgs,
@@ -6,7 +5,7 @@ import {
 } from 'gatsby-source-sanity/lib-es5/images/getGatsbyImageProps'
 
 const sanityConfig = {
-  projectId: GATSBY_SANITY_PROJECT_ID,
+  projectId: `${process.env.GATSBY_SANITY_PROJECT_ID}`,
   dataset: 'production',
 }
 type Layout = 'constrained' | 'fixed' | 'fullWidth'

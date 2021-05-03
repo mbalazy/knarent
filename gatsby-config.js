@@ -26,7 +26,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-svgr',
-    `gatsby-env-variables`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
