@@ -18,6 +18,7 @@ const MobileMenuTransition = css`
 
 const MobileMenuStyles = styled.section<MobileMenuProps>`
   ${MobileMenuTransition}
+  padding: 2rem;
   transform: translateX(100vw);
   position: fixed;
   top: ${({ theme }) => theme.dimensions.navbarHeight};
@@ -26,9 +27,10 @@ const MobileMenuStyles = styled.section<MobileMenuProps>`
   right: 0px;
   background-color: ${({ theme }) => theme.colors.accent2};
   overflow-y: auto;
-  display: grid;
-  gap: 2rem;
-  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+
   ${({ showMenu }) =>
     showMenu &&
     css`

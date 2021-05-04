@@ -40,7 +40,7 @@ const mainTheme = {
   dimensions: {
     navbarHeight: '70px' as const,
     mainContentWidth: '1100px' as const,
-    mainContentGap: '12rem' as const,
+    mainContentGap: '10rem' as const,
     equipmentMargin: '6rem' as const,
     equipmentGap: '4rem' as const,
   },

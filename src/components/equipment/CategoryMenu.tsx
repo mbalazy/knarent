@@ -17,6 +17,13 @@ const CategoryMenuStyles = styled.aside<CategoryMenuProps>`
   overflow-y: auto;
 
   ${({ onMobile }) =>
+    onMobile &&
+    css`
+      flex: 1;
+      margin-top: 2rem;
+    `}
+
+  ${({ onMobile }) =>
     !onMobile &&
     css`
       max-height: 80rem;

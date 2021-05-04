@@ -36,7 +36,9 @@ const Copy = styled.section`
 
   & > a {
     margin-top: 5vh;
+    justify-self: stretch;
   }
+
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
       h1 {
@@ -64,7 +66,8 @@ const LogoWrapper = styled.section`
   justify-content: center;
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
-      height: 90%;
+      height: 70%;
+      grid-row: 1 / span 1;
     }
   `}
 `

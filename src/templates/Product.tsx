@@ -23,8 +23,7 @@ type ProductProps = {
 const ProductWrapper = styled.div`
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
   width: 90vw;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: ${({ theme }) => theme.dimensions.equipmentMargin};
   margin-top: ${({ theme }) => theme.dimensions.equipmentMargin};
 `
@@ -90,10 +89,10 @@ const PhoneStyles = styled.div`
   * {
     fill: white;
   }
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-auto-flow: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
@@ -114,7 +113,8 @@ const BackButton = styled.button`
   border-radius: ${({ theme }) => theme.border.standard};
   border: none;
 
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
   align-items: center;
   gap: 1rem;
 

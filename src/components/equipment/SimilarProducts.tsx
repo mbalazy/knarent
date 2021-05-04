@@ -19,19 +19,14 @@ const SimilarProductsWrapper = styled.section`
 const SimilarProductsList = styled.ul`
   display: flex;
   flex-wrap: nowrap;
-  gap: 6rem;
   overflow-x: auto;
 
-  padding: ${({ theme }) => theme.dimensions.equipmentMargin};
+  padding: ${({ theme }) => theme.dimensions.equipmentMargin} 0;
   padding-top: ${({ theme }) => theme.dimensions.equipmentGap};
 
-  ${({ theme: { down, breakpoints } }) => css`
-    ${down(breakpoints.m)} {
-      gap: 3rem;
-    }
-  `}
   & > * {
     flex: 0 0 270px;
+    margin: 0 2rem;
   }
 
   ${({ theme: { down, breakpoints } }) => css`

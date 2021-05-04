@@ -9,9 +9,7 @@ import styled from 'styled-components'
 import { H2, H3 } from '../../../theme/Typography'
 
 const SectionWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
   align-items: center;
   gap: 6rem;
 

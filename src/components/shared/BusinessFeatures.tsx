@@ -7,15 +7,15 @@ import { cardBasicStyle, centerInsideMe } from '../../../theme/globalStyle'
 import { H4 } from '../../../theme/Typography'
 
 const BusinessFeaturesWrapper = styled.section`
-  display: flex;
   ${cardBasicStyle}
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  justify-items: center;
+  gap: 4rem;
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
-      flex-direction: column;
-      align-items: center;
-      gap: 4rem;
       padding-top: 3rem;
     }
   `}
@@ -26,7 +26,6 @@ const FeaturesStyles = styled.ul`
   justify-content: center;
   gap: 3rem;
 
-  flex: 4;
   margin: 5rem 0;
   padding: 0 3rem;
   ${({ theme: { down, breakpoints } }) => css`
@@ -41,8 +40,8 @@ const FeatureBullet = styled.li`
   gap: 2rem;
 `
 const LogoWrapper = styled.div`
-  flex: 5;
   ${centerInsideMe}
+  padding: 2rem;
 
   svg {
     height: 250px;
