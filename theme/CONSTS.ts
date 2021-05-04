@@ -8,7 +8,7 @@ const CONSTS = {
   telephones: ['514 902 882'],
   mapCenter: { lat: 50.374, lng: 19.7941 } as const,
   emails: ['kontakt@knarent.pl'],
-  adress: ['Brzozowka 55a', '32-340 Wolbrom'],
+  adress: ['Brzozówka 55a', '32-340 Wolbrom'],
   openHours: [
     { days: 'Poniedzialek - Piatek', hours: '09:00 - 17:00' },
     { days: 'Sobota', hours: '09:00 - 13:00' },

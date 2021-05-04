@@ -133,7 +133,7 @@ const ProductDescription = styled.section`
   padding: 3rem 4rem;
   grid-column: 2/-1;
   grid-row: -2 / span 1;
-  max-height: 26rem;
+  max-height: 22rem;
   overflow-y: auto;
 
   position: relative;
@@ -144,7 +144,7 @@ const ProductDescription = styled.section`
   `}
 `
 const Product = ({ data: { product, similarProducts } }: ProductProps) => {
-  const [telephone] = CONSTS.telephones
+  const [firstTelephone] = CONSTS.telephones
   const handleGoBack = () => navigate(-1)
 
   return (
@@ -159,7 +159,7 @@ const Product = ({ data: { product, similarProducts } }: ProductProps) => {
             <H2>{product.title}</H2>
             <PhoneStyles>
               <Phone />
-              {telephone}
+              {firstTelephone}
             </PhoneStyles>
           </ProductDetails>
           <BackButton onClick={handleGoBack}>

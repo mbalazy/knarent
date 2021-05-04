@@ -18,6 +18,7 @@ const CategoryMenuStyles = styled.aside`
   grid-column: 1 / span 1;
   grid-row: 1 / span 3;
   height: 100%;
+  max-height: 80rem;
 `
 const LinksStyles = styled.div`
   display: flex;
