@@ -21,8 +21,7 @@ const MenuStyles = styled.ul<MenuProps>`
   ${({ vertical }) =>
     vertical &&
     css`
-      flex-direction: column;
-      align-items: flex-start;
+      display: grid;
       width: auto;
       margin: 0;
       gap: 2rem;

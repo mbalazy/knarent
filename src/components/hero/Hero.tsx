@@ -30,11 +30,8 @@ const Content = styled.div`
   `}
 `
 const Copy = styled.section`
-  flex: 1 1 350px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  justify-items: start;
   gap: 2rem;
 
   & > a {
@@ -74,6 +71,7 @@ const LogoWrapper = styled.section`
 const LogoStyles = styled(BigLogo)`
   padding: 6rem;
   height: 100%;
+  width: 100%;
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.s)} {
       padding: 3rem;

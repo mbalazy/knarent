@@ -7,10 +7,9 @@ import { cardBasicStyle } from '../../../theme/globalStyle'
 const OneFeatureWrapper = styled.article`
   ${cardBasicStyle}
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  justify-items: center;
   gap: 4rem;
-  flex: 1 1 260px;
   padding: 5rem 3rem;
 `
 const ImageStyles = styled.img`

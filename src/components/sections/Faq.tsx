@@ -5,8 +5,7 @@ import Section from '../shared/Section'
 import styled from 'styled-components'
 
 const FaqWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 4rem;
 `
 

@@ -9,7 +9,7 @@ type ProductGalleryProps = {
   productTitle: string
 }
 const ProductGalleryWrapper = styled.div`
-  flex: 1;
+  width: 100%;
   height: 54rem;
   padding: ${({ theme }) => theme.dimensions.equipmentGap};
 
@@ -20,11 +20,13 @@ const ProductGalleryWrapper = styled.div`
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
       width: 70%;
+      height: auto;
       padding: 0;
     }
   `}
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.s)} {
+      width: 90%;
       gap: 1rem;
     }
   `}

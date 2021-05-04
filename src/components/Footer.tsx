@@ -24,7 +24,9 @@ const FooterInnerWrapper = styled.div`
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.s)} {
-      flex-direction: column;
+      display: grid;
+      justify-items: center;
+      justify-content: center;
       gap: 4rem;
 
       & ul {
@@ -34,8 +36,7 @@ const FooterInnerWrapper = styled.div`
   `}
 `
 const FooterContentStyles = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 2rem;
 `
 const MapWrapper = styled.div`

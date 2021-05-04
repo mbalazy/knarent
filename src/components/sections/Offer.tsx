@@ -7,9 +7,9 @@ import MainCategoryThumbnail from '../shared/MainCategoryThmubnail'
 import Section from '../shared/Section'
 
 const OfferWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
   gap: 4rem;
-  flex-wrap: wrap;
 `
 
 const Offer = () => {

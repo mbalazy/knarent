@@ -36,47 +36,45 @@ const ProductMainInfoGrid = styled.div`
   section {
     ${cardBasicStyle}
   }
+
   ${({ theme: { down, breakpoints } }) => css`
-    ${down(breakpoints.m)} {
-      display: flex;
-      flex-direction: column;
+    ${down(breakpoints.s)} {
+      grid-template-rows: repeat(2, 1fr);
     }
   `}
 `
 const ProductMainInfo = styled.section`
   grid-column: 2/-1;
   grid-row: 1 / span 2;
-  display: flex;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: space-between;
+  justify-items: center;
 
   position: relative;
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
+      grid-template-columns: 1fr;
       grid-column: 2/-1;
-      flex-direction: column;
       padding: 2rem;
       gap: 4rem;
     }
   `}
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
-      flex: 1 1 30rem;
+      grid-column: 1/-1;
       position: static;
     }
   `}
 `
 const ProductDetails = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   text-align: center;
   gap: 4rem;
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
-      flex: 1 1 10rem;
-      justify-content: space-evenly;
       gap: 2rem;
     }
   `}
@@ -100,6 +98,7 @@ const PhoneStyles = styled.div`
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
       padding: 2rem 3rem;
+      margin: 0;
     }
   `}
 `
@@ -140,6 +139,12 @@ const ProductDescription = styled.section`
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
       max-height: 44rem;
+      grid-column: 1/-1;
+    }
+  `}
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.m)} {
+      grid-row: 3 / span 1;
     }
   `}
 `

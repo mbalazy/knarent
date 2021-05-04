@@ -21,12 +21,11 @@ const MobileMenuStyles = styled.section<MobileMenuProps>`
   position: fixed;
   top: ${({ theme }) => theme.dimensions.navbarHeight};
   bottom: 0px;
-  left: 0%;
+  left: 0px;
   right: 0px;
   background-color: ${({ theme }) => theme.colors.accent2};
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 2rem;
   padding: 2rem;
   ${({ showMenu }) =>
@@ -92,7 +91,7 @@ const ButtonStyles = styled.div<CloseButtonProps>`
       `}
   }
 `
-const MobileNavWrapper = styled.div`
+const MobileMenuWrapper = styled.div`
   ${cardBasicStyle}
   padding: 3rem;
 `
@@ -106,9 +105,9 @@ const MobileMenu = () => {
         <ButtonStyles showCloseIcon={!!showMobileMenu} />
       </ToggleMenuButton>
       <MobileMenuStyles showMenu={!!showMobileMenu}>
-        <MobileNavWrapper>
+        <MobileMenuWrapper>
           <DesktopMenu vertical onMobile />
-        </MobileNavWrapper>
+        </MobileMenuWrapper>
         <CategoryMenu onMobile />
       </MobileMenuStyles>
     </>

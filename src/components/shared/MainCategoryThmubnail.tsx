@@ -14,9 +14,6 @@ type MainCategoryThumbanilProps = {
 const MainCategoryThumbnailWrapper = styled.article`
   ${cardBasicStyle}
   overflow-y: hidden;
-
-  flex: 1 1 270px;
-
   display: flex;
   flex-direction: column;
 `
@@ -27,10 +24,8 @@ const CopyWrapper = styled.div`
   flex: 1 1 200px;
   margin: 4rem 3rem 3rem;
 
-  display: flex;
+  display: grid;
   gap: 3rem;
-  flex-direction: column;
-  justify-content: space-between;
 `
 
 const MainCategoryThumbnail = ({

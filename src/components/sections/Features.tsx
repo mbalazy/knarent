@@ -5,10 +5,9 @@ import Section from '../shared/Section'
 import styled from 'styled-components'
 
 const AllFeaturesWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   gap: 5rem;
-  flex-wrap: wrap;
 `
 
 const Features = () => {
