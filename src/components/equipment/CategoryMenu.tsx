@@ -12,13 +12,18 @@ type CategoryMenuProps = {
   onMobile?: boolean
 }
 
-const CategoryMenuStyles = styled.aside`
+const CategoryMenuStyles = styled.aside<CategoryMenuProps>`
   ${cardBasicStyle}
   overflow-y: auto;
-  grid-column: 1 / span 1;
-  grid-row: 1 / span 3;
   height: 100%;
   max-height: 80rem;
+
+  ${({ onMobile }) =>
+    !onMobile &&
+    css`
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 3;
+    `}
 `
 const LinksStyles = styled.div`
   display: flex;
@@ -70,7 +75,7 @@ const CategoryMenu = ({ onMobile }: CategoryMenuProps) => {
   `)
 
   return (
-    <CategoryMenuStyles>
+    <CategoryMenuStyles onMobile={onMobile}>
       {mainCategories.nodes
         .sort((a: MainCategory, b: MainCategory) => a.title.localeCompare(b.title))
         .map((mainCategory: MainCategory) => {

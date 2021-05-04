@@ -9,9 +9,8 @@ import '@fontsource/work-sans'
 import '@fontsource/montserrat'
 
 const PageWrapper = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  justify-items: center;
   background-color: ${({ theme }) => theme.colors.grey002};
   gap: ${({ theme }) => theme.dimensions.mainContentGap};
   padding-bottom: ${({ theme }) => theme.dimensions.mainContentGap};
