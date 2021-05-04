@@ -30,6 +30,9 @@ const EquipmentOverviewWrapper = styled.div`
     ${down(breakpoints.m)} {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 7rem repeat(auto-fit, 36rem);
+
+      max-width: 85vw;
+      margin: 3rem 0;
     }
   `}
   ${({ theme: { down, breakpoints } }) => css`
