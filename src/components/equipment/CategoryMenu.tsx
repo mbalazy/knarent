@@ -15,12 +15,12 @@ type CategoryMenuProps = {
 const CategoryMenuStyles = styled.aside<CategoryMenuProps>`
   ${cardBasicStyle}
   overflow-y: auto;
-  height: 100%;
-  max-height: 80rem;
 
   ${({ onMobile }) =>
     !onMobile &&
     css`
+      max-height: 80rem;
+      height: 100%;
       grid-column: 1 / span 1;
       grid-row: 1 / span 3;
     `}
