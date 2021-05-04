@@ -17,17 +17,15 @@ const Content = styled.div`
   padding: 6rem;
   color: ${({ theme }) => theme.colors.lightText};
 
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 6rem;
-  flex-wrap: wrap;
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.s)} {
       padding: 3rem;
       gap: 1rem;
-      justify-content: center;
     }
   `}
 `
@@ -44,7 +42,6 @@ const Copy = styled.section`
   }
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
-      order: 2;
       h1 {
         font-size: 2.4rem;
       }
@@ -63,18 +60,20 @@ const LogoWrapper = styled.section`
 
   background-color: ${({ theme }) => theme.colors.lightText};
   border-radius: ${({ theme }) => theme.border.light};
+  height: 50%;
 
   display: flex;
   align-items: center;
   justify-content: center;
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
-      order: 1;
+      height: 90%;
     }
   `}
 `
 const LogoStyles = styled(BigLogo)`
-  padding: 8rem 6rem;
+  padding: 6rem;
+  height: 100%;
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.s)} {
       padding: 3rem;
