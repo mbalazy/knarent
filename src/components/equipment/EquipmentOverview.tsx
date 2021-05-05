@@ -85,4 +85,4 @@ const EquipmentOverview = ({ title, searchForm, children }: EquipmentOverviewPro
   )
 }
 
-export default EquipmentOverview
+export default React.memo(EquipmentOverview)

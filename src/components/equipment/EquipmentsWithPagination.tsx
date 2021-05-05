@@ -107,4 +107,4 @@ const EquipmentsWithPagination = ({ elements }: EquipmentPaginationProps) => {
   )
 }
 
-export default EquipmentsWithPagination
+export default React.memo(EquipmentsWithPagination)

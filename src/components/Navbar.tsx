@@ -1,11 +1,12 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useContext } from 'react'
 import styled, { css } from 'styled-components'
 import { ReactComponent as Logo } from '../../images/logo_knarent.svg'
 import { ReactComponent as Phone } from '../../images/phone1.svg'
 import CONSTS from '../../theme/CONSTS'
 import Menu from './menu/Menu'
 import MobileMenu from './menu/MobileMenu'
+import { MenuContext } from './menu/MobileMenuContext'
 
 type NavProps = {
   sticky?: boolean
@@ -68,11 +69,13 @@ const MobileMenuWrapper = styled.div`
 `
 
 const Navbar = ({ sticky }: NavProps) => {
+  const { setShowMobileMenu } = useContext(MenuContext)
+  const handleCloseMenu = () => setShowMobileMenu(false)
   const [firstPhoneNumber] = CONSTS.telephones
   return (
     <NavWrapper sticky={sticky}>
       <NavInnerWrapper>
-        <Link to="/" style={{ display: 'flex' }}>
+        <Link to="/" style={{ display: 'flex' }} onClick={handleCloseMenu}>
           <Logo />
         </Link>
         <DesktopMenuWrapper>
