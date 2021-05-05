@@ -27,12 +27,17 @@ const ProductGalleryWrapper = styled.div`
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.s)} {
       width: 90%;
-      gap: 1rem;
     }
   `}
 `
 const BigImageStyles = styled.div`
   margin-top: auto;
+
+  ${({ theme: { down, breakpoints } }) => css`
+    ${down(breakpoints.s)} {
+      margin-bottom: 2rem;
+    }
+  `}
 `
 const SmallerImagesStyles = styled.div`
   width: 100%;
@@ -40,7 +45,6 @@ const SmallerImagesStyles = styled.div`
   display: flex;
   justify-content: center;
   margin-top: auto;
-  gap: 1rem;
 
   & > * {
     flex: 0 1 8rem;

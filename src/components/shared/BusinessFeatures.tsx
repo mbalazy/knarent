@@ -52,7 +52,7 @@ const LogoWrapper = styled.div`
 
     ${({ theme: { down, breakpoints } }) => css`
       ${down(breakpoints.s)} {
-        height: initial;
+        height: 120px;
       }
     `}
   }

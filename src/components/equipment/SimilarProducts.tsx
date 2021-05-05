@@ -27,6 +27,8 @@ const SimilarProductsList = styled.ul`
 
   & > * {
     flex: 0 0 270px;
+  }
+  & > *:not(:first-child) {
     margin: 0 2rem;
   }
 

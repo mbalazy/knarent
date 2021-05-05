@@ -39,7 +39,7 @@ const ProductMainInfoGrid = styled.div`
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.s)} {
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: 1fr auto;
     }
   `}
 `
@@ -65,6 +65,7 @@ const ProductMainInfo = styled.section`
     ${down(breakpoints.m)} {
       grid-column: 1/-1;
       position: static;
+      padding: 2rem 2rem 3rem;
     }
   `}
 `
@@ -141,11 +142,12 @@ const ProductDescription = styled.section`
     ${down(breakpoints.m)} {
       max-height: 44rem;
       grid-column: 1/-1;
+      grid-row: 3 / span 1;
     }
   `}
   ${({ theme: { down, breakpoints } }) => css`
-    ${down(breakpoints.m)} {
-      grid-row: 3 / span 1;
+    ${down(breakpoints.s)} {
+      max-height: initial;
     }
   `}
 `
