@@ -13,7 +13,7 @@ type Layout = 'constrained' | 'fixed' | 'fullWidth'
 export const getImageFromId = (
   imageId: ImageNode,
   layout: Layout = 'fullWidth',
-  maxWidth = 800
+  maxWidth = 400
 ) => {
   return getGatsbyImageData(imageId, { maxWidth, layout } as GatsbyImageDataArgs, sanityConfig)
 }
