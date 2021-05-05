@@ -14,8 +14,6 @@ type CategoryMenuProps = {
 
 const CategoryMenuStyles = styled.aside<CategoryMenuProps>`
   ${cardBasicStyle}
-  overflow-y: auto;
-
   ${({ onMobile }) =>
     onMobile &&
     css`
@@ -26,6 +24,7 @@ const CategoryMenuStyles = styled.aside<CategoryMenuProps>`
   ${({ onMobile }) =>
     !onMobile &&
     css`
+      overflow-y: auto;
       max-height: 80rem;
       height: 100%;
       grid-column: 1 / span 1;

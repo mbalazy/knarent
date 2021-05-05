@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled, { css } from 'styled-components'
 import { cardBasicStyle } from '../../../theme/globalStyle'
 import CategoryMenu from '../equipment/CategoryMenu'
-import DesktopMenu from './DesktopMenu'
+import Menu from './Menu'
 import { MenuContext } from './MobileMenuContext'
 
 type MobileMenuProps = {
@@ -108,7 +108,7 @@ const MobileMenu = () => {
       </ToggleMenuButton>
       <MobileMenuStyles showMenu={!!showMobileMenu}>
         <MobileMenuWrapper>
-          <DesktopMenu vertical onMobile />
+          <Menu vertical onMobile />
         </MobileMenuWrapper>
         <CategoryMenu onMobile />
       </MobileMenuStyles>

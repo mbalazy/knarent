@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { ReactComponent as Logo } from '../../images/logo_knarent.svg'
 import { ReactComponent as Phone } from '../../images/phone1.svg'
 import CONSTS from '../../theme/CONSTS'
-import DesktopMenu from './menu/DesktopMenu'
+import Menu from './menu/Menu'
 import MobileMenu from './menu/MobileMenu'
 
 type NavProps = {
@@ -70,7 +70,7 @@ const Navbar = ({ sticky }: NavProps) => {
         <Logo />
       </Link>
       <DesktopMenuWrapper>
-        <DesktopMenu />
+        <Menu />
       </DesktopMenuWrapper>
       <PhoneWrapper>
         <Phone />

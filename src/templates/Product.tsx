@@ -26,7 +26,7 @@ const ProductWrapper = styled.div`
   display: grid;
   grid-template-columns: 100%;
   gap: ${({ theme }) => theme.dimensions.equipmentMargin};
-  margin-top: ${({ theme }) => theme.dimensions.equipmentMargin};
+  margin-top: 8rem;
 `
 const ProductMainInfoGrid = styled.div`
   display: grid;
@@ -122,10 +122,10 @@ const BackButton = styled.button`
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
-      top: 8rem;
-      right: auto;
-      left: 3rem;
-      padding: 0.3rem 1.2rem;
+      top: 9rem;
+      left: auto;
+      right: 3rem;
+      padding: 0.6rem 1.6rem;
       z-index: 2;
     }
   `}

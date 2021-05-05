@@ -23,9 +23,7 @@ const BusinessFeaturesWrapper = styled.section`
   `}
 `
 const FeaturesStyles = styled.ul`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
   gap: 3rem;
   justify-self: start;
 
@@ -39,8 +37,9 @@ const FeaturesStyles = styled.ul`
   `}
 `
 const FeatureBullet = styled.li`
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
   gap: 2rem;
 `
 const LogoWrapper = styled.div`

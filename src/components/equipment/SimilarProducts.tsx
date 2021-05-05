@@ -35,6 +35,7 @@ const SimilarProductsList = styled.ul`
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.m)} {
       padding: 2rem;
+      padding-bottom: 4rem;
     }
   `}
 `

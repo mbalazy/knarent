@@ -28,7 +28,7 @@ const MenuStyles = styled.ul<MenuProps>`
     `}
 `
 
-const DesktopMenu = ({ vertical, onMobile }: MenuProps) => {
+const Menu = ({ vertical, onMobile }: MenuProps) => {
   const { menuItemList } = CONSTS
   const { setShowMobileMenu } = useContext(MenuContext)
   const handleCloseMenu = () => onMobile && setShowMobileMenu(false)
@@ -41,4 +41,4 @@ const DesktopMenu = ({ vertical, onMobile }: MenuProps) => {
   )
 }
 
-export default DesktopMenu
+export default Menu

@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { cardBasicStyle } from '../../theme/globalStyle'
 import { H4 } from '../../theme/Typography'
-import DesktopMenu from './menu/DesktopMenu'
+import Menu from './menu/Menu'
 import ContactInfo from './shared/ContactInfo'
 import Map from './shared/Map'
 
@@ -50,7 +50,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <FooterInnerWrapper>
-        <DesktopMenu vertical />
+        <Menu vertical />
         <FooterContentStyles>
           <H4>Skontaktuj się z nami</H4>
           <ContactInfo />
