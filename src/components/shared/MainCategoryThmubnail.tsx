@@ -13,13 +13,13 @@ type MainCategoryThumbanilProps = {
 
 const MainCategoryThumbnailWrapper = styled.article`
   ${cardBasicStyle}
-  overflow-y: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 `
 const ImageStyles = styled(GatsbyImage)`
   flex: 0 0 280px;
+  border-radius: ${({ theme }) => theme.border.standard} ${({ theme }) => theme.border.standard} 0 0;
 `
 const CopyWrapper = styled.div`
   flex: 1 1 200px;

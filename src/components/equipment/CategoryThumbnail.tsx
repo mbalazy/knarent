@@ -16,6 +16,7 @@ const CategoryThumbnailWrapper = styled(Link)`
   overflow: hidden;
   position: relative;
 
+  border-radius: ${({ theme }) => theme.border.standard};
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
       height: 36rem;

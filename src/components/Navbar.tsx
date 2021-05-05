@@ -15,9 +15,6 @@ const NavWrapper = styled.nav<NavProps>`
   height: ${({ theme }) => theme.dimensions.navbarHeight};
   background-color: ${({ theme }) => theme.colors.primary};
   padding: 0 4%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   ${({ sticky }) =>
     sticky &&
@@ -32,6 +29,14 @@ const NavWrapper = styled.nav<NavProps>`
       padding: 0 4rem;
     }
   `}
+`
+const NavInnerWrapper = styled.div`
+  height: 100%;
+  max-width: 140rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 `
 const PhoneWrapper = styled.div`
   display: flex;
@@ -66,19 +71,21 @@ const Navbar = ({ sticky }: NavProps) => {
   const [firstPhoneNumber] = CONSTS.telephones
   return (
     <NavWrapper sticky={sticky}>
-      <Link to="/" style={{ display: 'flex' }}>
-        <Logo />
-      </Link>
-      <DesktopMenuWrapper>
-        <Menu />
-      </DesktopMenuWrapper>
-      <PhoneWrapper>
-        <Phone />
-        {firstPhoneNumber}
-      </PhoneWrapper>
-      <MobileMenuWrapper>
-        <MobileMenu />
-      </MobileMenuWrapper>
+      <NavInnerWrapper>
+        <Link to="/" style={{ display: 'flex' }}>
+          <Logo />
+        </Link>
+        <DesktopMenuWrapper>
+          <Menu />
+        </DesktopMenuWrapper>
+        <PhoneWrapper>
+          <Phone />
+          {firstPhoneNumber}
+        </PhoneWrapper>
+        <MobileMenuWrapper>
+          <MobileMenu />
+        </MobileMenuWrapper>
+      </NavInnerWrapper>
     </NavWrapper>
   )
 }
