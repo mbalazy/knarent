@@ -13,7 +13,7 @@ const OneFeatureWrapper = styled.article`
   padding: 5rem 3rem;
 `
 const ImageStyles = styled.img`
-  height: 8rem;
+  height: 7rem;
 `
 
 const OneFeature = ({ icon, heading, copy }: OneFeatureProps) => {

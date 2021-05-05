@@ -36,7 +36,11 @@ const Copy = styled.section`
 
   & > a {
     margin-top: 5vh;
-    justify-self: stretch;
+    ${({ theme: { down, breakpoints } }) => css`
+      ${down(breakpoints.s)} {
+        justify-self: stretch;
+      }
+    `}
   }
 
   ${({ theme: { down, breakpoints } }) => css`

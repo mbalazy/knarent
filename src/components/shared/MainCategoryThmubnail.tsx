@@ -16,6 +16,7 @@ const MainCategoryThumbnailWrapper = styled.article`
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `
 const ImageStyles = styled(GatsbyImage)`
   flex: 0 0 280px;

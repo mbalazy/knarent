@@ -34,7 +34,9 @@ const ArrowStyles = styled.button<ArrowProps>`
   transition: transform 80ms;
 
   background-color: transparent;
-  border: none;
+  border: transparent solid 2px !important;
+  border-radius: 4px;
+  padding: 0.8rem;
   outline: none;
 
   ${({ visibilityOfQuestion }) =>
@@ -46,8 +48,6 @@ const ArrowStyles = styled.button<ArrowProps>`
   &:active,
   &:focus {
     border: ${({ theme }) => theme.colors.accent1} solid 2px !important;
-    border-radius: 4px;
-    padding: 1rem;
   }
 `
 

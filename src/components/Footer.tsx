@@ -1,10 +1,8 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { cardBasicStyle } from '../../theme/globalStyle'
 import { H4 } from '../../theme/Typography'
 import Menu from './menu/Menu'
 import ContactInfo from './shared/ContactInfo'
-import Map from './shared/Map'
 
 const FooterWrapper = styled.footer`
   color: ${({ theme }) => theme.colors.lightText};
@@ -25,39 +23,27 @@ const FooterInnerWrapper = styled.div`
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.s)} {
       display: grid;
-      justify-items: center;
+      justify-items: start;
       justify-content: center;
       gap: 4rem;
-
-      & ul {
-        display: none;
-      }
     }
   `}
 `
 const FooterContentStyles = styled.div`
   display: grid;
   gap: 2rem;
-`
-const MapWrapper = styled.div`
-  ${cardBasicStyle}
-  overflow: hidden;
-  width: 30rem;
-  height: 24rem;
+  padding: 0 1.4rem;
 `
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <FooterInnerWrapper>
-        <Menu vertical />
         <FooterContentStyles>
           <H4>Skontaktuj się z nami</H4>
           <ContactInfo />
         </FooterContentStyles>
-        <MapWrapper>
-          <Map disableDefaultUI zoom={12} />
-        </MapWrapper>
+        <Menu vertical />
       </FooterInnerWrapper>
     </FooterWrapper>
   )

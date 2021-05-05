@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import Button from '../shared/Button'
+import { useLocation } from '@reach/router'
 
 type EquipmentPaginationProps = {
   elements: JSX.Element[]
@@ -11,7 +12,8 @@ const PaginationStyles = styled.div`
   grid-row: 4/-1;
   gap: 2rem;
 
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
 
@@ -31,14 +33,18 @@ const PaginationStyles = styled.div`
     ${down(breakpoints.s)} {
       grid-column: 1 / span 1;
       grid-row: 8 / span 1;
-      flex-direction: column;
+      grid-auto-flow: row;
+      justify-content: center;
       gap: 2.4rem;
     }
   `}
 `
 const PageButtonsWrapper = styled.div`
-  display: flex;
+  max-width: 80vw;
+  display: grid;
+  grid-auto-flow: column;
   gap: 1rem;
+  justify-items: center;
 `
 
 const EquipmentsWithPagination = ({ elements }: EquipmentPaginationProps) => {
@@ -53,6 +59,13 @@ const EquipmentsWithPagination = ({ elements }: EquipmentPaginationProps) => {
   const indexEnd = elementsPerPage * currentPage
 
   const handleChangePage = (nextPage: number) => setCurrentPage(nextPage)
+
+  const location = useLocation()
+  const searchQuery = location.search.replace('?', '')
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchQuery])
+
   return (
     <>
       {elements.slice(indexStart, indexEnd)}
