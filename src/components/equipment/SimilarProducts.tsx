@@ -11,6 +11,7 @@ type SimilarProductsProps = {
 
 const SimilarProductsWrapper = styled.section`
   ${cardBasicStyle}
+  width: 100%;
   background-color: ${({ theme }) => theme.colors.grey005};
 
   display: flex;

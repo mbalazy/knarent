@@ -10,13 +10,15 @@ const BusinessFeaturesWrapper = styled.section`
   ${cardBasicStyle}
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
   gap: 4rem;
 
   ${({ theme: { down, breakpoints } }) => css`
     ${down(breakpoints.l)} {
       padding-top: 3rem;
+      grid-template-columns: 1fr;
     }
   `}
 `
@@ -25,12 +27,14 @@ const FeaturesStyles = styled.ul`
   flex-direction: column;
   justify-content: center;
   gap: 3rem;
+  justify-self: start;
 
   margin: 5rem 0;
   padding: 0 3rem;
   ${({ theme: { down, breakpoints } }) => css`
-    ${down(breakpoints.m)} {
+    ${down(breakpoints.l)} {
       margin: 0 0 5rem;
+      justify-self: center;
     }
   `}
 `
@@ -44,7 +48,13 @@ const LogoWrapper = styled.div`
   padding: 2rem;
 
   svg {
-    height: 250px;
+    height: 240px;
+
+    ${({ theme: { down, breakpoints } }) => css`
+      ${down(breakpoints.s)} {
+        height: initial;
+      }
+    `}
   }
 
   ${({ theme: { down, breakpoints } }) => css`

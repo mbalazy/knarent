@@ -24,6 +24,7 @@ const ProductWrapper = styled.div`
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
   width: 90vw;
   display: grid;
+  grid-template-columns: 100%;
   gap: ${({ theme }) => theme.dimensions.equipmentMargin};
   margin-top: ${({ theme }) => theme.dimensions.equipmentMargin};
 `
