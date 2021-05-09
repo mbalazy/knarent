@@ -22,7 +22,7 @@ const SimilarProductsList = styled.ul`
   flex-wrap: nowrap;
   overflow-x: auto;
 
-  padding: ${({ theme }) => theme.dimensions.equipmentMargin} 0;
+  padding: ${({ theme }) => theme.dimensions.equipmentMargin} 3rem;
   padding-top: ${({ theme }) => theme.dimensions.equipmentGap};
 
   & > * {
