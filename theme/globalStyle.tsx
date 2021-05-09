@@ -39,6 +39,13 @@ export const cardBasicStyle = css`
   box-shadow: 0px 34px 53px -7px rgba(0, 0, 0, 0.11);
   border-radius: ${({ theme }) => theme.border.standard};
   background-color: ${({ theme }) => theme.colors.white};
+  transition: all 0.1s ease-in-out;
+`
+export const cardHoverEffect = css`
+  &:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0px 36px 56px -8px rgba(0, 0, 0, 0.14);
+  }
 `
 export const centerInsideMe = css`
   display: flex;

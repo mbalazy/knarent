@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
-import { cardBasicStyle } from '../../../theme/globalStyle'
+import { cardBasicStyle, cardHoverEffect } from '../../../theme/globalStyle'
 import { Product } from '../../../types/sanity'
 import { getImageFromId } from '../utils/getHeroImageFromId'
 type ProductThumbnailProps = {
@@ -11,6 +11,7 @@ type ProductThumbnailProps = {
 const ProductThumbnailWrapper = styled(Link)`
   overflow-y: hidden;
   ${cardBasicStyle}
+  ${cardHoverEffect}
   text-decoration: inherit;
   color: inherit;
 
