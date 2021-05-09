@@ -1,7 +1,7 @@
 import React from 'react'
 import { Category } from '../../../types/sanity'
 import styled, { css } from 'styled-components'
-import { cardBasicStyle } from '../../../theme/globalStyle'
+import { cardBasicStyle, cardHoverEffect } from '../../../theme/globalStyle'
 import { getImageFromId } from '../utils/getHeroImageFromId'
 import { ImageOverlayWrapper, FullImageStyles } from '../shared/ImageOverlay'
 import { H3 } from '../../../theme/Typography'
@@ -13,6 +13,7 @@ type CategoryThumbnailProps = {
 
 const CategoryThumbnailWrapper = styled(Link)`
   ${cardBasicStyle}
+  ${cardHoverEffect}
   overflow: hidden;
   position: relative;
 

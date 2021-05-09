@@ -1,8 +1,9 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { BottomBaseStyles as LikeAButtonStyles } from './Button'
-import { Link } from 'gatsby'
+import { bigLinkHoverEffect } from '../../../theme/globalStyle'
 import type { ButtonProps } from './Button'
+import { BottomBaseStyles as LikeAButtonStyles } from './Button'
 
 interface LinkProps extends ButtonProps {
   to: string
@@ -18,6 +19,7 @@ const BaseLinkStyles = css`
 const BigLinkStyles = styled(Link)<LinkProps>`
   ${BaseLinkStyles}
   ${LikeAButtonStyles}
+  ${bigLinkHoverEffect}
   text-align: center;
 `
 export const BigLink = ({ variant = 'primary', children, to }: LinkProps) => {
@@ -30,7 +32,7 @@ export const BigLink = ({ variant = 'primary', children, to }: LinkProps) => {
 
 const SimpleLinkStyles = styled(Link)<LinkProps>`
   ${BaseLinkStyles}
-  padding: 1.4rem;
+  padding: 1rem 1.8rem;
   ${({ smaller }) =>
     smaller &&
     css`

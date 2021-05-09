@@ -7,11 +7,18 @@ type MenuItemProps = {
   item: Item
   onClick?: () => unknown
 }
+import styled from 'styled-components'
+
+const NavbarLinkStyle = styled(SimpleLink)`
+  backface-visibility: hidden;
+  &:hover {
+  }
+`
 
 const MenuItem = ({ item: { label, link }, ...delegated }: MenuItemProps) => {
   return (
     <li {...delegated}>
-      <SimpleLink to={link}>{label}</SimpleLink>
+      <NavbarLinkStyle to={link}>{label}</NavbarLinkStyle>
     </li>
   )
 }
