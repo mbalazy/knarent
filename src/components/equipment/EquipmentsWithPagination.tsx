@@ -86,7 +86,7 @@ const EquipmentsWithPagination = ({ elements }: EquipmentPaginationProps) => {
                 <Button
                   variant="ghostOutline"
                   active={page === currentPage}
-                  key={i}
+                  key={page}
                   onClick={() => handleChangePage(page)}
                 >
                   {page}

@@ -73,7 +73,7 @@ const Navbar = ({ sticky }: NavProps) => {
   const handleCloseMenu = () => setShowMobileMenu(false)
   const [firstPhoneNumber] = CONSTS.telephones
   return (
-    <NavWrapper sticky={sticky}>
+    <NavWrapper sticky={!!sticky}>
       <NavInnerWrapper>
         <Link to="/" style={{ display: 'flex' }} onClick={handleCloseMenu}>
           <Logo />
