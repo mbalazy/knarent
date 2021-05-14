@@ -55,7 +55,9 @@ const InputStyles = styled.input`
 const Search = () => {
   const ref = useRef(null)
   useEffect(() => {
-    ref.current.focus()
+    if (ref.current) {
+      ref.current.focus()
+    }
   }, [])
   const location = useLocation()
   const searchQuery = location.search.replace('?', '')

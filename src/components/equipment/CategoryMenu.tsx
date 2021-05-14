@@ -1,51 +1,15 @@
-import React, { useContext } from 'react'
 import { useLocation } from '@reach/router'
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import styled, { css } from 'styled-components'
-import { cardBasicStyle } from '../../../theme/globalStyle'
-import { Category, MainCategory } from '../../../types/sanity'
+import { graphql, useStaticQuery } from 'gatsby'
+import React, { useContext } from 'react'
 import { H4 } from '../../../theme/Typography'
-import { SimpleLink } from '../shared/Links'
+import { Category, MainCategory } from '../../../types/sanity'
 import { MenuContext } from '../menu/MobileMenuContext'
+import { SimpleLink } from '../shared/Links'
+import { CategoryMenuStyles, LinksStyles, MenuLinkStyles } from './CategoryMenu.styles'
 
 type CategoryMenuProps = {
   onMobile?: boolean
 }
-
-const CategoryMenuStyles = styled.aside<CategoryMenuProps>`
-  ${cardBasicStyle}
-  ${({ onMobile }) =>
-    onMobile &&
-    css`
-      flex: 1;
-      margin-top: 2rem;
-    `}
-
-  ${({ onMobile }) =>
-    !onMobile &&
-    css`
-      overflow-y: auto;
-      max-height: 80rem;
-      height: 100%;
-      grid-column: 1 / span 1;
-      grid-row: 1 / span 3;
-    `}
-`
-const LinksStyles = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 3rem;
-
-  ${({ theme: { down, breakpoints } }) => css`
-    ${down(breakpoints.m)} {
-      padding: 3rem 3rem 0;
-    }
-  `}
-`
-const MenuLinkStyles = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-`
 
 const CategoryMenu = ({ onMobile }: CategoryMenuProps) => {
   const location = useLocation()

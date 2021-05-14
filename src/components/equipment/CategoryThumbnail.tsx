@@ -1,44 +1,13 @@
 import React from 'react'
-import { Category } from '../../../types/sanity'
-import styled, { css } from 'styled-components'
-import { cardBasicStyle, cardHoverEffect } from '../../../theme/globalStyle'
-import { getImageFromId } from '../utils/getHeroImageFromId'
-import { ImageOverlayWrapper, FullImageStyles } from '../shared/ImageOverlay'
 import { H3 } from '../../../theme/Typography'
-import { Link } from 'gatsby'
+import { Category } from '../../../types/sanity'
+import { FullImageStyles, ImageOverlayWrapper } from '../shared/ImageOverlay'
+import { getImageFromId } from '../utils/getHeroImageFromId'
+import { CategoryThumbnailWrapper, TitleWrapper } from './CategoryThumbnail.styles'
 
 type CategoryThumbnailProps = {
   category: Category
 }
-
-const CategoryThumbnailWrapper = styled(Link)`
-  ${cardBasicStyle}
-  ${cardHoverEffect}
-  overflow: hidden;
-  position: relative;
-
-  border-radius: ${({ theme }) => theme.border.standard};
-  ${({ theme: { down, breakpoints } }) => css`
-    ${down(breakpoints.l)} {
-      height: 36rem;
-    }
-  `}
-`
-const TitleWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: ${({ theme }) => theme.colors.lightText};
-
-  ${({ theme: { down, breakpoints } }) => css`
-    ${down(breakpoints.m)} {
-      h3 {
-        font-size: 2.2rem;
-      }
-    }
-  `}
-`
 
 const CategoryThumbnail = ({ category }: CategoryThumbnailProps) => {
   const image = getImageFromId(category.images.asset.id, 'fullWidth')
