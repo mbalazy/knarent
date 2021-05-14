@@ -20,7 +20,7 @@ export const InputWrapper = styled.form`
 export const SearchIconStyles = styled(SearchIcon)`
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
-  fill: white;
+  fill: ${({ theme }) => theme.colors.white};
   transition: transform 0.2s;
   justify-self: center;
 `

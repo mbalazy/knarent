@@ -1,6 +1,6 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { MainCategory } from '../../../types/sanity'
+import { useAllCategory } from '../../graphql/useAllCategory'
 import { CategoryMenuStyles } from './CategoryMenu.styles'
 import SingleMainCategoryLink from './SingleMainCategoryLink'
 
@@ -9,35 +9,7 @@ type CategoryMenuProps = {
 }
 
 const CategoryMenu = ({ onMobile }: CategoryMenuProps) => {
-  const {
-    allSanityMainCategory: mainCategories,
-    allSanityCategory: categories,
-  } = useStaticQuery(graphql`
-    query AllSanityCategories {
-      allSanityMainCategory {
-        nodes {
-          title
-          id
-          slug {
-            current
-          }
-        }
-      }
-      allSanityCategory {
-        nodes {
-          title
-          id
-          slug {
-            current
-          }
-          mainCategory {
-            id
-          }
-        }
-      }
-    }
-  `)
-
+  const { mainCategories, categories } = useAllCategory()
   return (
     <CategoryMenuStyles onMobile={onMobile}>
       {mainCategories.nodes

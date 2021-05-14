@@ -1,16 +1,17 @@
 import React from 'react'
 import CONSTS from '../../../theme/CONSTS'
 import { P } from '../../../theme/Typography'
+import { AdressStyles } from './ContactInfo.style'
 
 const ContactInfo = () => {
   const { emails, telephones, adress } = CONSTS
   return (
     <>
-      <div>
+      <AdressStyles>
         {adress.map((adres) => (
           <p key={adres}>{adres}</p>
         ))}
-      </div>
+      </AdressStyles>
       <div>
         <P>
           email:{' '}

@@ -23,7 +23,11 @@ const SingleMainCategoryLink = ({ categories, mainCategory }: SingleCategoryLink
         .map(
           (category: Category) =>
             category.mainCategory.id === mainCategory.id && (
-              <SingleCategoryLink category={category} mainCategory={mainCategory} />
+              <SingleCategoryLink
+                key={category.id}
+                category={category}
+                mainCategory={mainCategory}
+              />
             )
         )}
     </LinksStyles>

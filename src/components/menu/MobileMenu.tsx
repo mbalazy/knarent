@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import CategoryMenu from '../equipment/CategoryMenu'
 import Menu from './Menu'
 import {
@@ -7,10 +7,10 @@ import {
   MobileMenuWrapper,
   ToggleMenuButton,
 } from './MobileMenu.style'
-import { MenuContext } from './MobileMenuContext'
+import { useMenu } from './MobileMenuContext'
 
 const MobileMenu = () => {
-  const { showMobileMenu, setShowMobileMenu } = useContext(MenuContext)
+  const { showMobileMenu, setShowMobileMenu } = useMenu()
   const handleToggleMenu = () => setShowMobileMenu(!showMobileMenu)
   return (
     <>

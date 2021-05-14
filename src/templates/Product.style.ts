@@ -70,7 +70,7 @@ export const PhoneStyles = styled.div`
   border-radius: ${({ theme }) => theme.border.light};
   font-weight: 600;
   * {
-    fill: white;
+    fill: ${({ theme }) => theme.colors.white};
   }
   display: grid;
   grid-auto-flow: column;

@@ -5,18 +5,18 @@ type ArrowProps = {
   visibilityOfQuestion: boolean
 }
 
-export const FaqIssueWrapper = styled.article`
+export const FaqIssueWrapper = styled.details`
   ${cardBasicStyle}
   padding: 2.4rem 3rem;
   text-align: left;
   cursor: pointer;
 `
-export const QuestionStyles = styled.div`
+export const QuestionStyles = styled.summary`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `
-export const AnswerStyles = styled.div`
+export const AnswerStyles = styled.p`
   padding-top: 2.4rem;
 `
 export const ArrowStyles = styled.button<ArrowProps>`
