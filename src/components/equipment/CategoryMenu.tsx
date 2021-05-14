@@ -4,8 +4,8 @@ import React, { useContext } from 'react'
 import { H4 } from '../../../theme/Typography'
 import { Category, MainCategory } from '../../../types/sanity'
 import { MenuContext } from '../menu/MobileMenuContext'
-import { SimpleLink } from '../shared/Links'
 import { CategoryMenuStyles, LinksStyles, MenuLinkStyles } from './CategoryMenu.styles'
+import SingleCategoryLink from './SingleCategoryLink'
 
 type CategoryMenuProps = {
   onMobile?: boolean
@@ -59,14 +59,7 @@ const CategoryMenu = ({ onMobile }: CategoryMenuProps) => {
                 .map(
                   (category: Category) =>
                     category.mainCategory.id === mainCategory.id && (
-                      <SimpleLink
-                        smaller
-                        key={category.id}
-                        to={`/${mainCategory.slug.current}/${category.slug.current}`}
-                        onClick={handleCloseMenu}
-                      >
-                        {category.title}
-                      </SimpleLink>
+                      <SingleCategoryLink category={category} mainCategory={mainCategory} />
                     )
                 )}
             </LinksStyles>

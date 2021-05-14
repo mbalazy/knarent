@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import CategoryMenu from '../equipment/CategoryMenu'
 import Menu from './Menu'
 import {
-  ButtonStyles,
+  ButtonIcon,
   MobileMenuStyles,
   MobileMenuWrapper,
   ToggleMenuButton,
@@ -14,8 +14,12 @@ const MobileMenu = () => {
   const handleToggleMenu = () => setShowMobileMenu(!showMobileMenu)
   return (
     <>
-      <ToggleMenuButton onClick={handleToggleMenu}>
-        <ButtonStyles showCloseIcon={!!showMobileMenu} />
+      <ToggleMenuButton
+        onClick={handleToggleMenu}
+        aria-expanded={!!showMobileMenu}
+        aria-label="pokaż menu"
+      >
+        <ButtonIcon showCloseIcon={!!showMobileMenu} />
       </ToggleMenuButton>
       <MobileMenuStyles showMenu={!!showMobileMenu}>
         <MobileMenuWrapper>

@@ -5,8 +5,9 @@ import Section from '../shared/Section'
 import { AllFeaturesWrapper } from './Features.style'
 
 const Features = () => {
+  const { featureSubheading } = CONSTS
   return (
-    <Section subheading={CONSTS.featureSubheading}>
+    <Section heading={featureSubheading}>
       <AllFeaturesWrapper>
         {listOfFeatures.map((feature) => (
           <OneFeature key={feature.heading} {...feature} />

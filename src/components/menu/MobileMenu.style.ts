@@ -49,7 +49,7 @@ export const ToggleMenuButton = styled.button`
   background-color: transparent;
   border: none;
 `
-export const ButtonStyles = styled.div<CloseButtonProps>`
+export const ButtonIcon = styled.div<CloseButtonProps>`
   ${MobileMenuTransition}
   position: relative;
   width: 70%;

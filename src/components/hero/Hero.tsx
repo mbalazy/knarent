@@ -14,7 +14,7 @@ const Hero = () => {
           <BigLink to="/#kontakt">Sprawdź adres</BigLink>
         </Copy>
         <LogoWrapper>
-          <LogoStyles />
+          <LogoStyles aria-label="logo firmowe" />
         </LogoWrapper>
       </Content>
     </HeroImage>

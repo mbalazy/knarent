@@ -6,7 +6,7 @@ type CategoryMenuProps = {
   onMobile?: boolean
 }
 
-export const CategoryMenuStyles = styled.aside<CategoryMenuProps>`
+export const CategoryMenuStyles = styled.div<CategoryMenuProps>`
   ${cardBasicStyle}
   ${({ onMobile }) =>
     onMobile &&
@@ -25,16 +25,11 @@ export const CategoryMenuStyles = styled.aside<CategoryMenuProps>`
       grid-row: 1 / span 3;
     `}
 `
-export const LinksStyles = styled.div`
-  display: flex;
-  flex-direction: column;
+export const LinksStyles = styled.ul`
+  display: grid;
+  gap: 2.6rem;
   padding: 3rem;
-
-  ${({ theme: { down, breakpoints } }) => css`
-    ${down(breakpoints.m)} {
-      padding: 3rem 3rem 0;
-    }
-  `}
+  white-space: nowrap;
 `
 export const MenuLinkStyles = styled(Link)`
   text-decoration: none;
