@@ -1,20 +1,7 @@
 import React from 'react'
 import { OneFeature as OneFeatureProps } from '../../../theme/CONSTS'
-import styled from 'styled-components'
 import { H4, P } from '../../../theme/Typography'
-import { cardBasicStyle } from '../../../theme/globalStyle'
-
-const OneFeatureWrapper = styled.article`
-  ${cardBasicStyle}
-
-  display: grid;
-  justify-items: center;
-  gap: 4rem;
-  padding: 5rem 3rem;
-`
-const ImageStyles = styled.img`
-  height: 7rem;
-`
+import { ImageStyles, OneFeatureWrapper } from './OneFeature.style'
 
 const OneFeature = ({ icon, heading, copy }: OneFeatureProps) => {
   return (

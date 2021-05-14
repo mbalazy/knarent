@@ -1,33 +1,17 @@
 import React from 'react'
-import { MainCategory } from '../../../types/sanity'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import styled from 'styled-components'
-import { getImageFromId } from '../utils/getHeroImageFromId'
 import { H4, P } from '../../../theme/Typography'
+import { MainCategory } from '../../../types/sanity'
 import { BigLink } from '../shared/Links'
-import { cardBasicStyle } from '../../../theme/globalStyle'
+import { getImageFromId } from '../utils/getHeroImageFromId'
+import {
+  CopyWrapper,
+  ImageStyles,
+  MainCategoryThumbnailWrapper,
+} from './MainCategoryThmubnail.style'
 
 type MainCategoryThumbanilProps = {
   mainCategory: MainCategory
 }
-
-const MainCategoryThumbnailWrapper = styled.article`
-  ${cardBasicStyle}
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-`
-const ImageStyles = styled(GatsbyImage)`
-  flex: 0 0 280px;
-  border-radius: ${({ theme }) => theme.border.standard} ${({ theme }) => theme.border.standard} 0 0;
-`
-const CopyWrapper = styled.div`
-  flex: 1 1 200px;
-  margin: 4rem 3rem 3rem;
-
-  display: grid;
-  gap: 3rem;
-`
 
 const MainCategoryThumbnail = ({
   mainCategory: { images, title, slug, description },

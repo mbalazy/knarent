@@ -1,16 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import styled from 'styled-components'
 import CONSTS from '../../../theme/CONSTS'
 import { MainCategory } from '../../../types/sanity'
 import MainCategoryThumbnail from '../shared/MainCategoryThmubnail'
 import Section from '../shared/Section'
-
-const OfferWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-  gap: 4rem;
-`
+import { OfferWrapper } from './Offer.style'
 
 const Offer = () => {
   const {

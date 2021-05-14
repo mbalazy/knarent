@@ -1,27 +1,12 @@
-import { Link } from 'gatsby'
 import React from 'react'
-import styled, { css } from 'styled-components'
-import { bigLinkHoverEffect } from '../../../theme/globalStyle'
 import type { ButtonProps } from './Button'
-import { BottomBaseStyles as LikeAButtonStyles } from './Button'
+import { BigLinkStyles, SimpleLinkStyles } from './Links.style'
 
 interface LinkProps extends ButtonProps {
   to: string
   smaller?: boolean
 }
-const BaseLinkStyles = css`
-  text-decoration: none;
-  color: inherit;
-  padding: 0.8rem 1.2rem;
-  font-size: ${({ theme }) => theme.fontSize.m};
-`
 
-const BigLinkStyles = styled(Link)<LinkProps>`
-  ${BaseLinkStyles}
-  ${LikeAButtonStyles}
-  ${bigLinkHoverEffect}
-  text-align: center;
-`
 export const BigLink = ({ variant = 'primary', children, to }: LinkProps) => {
   return (
     <BigLinkStyles variant={variant} to={to}>
@@ -30,15 +15,6 @@ export const BigLink = ({ variant = 'primary', children, to }: LinkProps) => {
   )
 }
 
-const SimpleLinkStyles = styled(Link)<LinkProps>`
-  ${BaseLinkStyles}
-  padding: 1rem 1.8rem;
-  ${({ smaller }) =>
-    smaller &&
-    css`
-      font-size: ${({ theme }) => theme.fontSize.s};
-    `}
-`
 export const SimpleLink = ({ children, to, smaller, ...delegated }: LinkProps) => {
   return (
     <SimpleLinkStyles to={to} smaller={smaller} {...delegated}>

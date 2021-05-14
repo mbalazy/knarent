@@ -1,9 +1,9 @@
-import { GoogleMap, InfoWindow, useJsApiLoader, Marker } from '@react-google-maps/api'
+import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-maps/api'
 import React from 'react'
-import styled from 'styled-components'
-import CONSTS from '../../../theme/CONSTS'
 import { ReactComponent as BigLogo } from '../../../images/logo_knarent.svg'
+import CONSTS from '../../../theme/CONSTS'
 import { P } from '../../../theme/Typography'
+import { InfoWindowStyles, LinkStyles } from './Map.style'
 
 type MapProps = {
   infoWindow?: boolean
@@ -11,28 +11,11 @@ type MapProps = {
   zoom?: number
 }
 
+//must be a normal object because of google map API
 const containerStyle = {
   width: '100%',
   height: '100%',
 }
-
-const InfoWindowStyles = styled.div`
-  padding: 1.2rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  justify-content: space-between;
-  align-items: flex-start;
-`
-const LinkStyles = styled.a`
-  padding: 0.6rem 1rem;
-  border-radius: 5px;
-  background-color: ${({ theme }) => theme.colors.secondary};
-  color: ${({ theme }) => theme.colors.white};
-  text-decoration: none;
-  align-self: stretch;
-  text-align: center;
-`
 
 const Map = ({ infoWindow, disableDefaultUI, zoom = 14 }: MapProps) => {
   const { adress, linkToExternalMap, mapCenter } = CONSTS

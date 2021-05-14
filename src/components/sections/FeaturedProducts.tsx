@@ -1,16 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import styled from 'styled-components'
 import CONSTS from '../../../theme/CONSTS'
 import { Product } from '../../../types/sanity'
 import ProductThumbnail from '../shared/ProductThumbnail'
 import Section from '../shared/Section'
-
-const FeaturedWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 3rem;
-`
+import { FeaturedWrapper } from './FeaturedProducts.style'
 
 const FeaturedProducts = () => {
   const {

@@ -1,19 +1,12 @@
 import React from 'react'
 import CONSTS from '../../../theme/CONSTS'
-import { SimpleLink } from '../shared/Links'
+import { NavbarLinkStyle } from './MenuItem.style'
 
 type Item = typeof CONSTS.menuItemList[number]
 type MenuItemProps = {
   item: Item
   onClick?: () => unknown
 }
-import styled from 'styled-components'
-
-const NavbarLinkStyle = styled(SimpleLink)`
-  backface-visibility: hidden;
-  &:hover {
-  }
-`
 
 const MenuItem = ({ item: { label, link }, ...delegated }: MenuItemProps) => {
   return (

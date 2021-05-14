@@ -2,12 +2,7 @@ import React from 'react'
 import CONSTS, { faqContent } from '../../../theme/CONSTS'
 import FaqIssue from '../shared/FaqIssue'
 import Section from '../shared/Section'
-import styled from 'styled-components'
-
-const FaqWrapper = styled.div`
-  display: grid;
-  gap: 4rem;
-`
+import { FaqWrapper } from './Faq.style'
 
 const Faq = () => {
   const { faqHeading } = CONSTS
