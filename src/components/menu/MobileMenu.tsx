@@ -7,7 +7,7 @@ import {
   MobileMenuWrapper,
   ToggleMenuButton,
 } from './MobileMenu.style'
-import { useMenu } from './MobileMenuContext'
+import { useMenu } from './useMenuContext'
 
 const MobileMenu = () => {
   const { showMobileMenu, setShowMobileMenu } = useMenu()

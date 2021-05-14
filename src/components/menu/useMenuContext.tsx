@@ -13,7 +13,7 @@ export const MenuContext = createContext<ContextProps>({
 export const useMenu = () => {
   const context = useContext(MenuContext)
   if (context === undefined) {
-    throw new Error('useContext must be used within  Provider')
+    throw new Error('useContext must be used within Provider')
   }
   return context
 }

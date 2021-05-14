@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { H4 } from '../../../theme/Typography'
 import { Category, MainCategory } from '../../../types/sanity'
-import { MenuContext } from '../menu/MobileMenuContext'
+import { useMenu } from '../menu/useMenuContext'
 import { LinksStyles, MenuLinkStyles } from './CategoryMenu.styles'
 import SingleCategoryLink from './SingleCategoryLink'
 
@@ -11,7 +11,7 @@ type SingleCategoryLinkProps = {
 }
 
 const SingleMainCategoryLink = ({ categories, mainCategory }: SingleCategoryLinkProps) => {
-  const { setShowMobileMenu } = useContext(MenuContext)
+  const { setShowMobileMenu } = useMenu()
   const handleCloseMenu = () => setShowMobileMenu(false)
   return (
     <LinksStyles key={mainCategory.id}>

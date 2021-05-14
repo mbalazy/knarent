@@ -1,11 +1,11 @@
 import { Link } from 'gatsby'
-import React, { useContext } from 'react'
+import React from 'react'
 import { ReactComponent as Logo } from '../../images/logo_knarent.svg'
 import { ReactComponent as Phone } from '../../images/phone1.svg'
 import CONSTS from '../../theme/CONSTS'
 import Menu from './menu/Menu'
 import MobileMenu from './menu/MobileMenu'
-import { MenuContext } from './menu/MobileMenuContext'
+import { useMenu } from './menu/useMenuContext'
 import {
   DesktopMenuWrapper,
   MobileMenuWrapper,
@@ -19,7 +19,7 @@ type NavProps = {
 }
 
 const Navbar = ({ sticky }: NavProps) => {
-  const { setShowMobileMenu } = useContext(MenuContext)
+  const { setShowMobileMenu } = useMenu()
   const handleCloseMenu = () => setShowMobileMenu(false)
   const [firstPhoneNumber] = CONSTS.telephones
   return (

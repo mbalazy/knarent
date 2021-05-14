@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import CONSTS from '../../../theme/CONSTS'
 import { MenuStyles } from './Menu.style'
 import MenuItem from './MenuItem'
-import { MenuContext } from './MobileMenuContext'
+import { useMenu } from './useMenuContext'
 
 type MenuProps = {
   vertical?: boolean
@@ -11,7 +11,7 @@ type MenuProps = {
 
 const Menu = ({ vertical, onMobile }: MenuProps) => {
   const { menuItemList } = CONSTS
-  const { setShowMobileMenu } = useContext(MenuContext)
+  const { setShowMobileMenu } = useMenu()
   const handleCloseMenu = () => onMobile && setShowMobileMenu(false)
   return (
     <MenuStyles vertical={vertical}>
