@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useLocation } from '@reach/router'
 import { graphql, navigate, useStaticQuery } from 'gatsby'
 import styled, { css } from 'styled-components'
@@ -53,6 +53,10 @@ const InputStyles = styled.input`
 `
 
 const Search = () => {
+  const ref = useRef(null)
+  useEffect(() => {
+    ref.current.focus()
+  }, [])
   const location = useLocation()
   const searchQuery = location.search.replace('?', '')
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => navigate(`./?${e.target.value}`)
@@ -91,7 +95,13 @@ const Search = () => {
   const searchForm = (
     <InputWrapper>
       <label htmlFor="szukaj">
-        <InputStyles id="szukaj" name="szukaj" onChange={handleChange} defaultValue={searchQuery} />
+        <InputStyles
+          ref={ref}
+          id="szukaj"
+          name="szukaj"
+          onChange={handleChange}
+          defaultValue={searchQuery}
+        />
         <SearchIconStyles />
       </label>
     </InputWrapper>
