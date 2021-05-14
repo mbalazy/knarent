@@ -109,13 +109,11 @@ const Search = () => {
     </InputWrapper>
   )
   return (
-    <>
-      <EquipmentOverview searchForm={searchForm}>
-        {filteredProduct.map((product: Product) => (
-          <ProductThumbnail key={product.id} product={product} />
-        ))}
-      </EquipmentOverview>
-    </>
+    <EquipmentOverview searchForm={searchForm}>
+      {filteredProduct.map((product: Product) => (
+        <ProductThumbnail key={product.id} product={product} />
+      ))}
+    </EquipmentOverview>
   )
 }
 

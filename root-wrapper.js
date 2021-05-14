@@ -8,7 +8,7 @@ import { MenuProvider } from './src/components/menu/MobileMenuContext'
 import '@fontsource/work-sans'
 import '@fontsource/montserrat'
 
-const PageWrapper = styled.main`
+const PageWrapper = styled.div`
   display: grid;
   justify-items: center;
   background-color: ${({ theme }) => theme.colors.grey002};

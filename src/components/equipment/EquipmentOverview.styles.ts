@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { cardBasicStyle, centerInsideMe } from '../../../theme/globalStyle'
 
-export const EquipmentOverviewWrapper = styled.div`
+export const EquipmentOverviewWrapper = styled.main`
   width: 90vw;
   max-width: ${({ theme }) => theme.dimensions.mainContentWidth};
   margin: ${({ theme }) => theme.dimensions.equipmentMargin};
