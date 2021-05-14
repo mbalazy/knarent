@@ -5,13 +5,7 @@ import Faq from '../components/sections/Faq'
 import FeaturedProducts from '../components/sections/FeaturedProducts'
 import Features from '../components/sections/Features'
 import Offer from '../components/sections/Offer'
-import styled from 'styled-components'
-
-const HomeWrapper = styled.main`
-  display: grid;
-  gap: ${({ theme }) => theme.dimensions.mainContentGap};
-  justify-items: center;
-`
+import { HomeWrapper } from './index.style'
 
 const Home = () => {
   return (
