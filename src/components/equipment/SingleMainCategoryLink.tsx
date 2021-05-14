@@ -6,7 +6,7 @@ import { LinksStyles, MenuLinkStyles } from './CategoryMenu.styles'
 import SingleCategoryLink from './SingleCategoryLink'
 
 type SingleCategoryLinkProps = {
-  categories: { nodes: Category[] }
+  categories: Category[]
   mainCategory: MainCategory
 }
 
@@ -18,7 +18,7 @@ const SingleMainCategoryLink = ({ categories, mainCategory }: SingleCategoryLink
       <MenuLinkStyles to={`/${mainCategory.slug.current}`} onClick={handleCloseMenu}>
         <H4 smaller>{mainCategory.title}</H4>
       </MenuLinkStyles>
-      {categories.nodes
+      {categories
         .sort((a: Category, b: Category) => a.title.localeCompare(b.title))
         .map(
           (category: Category) =>

@@ -12,7 +12,7 @@ const CategoryMenu = ({ onMobile }: CategoryMenuProps) => {
   const { mainCategories, categories } = useAllCategory()
   return (
     <CategoryMenuStyles onMobile={onMobile}>
-      {mainCategories.nodes
+      {mainCategories
         .sort((a: MainCategory, b: MainCategory) => a.title.localeCompare(b.title))
         .map((mainCategory: MainCategory) => (
           <SingleMainCategoryLink

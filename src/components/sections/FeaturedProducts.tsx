@@ -1,57 +1,21 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import CONSTS from '../../../theme/CONSTS'
-import { Product } from '../../../types/sanity'
+import { useFeaturedProducts } from '../../graphql/useFeaturedProducts'
 import ProductThumbnail from '../shared/ProductThumbnail'
 import Section from '../shared/Section'
 import { FeaturedWrapper } from './FeaturedProducts.style'
 
 const FeaturedProducts = () => {
-  const {
-    allSanityEquipment: { edges: featuredProducts },
-  } = useStaticQuery(graphql`
-    query FeaturedProducts {
-      allSanityEquipment(filter: { featured: { eq: true } }) {
-        edges {
-          node {
-            id
-            description
-            title
-            slug {
-              current
-            }
-            featured
-            images {
-              asset {
-                id
-              }
-            }
-            category {
-              slug {
-                current
-              }
-              mainCategory {
-                slug {
-                  current
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
+  const featuredProducts = useFeaturedProducts()
+  console.log(featuredProducts)
   return (
-    <>
-      <Section heading={CONSTS.featuredProductsHeading}>
-        <FeaturedWrapper>
-          {featuredProducts.map(({ node: product }: { node: Product }) => (
-            <ProductThumbnail product={product} key={product.id} />
-          ))}
-        </FeaturedWrapper>
-      </Section>
-    </>
+    <Section heading={CONSTS.featuredProductsHeading}>
+      <FeaturedWrapper>
+        {featuredProducts.map((product) => (
+          <ProductThumbnail product={product} key={product.id} />
+        ))}
+      </FeaturedWrapper>
+    </Section>
   )
 }
 

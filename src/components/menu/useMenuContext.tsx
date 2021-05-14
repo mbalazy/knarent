@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useState } from 'react'
 
-type ContextProps = {
+type Context = {
   showMobileMenu: boolean
   setShowMobileMenu: (arg0: boolean) => void
 }
 
-export const MenuContext = createContext<ContextProps>({
-  setShowMobileMenu: () => false,
+export const MenuContext = createContext<Context>({
   showMobileMenu: false,
+  setShowMobileMenu: () => false,
 })
 
 export const useMenu = () => {

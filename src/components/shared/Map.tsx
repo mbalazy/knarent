@@ -11,7 +11,7 @@ type MapProps = {
   zoom?: number
 }
 
-//must be a normal object because of google map API
+// must be a normal object because of Google Map API
 const containerStyle = {
   width: '100%',
   height: '100%',

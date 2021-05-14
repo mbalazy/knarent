@@ -1,15 +1,25 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import { Category, MainCategory } from '../../types/sanity'
 
 export const useAllCategory = () => {
   const {
-    allSanityMainCategory: mainCategories,
-    allSanityCategory: categories,
+    allSanityMainCategory: { nodes: mainCategories },
+    allSanityCategory: { nodes: categories },
+  }: {
+    allSanityMainCategory: { nodes: MainCategory[] }
+    allSanityCategory: { nodes: Category[] }
   } = useStaticQuery(graphql`
     query {
       allSanityMainCategory {
         nodes {
-          title
           id
+          description
+          title
+          images {
+            asset {
+              id
+            }
+          }
           slug {
             current
           }
