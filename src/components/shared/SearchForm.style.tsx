@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { ReactComponent as SearchIcon } from '../../images/loupe.svg'
+import { ReactComponent as SearchIcon } from '../../../images/loupe.svg'
 
 export const InputWrapper = styled.form`
   border-bottom: 1px solid white;

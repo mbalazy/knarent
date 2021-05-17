@@ -1,5 +1,6 @@
 import React from 'react'
 import { H3 } from '../../../theme/Typography'
+import SearchForm from '../shared/SearchForm'
 import CategoryMenu from './CategoryMenu'
 import {
   CategoryMenuStyles,
@@ -11,10 +12,10 @@ import EquipmentsWithPagination from './EquipmentsWithPagination'
 type EquipmentOverviewProps = {
   title?: string
   children: JSX.Element | JSX.Element[]
-  searchForm?: JSX.Element | JSX.Element[]
+  withSearchForm?: boolean
 }
 
-const EquipmentOverview = ({ title, searchForm, children }: EquipmentOverviewProps) => {
+const EquipmentOverview = ({ title, withSearchForm, children }: EquipmentOverviewProps) => {
   return (
     <EquipmentOverviewWrapper>
       <CategoryMenuStyles>
@@ -22,7 +23,7 @@ const EquipmentOverview = ({ title, searchForm, children }: EquipmentOverviewPro
       </CategoryMenuStyles>
       <EquipmentHeadingWrapper>
         {title && <H3 bigger>{title}</H3>}
-        {searchForm}
+        {withSearchForm && <SearchForm />}
       </EquipmentHeadingWrapper>
       <EquipmentsWithPagination elements={children as JSX.Element[]} />
     </EquipmentOverviewWrapper>
