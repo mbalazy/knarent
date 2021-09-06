@@ -1,11 +1,17 @@
 import React from 'react'
+import styled from 'styled-components'
 import Hero from '../components/hero/Hero'
 import Contact from '../components/sections/Contact'
 import Faq from '../components/sections/Faq'
 import FeaturedProducts from '../components/sections/FeaturedProducts'
 import Features from '../components/sections/Features'
 import Offer from '../components/sections/Offer'
-import { HomeWrapper } from './index.style'
+
+export const HomeWrapper = styled.main`
+  display: grid;
+  gap: ${({ theme }) => theme.dimensions.mainContentGap};
+  justify-items: center;
+`
 
 const Home = () => {
   return (

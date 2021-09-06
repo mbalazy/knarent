@@ -7,7 +7,6 @@ import { FeaturedWrapper } from './FeaturedProducts.style'
 
 const FeaturedProducts = () => {
   const featuredProducts = useFeaturedProducts()
-  console.log(featuredProducts)
   return (
     <Section heading={CONSTS.featuredProductsHeading}>
       <FeaturedWrapper>

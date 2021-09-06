@@ -39,6 +39,7 @@ export type Product = {
     }
   }
 }
+
 export type Category = MainCategory & {
   mainCategory?: {
     id: string
